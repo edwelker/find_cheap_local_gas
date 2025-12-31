@@ -4,6 +4,10 @@ on:
   schedule:
     # Runs at 12:00 UTC (7:00 AM EST) every day
     - cron: '0 12 * * *'
+  push:
+    branches:
+      - main
+      - master
   workflow_dispatch:
     # Allows manual triggering from the Actions tab
 
