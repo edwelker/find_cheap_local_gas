@@ -1,0 +1,17 @@
+City,Zip,Station,Address,Base,Net,Discount
+Riverhead,11901,Shell,"1733 Old Country Rd, 11901",2.79,2.74,Shell
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",2.79,2.76,Mobil
+Riverhead,11901,76,"7 Peconic Ave, 11901",2.83,2.83,-
+Riverhead,11901,Shell,"9 Lake Ave, 11901",2.83,2.78,Shell
+Riverhead,11901,BP,"626 W Main St, 11901",2.85,2.8,BP
+Riverhead,11901,Mobil,"415 E Main St, 11901",2.83,2.8,Mobil
+Riverhead,11901,Speedway,"870 Old Country Rd, 11901",2.87,2.82,Speedway
+Riverhead,11901,Sunoco,"1879 Old Country Rd, 11901",2.95,2.92,Sunoco
+Hampton Bays,11946,Shell,"250 E Montauk Hwy, 11946",3.09,3.04,Shell
+Hampton Bays,11946,Shell,"172 W Montauk Hwy, 11946",3.69,3.64,Shell
+Southampton,11968,Speedway,"Unknown Address, 11968",2.99,2.94,Speedway
+Southampton,11968,Mobil,"380 North Sea Rd, 11968",3.84,3.81,Mobil
+Southampton,11968,Speedway,"380 North Sea Rd, 11968",2.29,2.24,Speedway
+East Hampton,11937,Empire,"148 N Main St, 11937",4.19,4.19,-
+East Hampton,11937,ROYAL,"23 Three Mile Harbor Rd, 11937",4.13,4.13,-
+Montauk,11954,Gulf,"675 Main St, 11954",2.29,2.29,-

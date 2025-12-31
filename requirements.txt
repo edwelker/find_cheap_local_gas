@@ -1,0 +1,5 @@
+pandas>=2.2.0
+selenium>=4.16.0
+beautifulsoup4>=4.12.0
+uszipcode>=1.0.1
+sqlalchemy-mate<1.5.0
