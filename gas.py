@@ -369,10 +369,15 @@ def main():
 
     df.to_csv(filename, index=False)
 
+    # Save a "latest" version in the root directory for easy access by external sites
+    latest_filename = f"latest_{safe_name}.csv"
+    df.to_csv(latest_filename, index=False)
+
     print("\n" + "=" * 80)
     print("✅ DATA COLLECTED")
     print("=" * 80)
-    print(f"File Saved: {os.path.abspath(filename)}")
+    print(f"Historical File: {os.path.abspath(filename)}")
+    print(f"Latest Pointer:   {os.path.abspath(latest_filename)}")
 
     # --- DISPLAY LOGIC ---
     pd.set_option("display.max_rows", None)
