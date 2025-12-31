@@ -1,3 +1,4 @@
+import sys
 import time
 import re
 import os
@@ -158,18 +159,23 @@ def calculate_radius_zips(center_zip, miles=15):
     return top_zips
 
 
-def get_region_choice():
-    print("\n--- SELECT REGION ---")
-    print("1. Maryland (ALL: Columbia, EC, Severn)")
-    print("2. Long Island (Riverhead - Montauk)")
-    print("3. Western Mass (Springfield - Deerfield)")
-    print("4. Commute Only: Severn <-> Scaggsville")
-    print("5. CUSTOM SEARCH (Radius Calculation)")
-
-    choice = input("Enter number: ").strip()
+def get_region_choice(cli_choice=None, cli_zip=None):
+    if cli_choice:
+        choice = cli_choice
+    else:
+        print("\n--- SELECT REGION ---")
+        print("1. Maryland (ALL: Columbia, EC, Severn)")
+        print("2. Long Island (Riverhead - Montauk)")
+        print("3. Western Mass (Springfield - Deerfield)")
+        print("4. Commute Only: Severn <-> Scaggsville")
+        print("5. CUSTOM SEARCH (Radius Calculation)")
+        choice = input("Enter number: ").strip()
 
     if choice == "5":
-        center = input("Enter Center Zip Code: ").strip()
+        if cli_zip:
+            center = cli_zip
+        else:
+            center = input("Enter Center Zip Code: ").strip()
         zips = calculate_radius_zips(center, miles=15)
         return {"name": f"Custom_Radius_{center}", "zips": zips}
 
@@ -212,10 +218,24 @@ def clean_address(full_text):
     return "Unknown Address"
 
 
-def scrape_gasbuddy(region_config):
-    print("\n🚀 Launching Browser... (Do not close the window!)")
+def scrape_gasbuddy(region_config, headless=False):
+    print(f"\n🚀 Launching Browser ({'Headless' if headless else 'Windowed'} mode)...")
     options = Options()
-    options.add_argument("--start-maximized")
+    
+    # Common options to avoid bot detection
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+
+    if headless:
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=1920,1080")
+    else:
+        options.add_argument("--start-maximized")
+    
     driver = webdriver.Chrome(options=options)
 
     scraped_data = []
@@ -228,11 +248,15 @@ def scrape_gasbuddy(region_config):
             url = f"https://www.gasbuddy.com/home?search={zip_code}&fuel=1"
             driver.get(url)
 
-            # --- HUMAN INTERVENTION ---
-            print(f"👉 ACTION REQUIRED for {zip_code}:")
-            print("   1. If Cloudflare checks you, click the box.")
-            print("   2. Wait for the list of stations to appear.")
-            input("   3. Press ENTER here once the prices are visible... ")
+            # --- HUMAN INTERVENTION / WAIT ---
+            if not headless:
+                print(f"👉 ACTION REQUIRED for {zip_code}:")
+                print("   1. If Cloudflare checks you, click the box.")
+                print("   2. Wait for the list of stations to appear.")
+                input("   3. Press ENTER here once the prices are visible... ")
+            else:
+                print("   Waiting for page to load (15s)...")
+                time.sleep(15)
 
             soup = BeautifulSoup(driver.page_source, "html.parser")
 
@@ -305,8 +329,23 @@ def scrape_gasbuddy(region_config):
 
 
 def main():
-    region = get_region_choice()
-    data = scrape_gasbuddy(region)
+    # Check for CLI arguments
+    args = sys.argv[1:]
+    
+    # Check for --headless flag
+    is_headless_requested = "--headless" in args
+    
+    # Extract positional arguments (choice and zip) by ignoring flags
+    pos_args = [a for a in args if not a.startswith("-")]
+    
+    cli_choice = pos_args[0] if len(pos_args) > 0 else None
+    cli_zip = pos_args[1] if len(pos_args) > 1 else None
+    
+    # Detect if running in GitHub Actions or requested via CLI
+    is_automated = (os.environ.get("GITHUB_ACTIONS") == "true") or is_headless_requested
+
+    region = get_region_choice(cli_choice, cli_zip)
+    data = scrape_gasbuddy(region, headless=is_automated)
 
     if not data:
         print("❌ No data found.")
