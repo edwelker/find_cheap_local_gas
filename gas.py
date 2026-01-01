@@ -35,12 +35,20 @@ ZIP_MAP = {
     "11901": "Riverhead",
     "11946": "Hampton Bays",
     "11968": "Southampton",
+    "11976": "Water Mill",
+    "11932": "Bridgehampton",
     "11937": "East Hampton",
+    "11930": "Amagansett",
     "11954": "Montauk",
     # Western Mass
     "01103": "Springfield",
+    "01020": "Chicopee",
     "01040": "Holyoke",
+    "01027": "Easthampton",
     "01060": "Northampton",
+    "01035": "Hadley",
+    "01002": "Amherst",
+    "01054": "Leverett",
     "01301": "Greenfield",
     "01373": "South Deerfield",
 }
@@ -62,11 +70,31 @@ REGIONS = {
     },
     "2": {
         "name": "Long Island (East End)",
-        "zips": ["11901", "11946", "11968", "11937", "11954"],
+        "zips": [
+            "11901",  # Riverhead
+            "11946",  # Hampton Bays
+            "11968",  # Southampton
+            "11976",  # Water Mill
+            "11932",  # Bridgehampton
+            "11937",  # East Hampton
+            "11930",  # Amagansett
+            "11954",  # Montauk
+        ],
     },
     "3": {
         "name": "Western Mass (I-91 Corridor)",
-        "zips": ["01103", "01040", "01060", "01301", "01373"],
+        "zips": [
+            "01103",  # Springfield
+            "01020",  # Chicopee
+            "01040",  # Holyoke
+            "01027",  # Easthampton
+            "01060",  # Northampton
+            "01035",  # Hadley
+            "01002",  # Amherst
+            "01054",  # Leverett
+            "01373",  # South Deerfield
+            "01301",  # Greenfield
+        ],
     },
     "4": {
         "name": "Commute: Severn <-> Scaggsville",
