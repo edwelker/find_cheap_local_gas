@@ -42,10 +42,13 @@ jobs:
       - name: Run Scraper (Western Mass)
         run: python gas.py 3
 
+      - name: Cleanup Old History
+        run: python cleanup_history.py
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add history/*.csv latest_*.csv
+          git add history/ latest_*.csv
           git commit -m "Automated gas price update: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
           git push
