@@ -4,9 +4,9 @@ Chicopee,01020,Stop & Shop,"672 Memorial Dr, 01020",2.55,2.45,Stop & Shop
 Chicopee,01020,Cumberland Farms,"37 Montcalm St, 01020",2.65,2.55,Cumberland
 Chicopee,01020,Cumberland Farms,"1061 Memorial Dr, 01020",2.65,2.55,Cumberland
 Chicopee,01020,Gulf,"646 Grattan St, 01020",2.69,2.69,-
-Chicopee,01020,F.L. Roberts,"2012 Memorial Dr, 01020",2.74,2.74,-
 Chicopee,01020,CITGO,"451 Grattan St, 01020",2.75,2.75,-
 Chicopee,01020,Big Y Express,"1177 Granby Rd, 01020",2.78,2.73,Big Y
+Chicopee,01020,F.L. Roberts,"2012 Memorial Dr, 01020",2.74,2.74,-
 Chicopee,01020,Pride,"27 Montgomery St, 01020",2.77,2.67,Pride
 Chicopee,01020,Sunoco,"560 East St, 01020",2.79,2.76,Sunoco
 Chicopee,01020,Sunoco,"500 Montgomery St, 01020",2.89,2.86,Sunoco
@@ -27,25 +27,25 @@ Easthampton,01027,Gulf,"317 Main St, 01027",3.09,3.09,-
 Easthampton,01027,F.L. Roberts,"124 Northampton St, 01027",3.09,3.09,-
 Northampton,01060,King Street Convenience,"60 King St, 01060",2.89,2.89,-
 Northampton,01060,Stop & Shop,"228 King St, 01060",2.89,2.79,Stop & Shop
-Northampton,01060,Pride,"375 King St, 01060",2.91,2.81,Pride
 Northampton,01060,Big Y Express,"188 N King St, 01060",2.91,2.86,Big Y
+Northampton,01060,Pride,"375 King St, 01060",2.91,2.81,Pride
 Northampton,01060,Cumberland Farms,"134 King St, 01060",2.94,2.84,Cumberland
-Northampton,01060,Racing Mart,"54 Easthampton Rd, 01060",2.93,2.93,-
 Northampton,01060,Mobil,"15 Locust, 01060",2.95,2.92,Mobil
+Northampton,01060,Racing Mart,"54 Easthampton Rd, 01060",2.93,2.93,-
 Northampton,01060,Shell,"506 Pleasant St, 01060",2.99,2.94,Shell
 Northampton,01060,Sunoco,"776 N King St, 01060",2.91,2.88,Sunoco
 Hadley,01035,Stop & Shop,"446 Russell St, 01035",2.95,2.85,Stop & Shop
-Hadley,01035,Pride,"445 Russell St, 01035",2.99,2.89,Pride
 Hadley,01035,Cumberland Farms,"109 Russell St, 01035",3.01,2.91,Cumberland
-Hadley,01035,Pride,"25 Russell St, 01035",3.03,2.93,Pride
+Hadley,01035,Pride,"445 Russell St, 01035",2.99,2.89,Pride
 Hadley,01035,Mobil,"110 Russell St, 01035",3.02,2.99,Mobil
+Hadley,01035,Pride,"25 Russell St, 01035",3.03,2.93,Pride
 Hadley,01035,Big Y Express,"73 Russell St, 01035",3.03,2.98,Big Y
 Amherst,01002,Cumberland Farms,"389 College St, 01002",2.98,2.88,Cumberland
 Amherst,01002,Speedway,"468 West St, 01002",2.99,2.94,Speedway
 Amherst,01002,F.L. Roberts,"399 Northampton Rd, 01002",3.04,3.04,-
 South Deerfield,01373,Cumberland Farms,"31 Elm St, 01373",3.09,2.99,Cumberland
-South Deerfield,01373,Irving,"1 Greenfield Rd, 01373",3.1,3.1,-
 South Deerfield,01373,Irving,"1 Sunderland Rd, 01373",3.1,3.1,-
+South Deerfield,01373,Irving,"1 Greenfield Rd, 01373",3.1,3.1,-
 South Deerfield,01373,Roady's,"372 State Rd, 01373",3.15,3.15,-
 Greenfield,01301,Shell,"Unknown Address, 01301",2.77,2.72,Shell
 Greenfield,01301,Mobil,"Unknown Address, 01301",2.77,2.74,Mobil
@@ -53,7 +53,7 @@ Greenfield,01301,Planet,"Unknown Address, 01301",2.77,2.77,-
 Greenfield,01301,Stop & Shop,"488 Bernardston Rd, 01301",2.79,2.69,Stop & Shop
 Greenfield,01301,Sandri,"295 Federal St, 01301",2.77,2.77,-
 Greenfield,01301,F.L. Roberts,"63 Main St, 01301",2.79,2.79,-
-Greenfield,01301,Cumberland Farms,"317 Federal St, 01301",2.84,2.74,Cumberland
 Greenfield,01301,Irving,"Unknown Address, 01301",2.85,2.85,-
+Greenfield,01301,Cumberland Farms,"317 Federal St, 01301",2.84,2.74,Cumberland
 Greenfield,01301,Sunoco,"416 Federal St, 01301",2.84,2.81,Sunoco
 Greenfield,01301,Speedway,"245 Federal St, 01301",2.83,2.78,Speedway
