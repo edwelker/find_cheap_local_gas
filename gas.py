@@ -348,7 +348,7 @@ def main():
 
     region = get_region_choice(cli_choice, cli_zip)
 
-    # --- PRE-CHECK: Skip if file for today already exists ---
+    # --- PRE-CHECK: Ensure history directory exists ---
     history_dir = "history"
     if not os.path.exists(history_dir):
         os.makedirs(history_dir)
@@ -359,14 +359,7 @@ def main():
     
     # Use Eastern Time for consistent naming
     now = datetime.datetime.now(ZoneInfo("America/New_York"))
-    date_today = now.strftime("%Y-%m-%d")
     
-    # Check if any file for this region and today exists to avoid redundant scrapes
-    existing_files = [f for f in os.listdir(history_dir) if f.startswith(f"gas_{safe_name}_{date_today}")]
-    if existing_files:
-        print(f"\n⏭️  Data for '{region['name']}' already exists for {date_today}. Skipping scrape.")
-        return
-
     date_str = now.strftime("%Y-%m-%d_%H-%M")
     filename = os.path.join(history_dir, f"gas_{safe_name}_{date_str}.csv")
 
