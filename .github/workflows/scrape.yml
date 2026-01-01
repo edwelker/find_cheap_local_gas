@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      TZ: America/New_York
     
     steps:
       - name: Checkout Repository

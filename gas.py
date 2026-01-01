@@ -3,6 +3,7 @@ import time
 import re
 import os
 import datetime
+from zoneinfo import ZoneInfo
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -356,7 +357,8 @@ def main():
     cleaned_name = raw_name.replace("/", "_").replace(" ", "_").replace(":", "")
     safe_name = re.sub(r"[^\w\-_]", "", cleaned_name)
     
-    now = datetime.datetime.now()
+    # Use Eastern Time for consistent naming
+    now = datetime.datetime.now(ZoneInfo("America/New_York"))
     date_today = now.strftime("%Y-%m-%d")
     
     # Check if any file for this region and today exists to avoid redundant scrapes
