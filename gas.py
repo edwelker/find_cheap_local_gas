@@ -303,13 +303,22 @@ def scrape_gasbuddy(region_config, headless=False):
                     # Walk up to find the "Card"
                     card = price_node.parent
                     depth = 0
+                    is_trend = False
+
                     while card and depth < 8:
+                        # Check if this element indicates a Price Trend panel
+                        if card.name:
+                            classes = card.get("class", [])
+                            if classes and any("PriceTrends" in c for c in classes):
+                                is_trend = True
+                                break
+
                         if card.name == "div" and card.find("h3"):
                             break
                         card = card.parent
                         depth += 1
 
-                    if not card:
+                    if not card or is_trend:
                         continue
 
                     # Name
