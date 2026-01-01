@@ -346,6 +346,28 @@ def main():
     is_automated = (os.environ.get("GITHUB_ACTIONS") == "true") or is_headless_requested
 
     region = get_region_choice(cli_choice, cli_zip)
+
+    # --- PRE-CHECK: Skip if file for today already exists ---
+    history_dir = "history"
+    if not os.path.exists(history_dir):
+        os.makedirs(history_dir)
+
+    raw_name = region["name"]
+    cleaned_name = raw_name.replace("/", "_").replace(" ", "_").replace(":", "")
+    safe_name = re.sub(r"[^\w\-_]", "", cleaned_name)
+    
+    now = datetime.datetime.now()
+    date_today = now.strftime("%Y-%m-%d")
+    
+    # Check if any file for this region and today exists to avoid redundant scrapes
+    existing_files = [f for f in os.listdir(history_dir) if f.startswith(f"gas_{safe_name}_{date_today}")]
+    if existing_files:
+        print(f"\n⏭️  Data for '{region['name']}' already exists for {date_today}. Skipping scrape.")
+        return
+
+    date_str = now.strftime("%Y-%m-%d_%H-%M")
+    filename = os.path.join(history_dir, f"gas_{safe_name}_{date_str}.csv")
+
     data = scrape_gasbuddy(region, headless=is_automated)
 
     if not data:
@@ -354,18 +376,6 @@ def main():
 
     df = pd.DataFrame(data)
     df = df.drop_duplicates(subset=["Station", "Address"])
-
-    # --- FILENAME SANITIZATION & HISTORY DIR ---
-    history_dir = "history"
-    if not os.path.exists(history_dir):
-        os.makedirs(history_dir)
-
-    raw_name = region["name"]
-    cleaned_name = raw_name.replace("/", "_").replace(" ", "_").replace(":", "")
-    safe_name = re.sub(r"[^\w\-_]", "", cleaned_name)
-
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-    filename = os.path.join(history_dir, f"gas_{safe_name}_{timestamp}.csv")
 
     df.to_csv(filename, index=False)
 
