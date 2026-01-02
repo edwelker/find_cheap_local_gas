@@ -11,15 +11,15 @@ Columbia (East),21045,Exxon,"6004 Foreland Gart, 21045",2.99,2.96,Exxon,,
 Columbia (Guilford),21046,Exxon,"6300 Stevens Forest, 21046",2.69,2.66,Exxon,39.1973061,-76.8530941
 Ellicott City (Central),21042,Mobil,"9320 Baltimore National Pike, 21042",2.71,2.68,Mobil,39.2779163,-76.8325436
 Ellicott City (Central),21042,Sunoco,"9395 Baltimore National Pike, 21042",2.75,2.72,Sunoco,39.2772371,-76.8350415
-Ellicott City (Central),21042,Sunoco,"10214 Baltimore National Pke, 21042",2.79,2.76,Sunoco,,
+Ellicott City (Central),21042,Sunoco,"10214 Baltimore National Pike, 21042",2.79,2.76,Sunoco,39.2803307,-76.8652201
 Ellicott City (Central),21042,Carroll Motor Fuels,"9109 BALTIMORE NATIONAL PIKE, 21042",2.91,2.91,-,39.2771741,-76.8262007
 Ellicott City (Central),21042,Dash-In,"9075 Baltimore National Pike, 21042",2.99,2.99,-,39.2762251,-76.8250029
 Ellicott City (Central),21042,Shell,"4755 Dorsey Hall Dr, 21042",2.99,2.94,Shell,39.2423537,-76.8403131
 Ellicott City (Central),21042,Exxon,"10193 Baltimore National Pike, 21042",2.99,2.96,Exxon,39.2793591,-76.8636316
 Ellicott City (North),21043,Mobil,"4398 Montgomery Rd, 21043",2.74,2.71,Mobil,39.2520755,-76.8165282
 Ellicott City (North),21043,Dash In,"4205 Montgomery Rd, 21043",2.74,2.74,-,39.2561283,-76.8190081
-Ellicott City (North),21043,Shell,"64 Frederick Rd, 21043",2.93,2.88,Shell,39.2654947,-76.7906258
 Ellicott City (North),21043,Carroll Motor Fuels,"4132 Old Columbia Pike, 21043",2.91,2.91,-,39.2565046,-76.8197592
+Ellicott City (North),21043,Shell,"64 Frederick Rd, 21043",2.93,2.88,Shell,39.2654947,-76.7906258
 Ellicott City (North),21043,Carroll Motor Fuels,"8720 Baltimore National Pike, 21043",2.91,2.91,-,39.2808054,-76.8147058
 Ellicott City (North),21043,Exxon,"4235 Montgomery Rd, 21043",2.93,2.9,Exxon,39.2554156,-76.8184372
 Ellicott City (North),21043,BP,"8505 Baltimore National Pike, 21043",2.93,2.88,BP,39.2842309,-76.8075056
@@ -29,8 +29,8 @@ Ellicott City (North),21043,Exxon,"8850 Centre Park Dr, 21043",3.05,3.02,Exxon,3
 Ellicott City (North),21043,Carroll Motor Fuels,"8300 Baltimore National Pike, 21043",2.91,2.91,-,39.2895052,-76.7997418
 Scaggsville / Laurel,20723,7-Eleven,"9651 Washington Blvd, 20723",2.79,2.76,7-Eleven,39.1206298,-76.8266406
 Scaggsville / Laurel,20723,Weis,"9250 Washington Blvd, 20723",2.79,2.79,-,39.1292665,-76.8201441
-Scaggsville / Laurel,20723,Exxon,"9275 All Saints Rd, 20723",2.84,2.81,Exxon,39.1189484,-76.8513125
 Scaggsville / Laurel,20723,Shell,"9280 All Saints Rd, 20723",2.84,2.79,Shell,39.1195226,-76.8519516
+Scaggsville / Laurel,20723,Exxon,"9275 All Saints Rd, 20723",2.84,2.81,Exxon,39.1189484,-76.8513125
 Scaggsville / Laurel,20723,Exxon,"8850 Gorman Rd, 20723",2.99,2.96,Exxon,39.1315805,-76.8205188
 Severn,21144,7-Eleven,"500 Donaldson Ave, 21144",2.97,2.94,7-Eleven,39.136636,-76.659232
 Severn,21144,Royal Farms,"7843 Telegraph Rd, 21144",2.99,2.89,Royal Farms,39.1373727,-76.684828
@@ -45,6 +45,6 @@ Hanover (Arundel Mills),21076,Exxon,"7043 Arundel Mills Cir, 21076",3.29,3.26,Ex
 Hanover (Arundel Mills),21076,CITGO,"1401 Dorsey Rd, 21076",2.99,2.99,-,39.160101,-76.715098
 Jessup,20794,BP,"7879 Pocomoke Dr, 20794",2.79,2.74,BP,39.1682121,-76.7831573
 Jessup,20794,Shell,"2753 Annapolis Rd, 20794",2.99,2.94,Shell,39.1377885,-76.7521393
-Jessup,20794,Royal Farms,"8686 Washington Blvd, 20794",2.99,2.89,Royal Farms,39.1457337,-76.8094061
+Jessup,20794,Royal Farms,"8686 Washington Blvd, 20794",2.99,2.89,Royal Farms,,
 Jessup,20794,Shell,"8755 Washington Blvd, 20794",2.99,2.94,Shell,39.1447238,-76.8087484
 Jessup,20794,Sunoco,"2739 Annapolis Rd, 20794",2.89,2.86,Sunoco,39.1365014,-76.7506844
