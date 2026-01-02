@@ -232,23 +232,15 @@ def clean_address(full_text):
         "Credit",
         "Station Brand",
         "Payment",
+        "Hours",
+        "ago",
     ]
 
-    # Expanded list of suffixes, prioritizing full words to avoid partial matches
-    suffixes = [
-        "Boulevard", "Turnpike", "Highway", "Parkway", "Street", "Avenue",
-        "Drive", "Court", "Place", "Square", "Terrace", "Circle", "Trail",
-        "Lane", "Road", "Route", "Bypass", "Expressway",
-        "Blvd", "Tpke", "Hwy", "Pkwy", "St", "Ave", "Dr", "Ct", "Pl", "Sq",
-        "Ter", "Cir", "Trl", "Ln", "Rd", "Rte", "Rt", "Expy", "Loop", "Way",
-        "Pike", "Run", "Mall", "Pke",
-        "Garth", "Cove", "Mews", "Hollow", "Point", "Crossing", "Extension", "Walk", "Heights", "Path"
-    ]
-    suffix_pattern = "|".join(suffixes)
-
-    # Regex: Starts with digits, followed by words, ends with Road Type
+    # Regex: Starts with digits, followed by words.
+    # Relaxed to not require specific suffixes.
+    # Added support for hyphens, commas, and apostrophes in street names
     addr_regex = re.compile(
-        rf"^\d{{1,5}}\s+[A-Za-z0-9\.\s]+(?:{suffix_pattern})",
+        r"^\d{1,5}\s+[A-Za-z0-9\.\s\-\,']+",
         re.IGNORECASE,
     )
 
@@ -259,7 +251,7 @@ def clean_address(full_text):
 
         match = addr_regex.search(line)
         if match:
-            return match.group(0)
+            return match.group(0).strip()
 
     return "Unknown Address"
 
