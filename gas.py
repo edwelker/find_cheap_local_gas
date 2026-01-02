@@ -256,6 +256,19 @@ def clean_address(full_text):
     return "Unknown Address"
 
 
+def get_state_hint(zip_code):
+    """
+    Returns a state name based on the zip code prefix to help the geocoder.
+    """
+    if zip_code.startswith(("20", "21")):
+        return "Maryland"
+    if zip_code.startswith("11"):
+        return "New York"
+    if zip_code.startswith("01"):
+        return "Massachusetts"
+    return None
+
+
 def scrape_gasbuddy(region_config, headless=False):
     print(f"\n🚀 Launching Browser ({'Headless' if headless else 'Windowed'} mode)...")
     options = Options()
@@ -362,29 +375,58 @@ def scrape_gasbuddy(region_config, headless=False):
                     # Geocoding Logic
                     lat, lng = None, None
 
-                    # Determine query string
-                    geo_query = full_address
-                    if street_addr == "Unknown Address":
-                        # Fallback: Try Station Name + Zip
-                        geo_query = f"{name}, {zip_code}"
+                    # Determine cache key
+                    if street_addr != "Unknown Address":
+                        cache_key = f"{street_addr}, {zip_code}"
+                    else:
+                        cache_key = f"{name}, {zip_code}"
 
-                    if geo_query in geo_cache:
-                        lat, lng = geo_cache[geo_query]
+                    if cache_key in geo_cache:
+                        lat, lng = geo_cache[cache_key]
                     else:
                         try:
                             # Rate limiting for Nominatim (1 sec)
                             time.sleep(1.1)
-                            location = geolocator.geocode(geo_query)
+
+                            location = None
+                            state_hint = get_state_hint(zip_code)
+
+                            # 1. Try Structured Query (Most Accurate)
+                            if street_addr != "Unknown Address":
+                                query = {
+                                    "street": street_addr,
+                                    "postalcode": zip_code,
+                                    "country": "USA",
+                                }
+                                if state_hint:
+                                    query["state"] = state_hint
+
+                                location = geolocator.geocode(query)
+
+                            # 2. Fallback: Free-form string query
+                            if not location:
+                                parts = []
+                                if street_addr != "Unknown Address":
+                                    parts.append(street_addr)
+                                else:
+                                    parts.append(name)
+
+                                parts.append(zip_code)
+                                if state_hint:
+                                    parts.append(state_hint)
+                                parts.append("USA")
+
+                                q_str = ", ".join(parts)
+                                location = geolocator.geocode(q_str)
+
                             if location:
                                 lat = location.latitude
                                 lng = location.longitude
-                                geo_cache[geo_query] = (lat, lng)
+                                geo_cache[cache_key] = (lat, lng)
                             else:
-                                # If specific address failed, maybe fallback to just zip?
-                                # For now, leave as None or try zip center if desperate.
-                                geo_cache[geo_query] = (None, None)
+                                geo_cache[cache_key] = (None, None)
                         except Exception as e:
-                            print(f"   ⚠️ Geocoding error for '{geo_query}': {e}")
+                            print(f"   ⚠️ Geocoding error for '{cache_key}': {e}")
 
                     scraped_data.append(
                         {
