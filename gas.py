@@ -218,6 +218,9 @@ def clean_address(full_text):
     Parses a blob of text to find the street address line.
     Filters out 'Cash/Credit' and fuel grades.
     """
+    # Fix for "Pke" abbreviation -> "Pike"
+    full_text = re.sub(r"\bPke\b", "Pike", full_text, flags=re.IGNORECASE)
+
     lines = re.split(r"\s{2,}|\n", full_text)
     bad_keywords = [
         "Regular",
@@ -238,7 +241,8 @@ def clean_address(full_text):
         "Lane", "Road", "Route", "Bypass", "Expressway",
         "Blvd", "Tpke", "Hwy", "Pkwy", "St", "Ave", "Dr", "Ct", "Pl", "Sq",
         "Ter", "Cir", "Trl", "Ln", "Rd", "Rte", "Rt", "Expy", "Loop", "Way",
-        "Pike", "Run", "Mall", "Pke"
+        "Pike", "Run", "Mall", "Pke",
+        "Garth", "Cove", "Mews", "Hollow", "Point", "Crossing", "Extension", "Walk", "Heights", "Path"
     ]
     suffix_pattern = "|".join(suffixes)
 
