@@ -8,6 +8,8 @@ import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut
 
 # --- LIBRARY CHECK for Radius Search ---
 try:
@@ -229,9 +231,20 @@ def clean_address(full_text):
         "Payment",
     ]
 
+    # Expanded list of suffixes, prioritizing full words to avoid partial matches
+    suffixes = [
+        "Boulevard", "Turnpike", "Highway", "Parkway", "Street", "Avenue",
+        "Drive", "Court", "Place", "Square", "Terrace", "Circle", "Trail",
+        "Lane", "Road", "Route", "Bypass", "Expressway",
+        "Blvd", "Tpke", "Hwy", "Pkwy", "St", "Ave", "Dr", "Ct", "Pl", "Sq",
+        "Ter", "Cir", "Trl", "Ln", "Rd", "Rte", "Rt", "Expy", "Loop", "Way",
+        "Pike", "Run", "Mall", "Pke"
+    ]
+    suffix_pattern = "|".join(suffixes)
+
     # Regex: Starts with digits, followed by words, ends with Road Type
     addr_regex = re.compile(
-        r"^\d{1,5}\s+[A-Za-z0-9\.\s]+(?:Rd|St|Ave|Blvd|Ln|Dr|Hwy|Pike|Way|Cir|Ct|Pl|Bypass|Expy)",
+        rf"^\d{{1,5}}\s+[A-Za-z0-9\.\s]+(?:{suffix_pattern})",
         re.IGNORECASE,
     )
 
@@ -250,7 +263,7 @@ def clean_address(full_text):
 def scrape_gasbuddy(region_config, headless=False):
     print(f"\n🚀 Launching Browser ({'Headless' if headless else 'Windowed'} mode)...")
     options = Options()
-    
+
     # Common options to avoid bot detection
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -265,8 +278,12 @@ def scrape_gasbuddy(region_config, headless=False):
         options.add_argument("--window-size=1920,1080")
     else:
         options.add_argument("--start-maximized")
-    
+
     driver = webdriver.Chrome(options=options)
+
+    # Initialize Geocoder with increased timeout (10s)
+    geolocator = Nominatim(user_agent="gas_scraper_bot_v1", timeout=10)
+    geo_cache = {}
 
     scraped_data = []
 
@@ -346,6 +363,33 @@ def scrape_gasbuddy(region_config, headless=False):
                             rule = brand
                             break
 
+                    # Geocoding Logic
+                    lat, lng = None, None
+
+                    # Determine query string
+                    geo_query = full_address
+                    if street_addr == "Unknown Address":
+                        # Fallback: Try Station Name + Zip
+                        geo_query = f"{name}, {zip_code}"
+
+                    if geo_query in geo_cache:
+                        lat, lng = geo_cache[geo_query]
+                    else:
+                        try:
+                            # Rate limiting for Nominatim (1 sec)
+                            time.sleep(1.1)
+                            location = geolocator.geocode(geo_query)
+                            if location:
+                                lat = location.latitude
+                                lng = location.longitude
+                                geo_cache[geo_query] = (lat, lng)
+                            else:
+                                # If specific address failed, maybe fallback to just zip?
+                                # For now, leave as None or try zip center if desperate.
+                                geo_cache[geo_query] = (None, None)
+                        except Exception as e:
+                            print(f"   ⚠️ Geocoding error for '{geo_query}': {e}")
+
                     scraped_data.append(
                         {
                             "City": city_name,
@@ -355,6 +399,8 @@ def scrape_gasbuddy(region_config, headless=False):
                             "Base": base_price,
                             "Net": round(base_price - discount, 2),
                             "Discount": rule,
+                            "Lat": lat,
+                            "Long": lng,
                         }
                     )
 
@@ -370,16 +416,16 @@ def scrape_gasbuddy(region_config, headless=False):
 def main():
     # Check for CLI arguments
     args = sys.argv[1:]
-    
+
     # Check for --headless flag
     is_headless_requested = "--headless" in args
-    
+
     # Extract positional arguments (choice and zip) by ignoring flags
     pos_args = [a for a in args if not a.startswith("-")]
-    
+
     cli_choice = pos_args[0] if len(pos_args) > 0 else None
     cli_zip = pos_args[1] if len(pos_args) > 1 else None
-    
+
     # Detect if running in GitHub Actions or requested via CLI
     is_automated = (os.environ.get("GITHUB_ACTIONS") == "true") or is_headless_requested
 
@@ -393,10 +439,10 @@ def main():
     raw_name = region["name"]
     cleaned_name = raw_name.replace("/", "_").replace(" ", "_").replace(":", "")
     safe_name = re.sub(r"[^\w\-_]", "", cleaned_name)
-    
+
     # Use Eastern Time for consistent naming
     now = datetime.datetime.now(ZoneInfo("America/New_York"))
-    
+
     date_str = now.strftime("%Y-%m-%d_%H-%M")
     filename = os.path.join(history_dir, f"gas_{safe_name}_{date_str}.csv")
 

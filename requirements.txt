@@ -5,3 +5,4 @@ uszipcode>=1.0.1
 sqlalchemy-mate<1.5.0
 python-Levenshtein
 tzdata
+geopy
