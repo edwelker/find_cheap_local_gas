@@ -1,40 +1,36 @@
 City,Zip,Station,Address,Base,Net,Discount,Lat,Long
 Chicopee,01020,Sunoco,"2041 Memorial Dr, 01020",2.49,2.46,Sunoco,42.2131424,-72.5723361
 Chicopee,01020,Stop & Shop,"672 Memorial Dr, 01020",2.55,2.45,Stop & Shop,42.1759775,-72.5763068
-Chicopee,01020,BP,"1423 Memorial Dr, 01020",2.57,2.52,BP,42.1960997,-72.5739353
 Chicopee,01020,Gulf,"646 Grattan Street, 01020",2.65,2.65,-,42.1730203,-72.5984727
 Chicopee,01020,CITGO,"451 Grattan St, 01020",2.63,2.63,-,42.1684674,-72.5940776
 Chicopee,01020,Cumberland Farms,"1061 Memorial Dr, 01020",2.65,2.55,Cumberland,42.1870792,-72.5769006
-Chicopee,01020,Cumberland Farms,"37 Montcalm St, 01020",2.65,2.55,Cumberland,42.2021333,-72.5807318
 Chicopee,01020,Big Y Express,"1177 Granby Rd, 01020",2.72,2.67,Big Y,42.1739323,-72.5872689
 Chicopee,01020,Pride,"27 Montgomery St, 01020",2.77,2.67,Pride,42.1612887,-72.5824657
+Chicopee,01020,BP,"1423 Memorial Dr, 01020",2.57,2.52,BP,42.1960997,-72.5739353
+Chicopee,01020,Cumberland Farms,"37 Montcalm St, 01020",2.65,2.55,Cumberland,42.2021333,-72.5807318
 Chicopee,01020,Sunoco,"500 Montgomery St, 01020",2.89,2.86,Sunoco,42.1743862,-72.5869497
 Chicopee,01020,Pride,"363 Burnett Rd, 01020",2.99,2.89,Pride,42.1661787,-72.5451161
-Chicopee,01020,CITGO,"1875 Memorial Dr, 01020",2.89,2.89,-,42.2082465,-72.571413
-Chicopee,01020,Shell,"197 Grove St, 01020",2.99,2.94,Shell,42.1536921,-72.5840072
 Holyoke,01040,Stop and Shop,"2265 Northampton, 01040",2.67,2.67,-,42.1816881,-72.6330639
 Holyoke,01040,Stop & Shop,"2265 Northampton St, 01040",2.67,2.57,Stop & Shop,42.1816881,-72.6330639
 Holyoke,01040,Shell,"1530 Northampton St, 01040",2.99,2.94,Shell,42.211614,-72.6296123
 Holyoke,01040,Pride,"1553 Dwight St, 01040",2.85,2.75,Pride,42.21103,-72.6281361
-Holyoke,01040,Shell,"225 Whiting Farms Rd, 01040",2.85,2.8,Shell,42.1748898,-72.6408246
 Easthampton,01027,Pride,"60 Union St, 01027",3.05,2.95,Pride,42.2681716,-72.6714491
 Easthampton,01027,Cumberland Farms,"231 Northampton St, 01027",3.04,2.94,Cumberland,42.2870731,-72.6626682
 Easthampton,01027,7-Eleven,"97 Union St, 01027",3.04,3.01,7-Eleven,42.2669407,-72.6696351
 Easthampton,01027,F.L. Roberts,"124 Northampton St, 01027",3.09,3.09,-,42.2789978,-72.6713843
 Northampton,01060,Stop & Shop,"228 King St, 01060",2.89,2.79,Stop & Shop,42.3290172,-72.6358623
 Northampton,01060,Pride,"375 King St, 01060",2.89,2.79,Pride,42.3374852,-72.6366284
-Northampton,01060,Sunoco,"776 N King St, 01060",2.91,2.88,Sunoco,42.3622644,-72.6390352
 Northampton,01060,Big Y Express,"188 N King St, 01060",2.91,2.86,Big Y,42.3248303,-72.6330713
-Northampton,01060,King Street Convenience,"60 King St, 01060",2.89,2.89,-,42.3205763,-72.6313212
+Northampton,01060,Sunoco,"776 N King St, 01060",2.91,2.88,Sunoco,42.3622644,-72.6390352
 Northampton,01060,Shell,"506 Pleasant St, 01060",2.99,2.94,Shell,42.3114138,-72.6238099
+Northampton,01060,King Street Convenience,"60 King St, 01060",2.89,2.89,-,42.3205763,-72.6313212
 Northampton,01060,Cumberland Farms,"134 King St, 01060",2.94,2.84,Cumberland,42.3248303,-72.6330713
-Northampton,01060,Racing Mart,"54 Easthampton Rd, 01060",2.99,2.99,-,42.3052292,-72.6491003
 Hadley,01035,Stop & Shop,"446 Russell St, 01035",2.95,2.85,Stop & Shop,42.3646637,-72.5379721
 Hadley,01035,Cumberland Farms,"109 Russell St, 01035",2.98,2.88,Cumberland,42.3414531,-72.5946062
-Hadley,01035,Pride,"445 Russell St, 01035",2.99,2.89,Pride,42.3632797,-72.5387719
 Hadley,01035,Mobil,"110 Russell St, 01035",2.99,2.96,Mobil,42.3424399,-72.595176
-Hadley,01035,Big Y Express,"73 Russell St, 01035",3.02,2.97,Big Y,42.3405615,-72.6018812
+Hadley,01035,Pride,"445 Russell St, 01035",2.99,2.89,Pride,42.3632797,-72.5387719
 Hadley,01035,Pride,"25 Russell St, 01035",3.03,2.93,Pride,42.33861,-72.60906
+Hadley,01035,Big Y Express,"73 Russell St, 01035",3.02,2.97,Big Y,42.3405615,-72.6018812
 Amherst,01002,Cumberland Farms,"389 College St, 01002",2.98,2.88,Cumberland,42.373216,-72.5193521
 Amherst,01002,Speedway,"468 West St, 01002",2.99,2.94,Speedway,42.3420911,-72.5198559
 Amherst,01002,F.L. Roberts,"399 Northampton Rd, 01002",3.04,3.04,-,42.3661824,-72.5351597
@@ -43,11 +39,11 @@ South Deerfield,01373,Cumberland Farms,"31 Elm St, 01373",3.09,2.99,Cumberland,4
 South Deerfield,01373,Irving,"1 Sunderland Rd, 01373",3.1,3.1,-,42.4685118,-72.6135264
 South Deerfield,01373,Irving,"1 Greenfield Rd, 01373",3.1,3.1,-,42.4708672,-72.6158055
 Greenfield,01301,Sandri,"295 Federal St, 01301",2.74,2.74,-,42.600351,-72.5939125
-Greenfield,01301,Shell,"100 Mohawk Tr, 01301",2.77,2.72,Shell,,
 Greenfield,01301,Planet,"109 Mohawk Trail, 01301",2.77,2.77,-,42.5848575,-72.6166793
+Greenfield,01301,Shell,"100 Mohawk Tr, 01301",2.77,2.72,Shell,,
+Greenfield,01301,Stop & Shop,"488 Bernardston Rd, 01301",2.79,2.69,Stop & Shop,42.6094682,-72.5869418
 Greenfield,01301,F.L. Roberts,"63 Main St, 01301",2.79,2.79,-,42.5871489,-72.6066369
 Greenfield,01301,Cumberland Farms,"317 Federal St, 01301",2.84,2.74,Cumberland,42.6013026,-72.593169
-Greenfield,01301,Stop & Shop,"488 Bernardston Rd, 01301",2.79,2.69,Stop & Shop,42.6094682,-72.5869418
+Greenfield,01301,Sunoco,"416 Federal St, 01301",2.84,2.81,Sunoco,42.6060538,-72.5895143
 Greenfield,01301,Irving,"223 Mohawk Tr, 01301",2.85,2.85,-,,
 Greenfield,01301,Speedway,"245 Federal St, 01301",2.83,2.78,Speedway,42.5981415,-72.5957967
-Greenfield,01301,Sunoco,"416 Federal St, 01301",2.84,2.81,Sunoco,42.6060538,-72.5895143
