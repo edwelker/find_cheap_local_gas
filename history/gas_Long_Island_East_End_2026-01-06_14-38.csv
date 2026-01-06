@@ -1,18 +1,19 @@
 City,Zip,Station,Address,Base,Net,Discount,Lat,Long
-Riverhead,11901,Empire,"1050 Osborne Ave, 11901",2.57,2.57,-,40.8032257,-72.7577586
+Riverhead,11901,Shell,"1733 Old Country Rd, 11901",2.59,2.54,Shell,40.9239801,-72.7023482
 Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",2.59,2.56,Mobil,40.9252206,-72.6951725
-Riverhead,11901,Shell,"1733 Old Country Rd, 11901",2.67,2.62,Shell,40.9239801,-72.7023482
-Riverhead,11901,Valero,"1356 OLD COUNTRY RD, 11901",2.69,2.69,-,40.9283279,-72.6857992
-Riverhead,11901,Sunoco,"1879 Old Country Rd 58, 11901",2.63,2.6,Sunoco,,
-Riverhead,11901,BP,"626 W Main St, 11901",2.79,2.74,BP,40.9184063,-72.6731535
 Riverhead,11901,Speedway,"870 Old Country Rd, 11901",2.77,2.72,Speedway,40.9346058,-72.6699464
+Riverhead,11901,Empire,"1050 Osborne Ave, 11901",2.57,2.57,-,40.8032257,-72.7577586
+Riverhead,11901,BP,"626 W Main St, 11901",2.79,2.74,BP,40.9184063,-72.6731535
 Riverhead,11901,Mobil,"415 E Main St, 11901",2.85,2.82,Mobil,40.9182937,-72.6568979
 Riverhead,11901,76,"415 Flanders Rd, 11901",2.89,2.89,-,40.9119534,-72.6471547
 Riverhead,11901,Shell,"9 Lake Ave, 11901",2.89,2.84,Shell,40.9142638,-72.6632928
+Riverhead,11901,Valero,"1356 OLD COUNTRY RD, 11901",2.69,2.69,-,40.9283279,-72.6857992
+Riverhead,11901,Sunoco,"1879 Old Country Rd 58, 11901",2.63,2.6,Sunoco,,
 Riverhead,11901,Empire,"640 Main Rd, 11901",2.97,2.97,-,40.9379155,-72.6465653
 Riverhead,11901,CITGO,"1429 Main Rd, 11901",2.99,2.99,-,40.9379155,-72.6465653
 Hampton Bays,11946,Mobil,"239 W Montauk Hwy, 11946",2.75,2.72,Mobil,40.8659062,-72.5490604
 Hampton Bays,11946,Shell,"250 E Montauk Hwy, 11946",2.99,2.94,Shell,40.8834616,-72.5046248
+Southampton,11968,Shell,"1630 CR-39, 11968",2.79,2.74,Shell,40.8949342,-72.4534478
 Southampton,11968,Cumberland Farms,"13 CR-39, 11968",2.89,2.79,Cumberland,40.8966904,-72.3990073
 Southampton,11968,Speedway,"816 CR-39, 11968",2.89,2.84,Speedway,40.8926889,-72.4251772
 Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",3.09,3.04,Speedway,40.9192162,-72.3436923
