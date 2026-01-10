@@ -20,125 +20,81 @@ except ImportError:
     HAS_RADIUS_LIB = False
 
 # --- 1. CONFIGURATION: REGIONS & ZIPS ---
-ZIP_MAP = {
-    # Maryland - Columbia/EC
-    # Existing Codes ...
-    "20723": "Scaggsville / Laurel",
-    "21044": "Columbia (Wilde Lake / Town Center)",
-    "21045": "Columbia (East)",
-    "21046": "Columbia (Guilford)",
-    "21042": "Ellicott City (Central)",
-    "21043": "Ellicott City (North)",
-    "21144": "Severn",
-    "21076": "Hanover (Arundel Mills)",
-    "20794": "Jessup",
-    "20763": "Savage",
-    # New additions for full 15m coverage
-    "20759": "Fulton",
-    "20866": "Burtonsville",
-    "20777": "Highland",
-    "21029": "Clarksville",
-    "21041": "Ellicott City (West)",
-    "21075": "Elkridge",
-    "21113": "Odenton",
-    "20701": "Annapolis Junction",
-    "20868": "Spencerville",  # Optional: Just west of Burtonsville
-    # Long Island - South Fork & East End
-    "11901": "Riverhead",
-    "11960": "Remsenburg / Speonk",
-    "11977": "Westhampton",
-    "11978": "Westhampton Beach",
-    "11959": "Quogue",
-    "11946": "Hampton Bays",
-    "11968": "Southampton",
-    "11976": "Water Mill",
-    "11932": "Bridgehampton",
-    "11962": "Sagaponack",
-    "11963": "Sag Harbor",
-    "11975": "Wainscott",
-    "11937": "East Hampton",
-    "11930": "Amagansett",
-    "11954": "Montauk",
-    "11968": "Southampton",
-    "11976": "Water Mill",
-    "11932": "Bridgehampton",
-    "11937": "East Hampton",
-    "11930": "Amagansett",
-    "11954": "Montauk",
-    # Massachusetts - Pioneer Valley / I-91 Corridor
-    "01103": "Springfield (Downtown)",
-    "01104": "Springfield (East)",
-    "01089": "West Springfield",
-    "01085": "Westfield",
-    "01020": "Chicopee",
-    "01040": "Holyoke",
-    "01075": "South Hadley",
-    "01027": "Easthampton",
-    "01060": "Northampton",
-    "01035": "Hadley",
-    "01002": "Amherst",
-    "01054": "Leverett",
-    "01033": "Ludlow",
-    "01373": "South Deerfield",
-    "01301": "Greenfield",
-    "01370": "Shelburne Falls",  # Useful if you head west on Rt 2
-    "01001": "Agawam",
-}
-
-REGIONS = {
+# Consolidated configuration: Define regions and their zips in one place.
+REGION_DATA = {
     "1": {
         "name": "Maryland (ALL: Columbia, EC, Severn)",
-        "zips": [
-            "21044",
-            "21045",
-            "21046",  # Columbia
-            "21042",
-            "21043",  # Ellicott City
-            "20723",  # Scaggsville
-            "21144",
-            "21076",
-            "20794",  # Severn/Hanover/Jessup
-        ],
+        "zips": {
+            "20723": "Scaggsville / Laurel",
+            "21044": "Columbia (Wilde Lake / Town Center)",
+            "21045": "Columbia (East)",
+            "21046": "Columbia (Guilford)",
+            "21042": "Ellicott City (Central)",
+            "21043": "Ellicott City (North)",
+            "21144": "Severn",
+            "21076": "Hanover (Arundel Mills)",
+            "20794": "Jessup",
+            "20763": "Savage",
+            "20759": "Fulton",
+            "20866": "Burtonsville",
+            "20777": "Highland",
+            "21029": "Clarksville",
+            "21041": "Ellicott City (West)",
+            "21075": "Elkridge",
+            "21113": "Odenton",
+            "20701": "Annapolis Junction",
+            "20868": "Spencerville",
+        },
     },
     "2": {
         "name": "Long Island (East End)",
-        "zips": [
-            "11901",  # Riverhead
-            "11946",  # Hampton Bays
-            "11968",  # Southampton
-            "11976",  # Water Mill
-            "11932",  # Bridgehampton
-            "11937",  # East Hampton
-            "11930",  # Amagansett
-            "11954",  # Montauk
-        ],
+        "zips": {
+            "11901": "Riverhead",
+            "11960": "Remsenburg / Speonk",
+            "11977": "Westhampton",
+            "11978": "Westhampton Beach",
+            "11959": "Quogue",
+            "11946": "Hampton Bays",
+            "11968": "Southampton",
+            "11976": "Water Mill",
+            "11932": "Bridgehampton",
+            "11962": "Sagaponack",
+            "11963": "Sag Harbor",
+            "11975": "Wainscott",
+            "11937": "East Hampton",
+            "11930": "Amagansett",
+            "11954": "Montauk",
+        },
     },
     "3": {
         "name": "Western Mass (I-91 Corridor)",
-        "zips": [
-            "01103",  # Springfield
-            "01020",  # Chicopee
-            "01040",  # Holyoke
-            "01027",  # Easthampton
-            "01060",  # Northampton
-            "01035",  # Hadley
-            "01002",  # Amherst
-            "01054",  # Leverett
-            "01373",  # South Deerfield
-            "01301",  # Greenfield
-        ],
-    },
-    "4": {
-        "name": "Commute: Severn <-> Scaggsville",
-        "zips": [
-            "21144",  # Severn (Start)
-            "21076",  # Hanover
-            "20794",  # Jessup (The middle gap)
-            "20763",  # Savage
-            "20723",  # Scaggsville (End)
-        ],
+        "zips": {
+            "01103": "Springfield (Downtown)",
+            "01104": "Springfield (East)",
+            "01089": "West Springfield",
+            "01085": "Westfield",
+            "01020": "Chicopee",
+            "01040": "Holyoke",
+            "01075": "South Hadley",
+            "01027": "Easthampton",
+            "01060": "Northampton",
+            "01035": "Hadley",
+            "01002": "Amherst",
+            "01054": "Leverett",
+            "01033": "Ludlow",
+            "01373": "South Deerfield",
+            "01301": "Greenfield",
+            "01370": "Shelburne Falls",
+            "01001": "Agawam",
+        },
     },
 }
+
+# Flatten into ZIP_MAP for global lookup (used for display names)
+ZIP_MAP = {}
+for r_data in REGION_DATA.values():
+    ZIP_MAP.update(r_data["zips"])
+
 
 # --- 2. CONFIGURATION: LOYALTY ---
 # Added "Features" and "Dallas Parkway" to block the GasBuddy HQ address
@@ -225,14 +181,12 @@ def get_region_choice(cli_choice=None, cli_zip=None):
         choice = cli_choice
     else:
         print("\n--- SELECT REGION ---")
-        print("1. Maryland (ALL: Columbia, EC, Severn)")
-        print("2. Long Island (Riverhead - Montauk)")
-        print("3. Western Mass (Springfield - Deerfield)")
-        print("4. Commute Only: Severn <-> Scaggsville")
-        print("5. CUSTOM SEARCH (Radius Calculation)")
+        for key, val in REGION_DATA.items():
+            print(f"{key}. {val['name']}")
+        print("4. CUSTOM SEARCH (Radius Calculation)")
         choice = input("Enter number: ").strip()
 
-    if choice == "5":
+    if choice == "4":
         if cli_zip:
             center = cli_zip
         else:
@@ -240,7 +194,15 @@ def get_region_choice(cli_choice=None, cli_zip=None):
         zips = calculate_radius_zips(center, miles=15)
         return {"name": f"Custom_Radius_{center}", "zips": zips}
 
-    return REGIONS.get(choice, REGIONS["4"])
+    # Default to 1 if invalid
+    if choice not in REGION_DATA:
+        choice = "1"
+
+    selected = REGION_DATA[choice]
+    return {
+        "name": selected["name"],
+        "zips": list(selected["zips"].keys()),
+    }
 
 
 def clean_address(full_text):
