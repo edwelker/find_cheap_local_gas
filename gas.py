@@ -43,7 +43,7 @@ ZIP_MAP = {
     "21075": "Elkridge",
     "21113": "Odenton",
     "20701": "Annapolis Junction",
-    "20868": "Spencerville" # Optional: Just west of Burtonsville
+    "20868": "Spencerville", # Optional: Just west of Burtonsville
 # Long Island - South Fork & East End
     "11901": "Riverhead",
     "11960": "Remsenburg / Speonk",
