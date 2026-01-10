@@ -22,37 +22,68 @@ except ImportError:
 # --- 1. CONFIGURATION: REGIONS & ZIPS ---
 ZIP_MAP = {
     # Maryland - Columbia/EC
+# Existing Codes ...
     "20723": "Scaggsville / Laurel",
-    "21044": "Columbia (Town Center)",
+    "21044": "Columbia (Wilde Lake / Town Center)",
     "21045": "Columbia (East)",
     "21046": "Columbia (Guilford)",
     "21042": "Ellicott City (Central)",
     "21043": "Ellicott City (North)",
-    # Maryland - Severn/Commute Corridor
     "21144": "Severn",
     "21076": "Hanover (Arundel Mills)",
     "20794": "Jessup",
     "20763": "Savage",
-    # Long Island
+
+    # New additions for full 15m coverage
+    "20759": "Fulton",
+    "20866": "Burtonsville",
+    "20777": "Highland",
+    "21029": "Clarksville",
+    "21041": "Ellicott City (West)",
+    "21075": "Elkridge",
+    "21113": "Odenton",
+    "20701": "Annapolis Junction",
+    "20868": "Spencerville" # Optional: Just west of Burtonsville
+# Long Island - South Fork & East End
     "11901": "Riverhead",
+    "11960": "Remsenburg / Speonk",
+    "11977": "Westhampton",
+    "11978": "Westhampton Beach",
+    "11959": "Quogue",
     "11946": "Hampton Bays",
+    "11968": "Southampton",
+    "11976": "Water Mill",
+    "11932": "Bridgehampton",
+    "11962": "Sagaponack",
+    "11963": "Sag Harbor",
+    "11975": "Wainscott",
+    "11937": "East Hampton",
+    "11930": "Amagansett",
+    "11954": "Montauk",
     "11968": "Southampton",
     "11976": "Water Mill",
     "11932": "Bridgehampton",
     "11937": "East Hampton",
     "11930": "Amagansett",
     "11954": "Montauk",
-    # Western Mass
-    "01103": "Springfield",
+# Massachusetts - Pioneer Valley / I-91 Corridor
+    "01103": "Springfield (Downtown)",
+    "01104": "Springfield (East)",
+    "01089": "West Springfield",
+    "01085": "Westfield",
     "01020": "Chicopee",
     "01040": "Holyoke",
+    "01075": "South Hadley",
     "01027": "Easthampton",
     "01060": "Northampton",
     "01035": "Hadley",
     "01002": "Amherst",
     "01054": "Leverett",
-    "01301": "Greenfield",
+    "01033": "Ludlow",
     "01373": "South Deerfield",
+    "01301": "Greenfield",
+    "01370": "Shelburne Falls", # Useful if you head west on Rt 2
+    "01001": "Agawam"
 }
 
 REGIONS = {
