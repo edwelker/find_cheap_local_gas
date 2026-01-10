@@ -22,7 +22,7 @@ except ImportError:
 # --- 1. CONFIGURATION: REGIONS & ZIPS ---
 ZIP_MAP = {
     # Maryland - Columbia/EC
-# Existing Codes ...
+    # Existing Codes ...
     "20723": "Scaggsville / Laurel",
     "21044": "Columbia (Wilde Lake / Town Center)",
     "21045": "Columbia (East)",
@@ -33,7 +33,6 @@ ZIP_MAP = {
     "21076": "Hanover (Arundel Mills)",
     "20794": "Jessup",
     "20763": "Savage",
-
     # New additions for full 15m coverage
     "20759": "Fulton",
     "20866": "Burtonsville",
@@ -43,8 +42,8 @@ ZIP_MAP = {
     "21075": "Elkridge",
     "21113": "Odenton",
     "20701": "Annapolis Junction",
-    "20868": "Spencerville", # Optional: Just west of Burtonsville
-# Long Island - South Fork & East End
+    "20868": "Spencerville",  # Optional: Just west of Burtonsville
+    # Long Island - South Fork & East End
     "11901": "Riverhead",
     "11960": "Remsenburg / Speonk",
     "11977": "Westhampton",
@@ -66,7 +65,7 @@ ZIP_MAP = {
     "11937": "East Hampton",
     "11930": "Amagansett",
     "11954": "Montauk",
-# Massachusetts - Pioneer Valley / I-91 Corridor
+    # Massachusetts - Pioneer Valley / I-91 Corridor
     "01103": "Springfield (Downtown)",
     "01104": "Springfield (East)",
     "01089": "West Springfield",
@@ -82,8 +81,8 @@ ZIP_MAP = {
     "01033": "Ludlow",
     "01373": "South Deerfield",
     "01301": "Greenfield",
-    "01370": "Shelburne Falls", # Useful if you head west on Rt 2
-    "01001": "Agawam"
+    "01370": "Shelburne Falls",  # Useful if you head west on Rt 2
+    "01001": "Agawam",
 }
 
 REGIONS = {
@@ -308,7 +307,9 @@ def scrape_gasbuddy(region_config, headless=False):
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
-    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+    options.add_argument(
+        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    )
 
     if headless:
         options.add_argument("--headless")
