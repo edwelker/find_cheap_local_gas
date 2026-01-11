@@ -1,7 +1,7 @@
 City,Zip,Station,Address,Base,Net,Discount,Lat,Long
 Scaggsville / Laurel,20723,7-Eleven,"9651 Washington Blvd N, 20723",2.79,2.76,7-Eleven,39.1180551,-76.8297577
-Scaggsville / Laurel,20723,Exxon,"9275 All Saints Rd, 20723",2.84,2.81,Exxon,39.1189484,-76.8513125
 Scaggsville / Laurel,20723,Exxon,"8850 Gorman Rd, 20723",2.99,2.96,Exxon,39.1315805,-76.8205188
+Scaggsville / Laurel,20723,Exxon,"9275 All Saints Rd, 20723",2.84,2.81,Exxon,39.1189484,-76.8513125
 Scaggsville / Laurel,20723,Exxon,"7500 Montpelier Rd, 20723",3.39,3.36,Exxon,39.159558,-76.893227
 Columbia (Wilde Lake / Town Center),21044,BP,"5485 HARPERS FARM RD, 21044",3.14,3.09,BP,39.2220799,-76.8907487
 Columbia (Wilde Lake / Town Center),21044,Sunoco,"6440 Freetown Rd, 21044",3.29,3.26,Sunoco,39.1950229,-76.8817831
@@ -19,20 +19,19 @@ Columbia (Guilford),21046,Exxon,"6300 Stevens Forest, 21046",2.85,2.82,Exxon,39.
 Columbia (Guilford),21046,Shell,"9101 Snowden River Pkwy, 21046",2.89,2.84,Shell,39.1827983,-76.8205935
 Ellicott City (Central),21042,Carroll Motor Fuels,"9109 BALTIMORE NATIONAL PIKE, 21042",2.71,2.71,-,39.2771741,-76.8262007
 Ellicott City (Central),21042,Sunoco,"9395 Baltimore National Pike, 21042",2.79,2.76,Sunoco,39.2772371,-76.8350415
+Ellicott City (Central),21042,Dash-In,"9075 Baltimore National Pike, 21042",2.84,2.84,-,39.2762251,-76.8250029
 Ellicott City (Central),21042,Mobil,"9320 Baltimore National Pike, 21042",2.86,2.83,Mobil,39.2779163,-76.8325436
-Ellicott City (Central),21042,Dash-In,"9075 Baltimore National Pike, 21042",2.89,2.89,-,39.2762251,-76.8250029
 Ellicott City (Central),21042,Exxon,"10193 Baltimore National Pike, 21042",2.87,2.84,Exxon,39.2793591,-76.8636316
-Ellicott City (Central),21042,Sunoco,"10214 Baltimore National Pike, 21042",2.83,2.8,Sunoco,39.2803307,-76.8652201
 Ellicott City (Central),21042,Shell,"4755 Dorsey Hall Dr, 21042",3.09,3.04,Shell,39.2423537,-76.8403131
-Ellicott City (North),21043,High's,"3095 Rogers Ave, 21043",2.79,2.74,High's,39.2874075,-76.8091156
 Ellicott City (North),21043,BP,"8505 Baltimore National Pike, 21043",2.73,2.68,BP,39.2842309,-76.8075056
+Ellicott City (North),21043,Sunoco,"8411 Baltimore National Pike, 21043",2.75,2.72,Sunoco,39.2865722,-76.8033853
+Ellicott City (North),21043,High's,"3095 Rogers Ave, 21043",2.79,2.74,High's,39.2874075,-76.8091156
 Ellicott City (North),21043,Carroll Motor Fuels,"8720 Baltimore National Pike, 21043",2.79,2.79,-,39.2808054,-76.8147058
 Ellicott City (North),21043,Carroll Motor Fuels,"4132 Old Columbia Pike, 21043",2.81,2.81,-,39.2565046,-76.8197592
 Ellicott City (North),21043,Exxon,"4235 Montgomery Rd, 21043",2.81,2.78,Exxon,39.2554156,-76.8184372
+Ellicott City (North),21043,Exxon,"8850 Centre Park Dr, 21043",2.89,2.86,Exxon,39.2279074,-76.8127674
 Ellicott City (North),21043,Mobil,"4398 Montgomery Rd, 21043",2.87,2.84,Mobil,39.2520755,-76.8165282
 Ellicott City (North),21043,Dash In,"4205 Montgomery Rd, 21043",2.89,2.89,-,39.2561283,-76.8190081
-Ellicott City (North),21043,Exxon,"8850 Centre Park Dr, 21043",2.99,2.96,Exxon,39.2279074,-76.8127674
-Ellicott City (North),21043,Shell,"5651 Waterloo Rd, 21043",2.99,2.94,Shell,39.2170938,-76.806013
 Severn,21144,7-Eleven,"500 Donaldson Ave, 21144",2.78,2.75,7-Eleven,39.136636,-76.659232
 Severn,21144,Exxon,"805 Reece Rd, 21144",2.89,2.86,Exxon,39.1361231,-76.6867451
 Severn,21144,Sunoco,"8272 Quarterfield Rd, 21144",2.79,2.76,Sunoco,39.1165734,-76.681597
@@ -41,15 +40,15 @@ Hanover (Arundel Mills),21076,7-Eleven,"1075 Dorsey Rd, 21076",2.79,2.76,7-Eleve
 Hanover (Arundel Mills),21076,Shell,"2631 Old Annapolis Rd, 21076",2.79,2.74,Shell,39.2041164,-76.6417554
 Hanover (Arundel Mills),21076,Wawa,"7710 Milestone Pkwy, 21076",2.83,2.83,Wawa,39.154105,-76.744585
 Hanover (Arundel Mills),21076,Exxon,"7043 Arundel Mills Cir, 21076",2.99,2.96,Exxon,39.1539236,-76.7222726
-Hanover (Arundel Mills),21076,Exxon,"7898 Ridge Rd, 21076",2.87,2.84,Exxon,39.133292,-76.735335
+Hanover (Arundel Mills),21076,CITGO,"1401 Dorsey Rd, 21076",2.99,2.99,-,39.160101,-76.715098
 Hanover (Arundel Mills),21076,Exxon,"7671 Arundel Mills Blvd, 21076",3.19,3.16,Exxon,39.15227,-76.7312534
 Hanover (Arundel Mills),21076,Shell,"1356 Dorsey Rd, 21076",3.19,3.14,Shell,39.1588425,-76.7114914
-Jessup,20794,High's Dairy Store,"2861 Jessup Rd, 20794",2.77,2.72,High's,39.142357,-76.7631093
+Jessup,20794,Sunoco,"2739 Annapolis Rd, 20794",2.69,2.66,Sunoco,39.1365014,-76.7506844
 Jessup,20794,Shell,"2753 Annapolis Rd, 20794",2.79,2.74,Shell,39.1377885,-76.7521393
 Jessup,20794,BP,"8810 Washington Blvd, 20794",2.79,2.74,BP,39.1445028,-76.8091941
+Jessup,20794,High's Dairy Store,"2861 Jessup Rd, 20794",2.77,2.72,High's,39.142357,-76.7631093
 Jessup,20794,BP,"7879 Pocomoke Dr, 20794",2.89,2.84,BP,39.1682121,-76.7831573
 Jessup,20794,Exxon,"7930 Washington Blvd, 20794",2.93,2.9,Exxon,39.1711851,-76.7868219
-Jessup,20794,Royal Farms,"2850 Jessup Rd, 20794",2.79,2.69,Royal Farms,39.1424361,-76.7613968
 Jessup,20794,Shell,"8755 Washington Blvd, 20794",2.79,2.74,Shell,39.1447238,-76.8087484
 Fulton,20759,High's,"11840 Lime Kiln Rd, 20759",2.99,2.94,High's,39.1513419,-76.9241758
 Fulton,20759,BP,"8181 Maple Lawn Blvd, 20759",3.39,3.34,BP,39.1471556,-76.9052212
@@ -62,14 +61,14 @@ Elkridge,21075,Shell,"7894 Washington Blvd, 21075",2.79,2.74,Shell,39.1725006,-7
 Elkridge,21075,Shell,"6295 Washington Blvd, 21075",2.89,2.84,Shell,39.2073558,-76.7270995
 Elkridge,21075,Royal Farms,"8268 Lark Brown Rd, 21075",2.89,2.79,Royal Farms,39.1890762,-76.7957888
 Elkridge,21075,Exxon,"6310 Washington Blvd, 21075",2.89,2.86,Exxon,39.2071708,-76.7278267
-Elkridge,21075,Marathon,"6315 Washington Blvd, 21075",2.89,2.89,-,39.2062192,-76.7275618
 Elkridge,21075,BP,"5816 WASHINGTON BLVD, 21075",3.03,2.98,BP,39.2160163,-76.7108429
+Elkridge,21075,Marathon,"6315 Washington Blvd, 21075",2.89,2.89,-,39.2062192,-76.7275618
 Elkridge,21075,Exxon,"6070 Marshalee Dr, 21075",3.23,3.2,Exxon,39.2084335,-76.7778553
 Odenton,21113,Royal Farms,"1558 Annapolis Rd, 21113",2.79,2.69,Royal Farms,39.100476,-76.720547
-Odenton,21113,High's Dairy Store,"1624 Annapolis Rd, 21113",2.79,2.74,High's,39.1057505,-76.7217641
-Odenton,21113,Shell,"1144 MD-175, 21113",2.84,2.79,Shell,39.082546,-76.690855
 Odenton,21113,Sunoco,"1433 Annapolis Rd, 21113",2.79,2.76,Sunoco,39.0909128,-76.7130138
-Odenton,21113,Exxon,"1318 Annapolis Rd, 21113",2.89,2.86,Exxon,39.0885514,-76.7006064
+Odenton,21113,High's Dairy Store,"1624 Annapolis Rd, 21113",2.79,2.74,High's,39.1057505,-76.7217641
+Odenton,21113,Shell,"1144 MD-175, 21113",2.85,2.8,Shell,39.082546,-76.690855
+Odenton,21113,Exxon,"1318 Annapolis Rd, 21113",2.85,2.82,Exxon,39.0885514,-76.7006064
 Odenton,21113,BP,"8749 PINEY ORCHARD PKWY, 21113",2.99,2.94,BP,39.0691814,-76.7144977
 Annapolis Junction,20701,7-Eleven,"10930 Guilford Rd, 20701",2.79,2.76,7-Eleven,39.1292256,-76.7935882
 Spencerville,20868,Mobil,"16201 New Hampshire Ave, 20868",3.09,3.06,Mobil,39.1217595,-76.989073
