@@ -25,8 +25,8 @@ West Springfield,01089,Shell,"1130 Riverdale St, 01089",2.94,2.89,Shell,42.13482
 Westfield,01085,Shell,"259 N Elm St, 01085",2.65,2.6,Shell,42.1359276,-72.7389062
 Westfield,01085,Mobil,"181 Elm St, 01085",2.68,2.65,Mobil,42.1244206,-72.7476514
 Westfield,01085,CITGO,"439 N Elm St, 01085",2.66,2.66,-,42.1401791,-72.7333993
-Westfield,01085,Mobil,"162 Southampton Rd, 01085",2.72,2.69,Mobil,42.1460884,-72.7310211
 Westfield,01085,Cumberland Farms,"1134 Southampton Rd, 01085",2.72,2.62,Cumberland,42.1825106,-72.7271699
+Westfield,01085,Mobil,"162 Southampton Rd, 01085",2.72,2.69,Mobil,42.1460884,-72.7310211
 Westfield,01085,Sunoco,"163 Meadow St, 01085",2.79,2.76,Sunoco,42.1206555,-72.7397845
 Westfield,01085,Cumberland Farms,"69 Main St, 01085",2.79,2.69,Cumberland,42.1202361,-72.7456415
 Westfield,01085,Gulf,"278 Elm St, 01085",2.79,2.79,-,42.1086935,-72.6235306
@@ -58,15 +58,15 @@ South Hadley,01075,White Wing,"568 Newton St, 01075",2.59,2.59,-,42.2396215,-72.
 South Hadley,01075,Cumberland Farms,"507 Newton St, 01075",2.65,2.55,Cumberland,42.2374802,-72.5816164
 South Hadley,01075,Sunoco,"19 Bridge St, 01075",2.99,2.96,Sunoco,42.2152143,-72.5942742
 South Hadley,01075,Gulf,"72 Lamb St, 01075",3.09,3.09,-,42.219949,-72.5918302
+Easthampton,01027,Pride,"60 Union St, 01027",2.94,2.84,Pride,42.2681716,-72.6714491
 Easthampton,01027,Cumberland Farms,"231 Northampton St, 01027",2.95,2.85,Cumberland,42.2870731,-72.6626681
 Easthampton,01027,7-Eleven,"97 Union St, 01027",2.95,2.92,7-Eleven,42.2669407,-72.6696351
-Easthampton,01027,Pride,"60 Union St, 01027",2.99,2.89,Pride,42.2681716,-72.6714491
 Northampton,01060,Stop & Shop,"228 King St, 01060",2.79,2.69,Stop & Shop,42.3290172,-72.6358623
 Northampton,01060,Big Y Express,"188 N King St, 01060",2.79,2.74,Big Y,42.3270234,-72.6334485
 Northampton,01060,Pride,"375 King St, 01060",2.85,2.75,Pride,42.3374852,-72.6366284
 Northampton,01060,Mobil,"15 Locust, 01060",2.85,2.82,Mobil,42.3316863,-72.6526156
 Northampton,01060,Shell,"506 Pleasant St, 01060",2.89,2.84,Shell,42.3114138,-72.6238099
-Northampton,01060,Cumberland Farms,"134 King St, 01060",2.81,2.71,Cumberland,42.3270234,-72.6334485
+Northampton,01060,Cumberland Farms,"134 King St, 01060",2.81,2.71,Cumberland,42.3248303,-72.6330713
 Northampton,01060,Racing Mart,"54 Easthampton Rd, 01060",2.89,2.89,-,42.3052292,-72.6491003
 Northampton,01060,Sunoco,"776 N King St, 01060",2.89,2.86,Sunoco,42.3622644,-72.6390352
 Hadley,01035,Stop & Shop,"446 Russell St, 01035",2.84,2.74,Stop & Shop,42.3646637,-72.5379721
@@ -82,9 +82,9 @@ South Deerfield,01373,Irving,"1 Greenfield Rd, 01373",2.89,2.89,-,42.4708672,-72
 South Deerfield,01373,Neighbors Convenience Store,"242 Conway Rd, 01373",2.96,2.96,-,42.4973938,-72.6367494
 Greenfield,01301,Stop & Shop,"488 Bernardston Rd, 01301",2.69,2.59,Stop & Shop,42.6094682,-72.5869418
 Greenfield,01301,Cumberland Farms,"317 Federal St, 01301",2.71,2.61,Cumberland,42.6013026,-72.593169
-Greenfield,01301,Mobil,"142 Mohawk Tr, 01301",2.69,2.66,Mobil,,
 Greenfield,01301,Planet,"109 Mohawk Trail, 01301",2.69,2.69,-,42.5848575,-72.6166793
-Greenfield,01301,Speedway,"245 Federal St, 01301",2.71,2.66,Speedway,42.5981415,-72.5957967
+Greenfield,01301,Mobil,"142 Mohawk Tr, 01301",2.69,2.66,Mobil,,
+Greenfield,01301,Speedway,"245 Federal St, 01301",2.71,2.66,Speedway,42.5980487,-72.595861
 Greenfield,01301,Shell,"100 Mohawk Tr, 01301",2.69,2.64,Shell,,
 Greenfield,01301,F.L. Roberts,"63 Main St, 01301",2.73,2.73,-,42.5871489,-72.6066369
 Greenfield,01301,Irving,"223 Mohawk Tr, 01301",2.89,2.89,-,,
