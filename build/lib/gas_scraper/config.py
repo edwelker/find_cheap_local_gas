@@ -1,0 +1,101 @@
+# --- REGIONS & ZIPS ---
+REGION_DATA = {
+    "1": {
+        "name": "Maryland (ALL: Columbia, EC, Severn)",
+        "zips": {
+            "20723": "Scaggsville / Laurel",
+            "21044": "Columbia (Wilde Lake / Town Center)",
+            "21045": "Columbia (East)",
+            "21046": "Columbia (Guilford)",
+            "21042": "Ellicott City (Central)",
+            "21043": "Ellicott City (North)",
+            "21144": "Severn",
+            "21076": "Hanover (Arundel Mills)",
+            "20794": "Jessup",
+            "20763": "Savage",
+            "20759": "Fulton",
+            "20866": "Burtonsville",
+            "20777": "Highland",
+            "21029": "Clarksville",
+            "21041": "Ellicott City (West)",
+            "21075": "Elkridge",
+            "21113": "Odenton",
+            "20701": "Annapolis Junction",
+            "20868": "Spencerville",
+        },
+    },
+    "2": {
+        "name": "Long Island (East End)",
+        "zips": {
+            "11901": "Riverhead",
+            "11960": "Remsenburg / Speonk",
+            "11977": "Westhampton",
+            "11978": "Westhampton Beach",
+            "11959": "Quogue",
+            "11946": "Hampton Bays",
+            "11968": "Southampton",
+            "11976": "Water Mill",
+            "11932": "Bridgehampton",
+            "11962": "Sagaponack",
+            "11963": "Sag Harbor",
+            "11975": "Wainscott",
+            "11937": "East Hampton",
+            "11930": "Amagansett",
+            "11954": "Montauk",
+        },
+    },
+    "3": {
+        "name": "Western Mass (I-91 Corridor)",
+        "zips": {
+            "01103": "Springfield (Downtown)",
+            "01104": "Springfield (East)",
+            "01089": "West Springfield",
+            "01085": "Westfield",
+            "01020": "Chicopee",
+            "01040": "Holyoke",
+            "01075": "South Hadley",
+            "01027": "Easthampton",
+            "01060": "Northampton",
+            "01035": "Hadley",
+            "01002": "Amherst",
+            "01054": "Leverett",
+            "01033": "Ludlow",
+            "01373": "South Deerfield",
+            "01301": "Greenfield",
+            "01370": "Shelburne Falls",
+            "01001": "Agawam",
+        },
+    },
+}
+
+# Flatten into ZIP_MAP for global lookup (used for display names)
+ZIP_MAP = {}
+for r_data in REGION_DATA.values():
+    ZIP_MAP.update(r_data["zips"])
+
+# --- LOYALTY ---
+# Added "Features" and "Dallas Parkway" to block the GasBuddy HQ address
+BLOCKLIST = ["BJ's", "Costco", "Sam's Club", "Features", "GasBuddy", "Dallas Parkway"]
+
+DISCOUNTS = {
+    # MD
+    "Royal Farms": 0.10,
+    "Giant": 0.05,
+    "High's": 0.05,
+    # MA / NY
+    "Cumberland": 0.10,
+    "Big Y": 0.05,
+    "Pride": 0.10,
+    "Stop & Shop": 0.10,
+    # National
+    "Speedway": 0.05,
+    "Sheetz": 0.03,
+    "7-Eleven": 0.03,
+    "7-11": 0.03,
+    "Shell": 0.05,
+    "Exxon": 0.03,
+    "Mobil": 0.03,
+    "Sunoco": 0.03,
+    "BP": 0.05,
+    "Wawa": 0.00,
+}

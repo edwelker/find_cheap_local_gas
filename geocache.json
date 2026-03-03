@@ -306,5 +306,457 @@
   "16201 New Hampshire Ave Silver Spring, MD, 20868": {
     "lat": 39.076572,
     "lon": -77.0018621
+  },
+  "7 Peconic Ave Riverhead, NY, 11901": {
+    "lat": 40.9149773,
+    "lon": -72.6623567
+  },
+  "626 W Main St Riverhead, NY, 11901": {
+    "lat": 40.9184063,
+    "lon": -72.6731535
+  },
+  "1733 Old Country Rd, 11901": {
+    "lat": 40.9239801,
+    "lon": -72.7023482
+  },
+  "1575 Old Country Rd Riverhead, NY, 11901": {
+    "lat": 40.9252206,
+    "lon": -72.6951725
+  },
+  "1356 OLD COUNTRY RD Riverhead, NY, 11901": {
+    "lat": 40.9283279,
+    "lon": -72.6857992
+  },
+  "1050 Osborne Ave Riverhead, NY, 11901": {
+    "lat": null,
+    "lon": null
+  },
+  "1879 Old Country Rd 58 Riverhead, NY, 11901": {
+    "lat": null,
+    "lon": null
+  },
+  "9 Lake Ave Riverhead, NY, 11901": {
+    "lat": 40.9142638,
+    "lon": -72.6632928
+  },
+  "870 Old Country Rd Riverhead, NY, 11901": {
+    "lat": 40.9346058,
+    "lon": -72.6699464
+  },
+  "640 Main Rd Aquebogue, NY, 11901": {
+    "lat": null,
+    "lon": null
+  },
+  "640 Old Country Rd Riverhead, NY, 11901": {
+    "lat": 40.935281,
+    "lon": -72.6648692
+  },
+  "1429 Main Rd Jamesport, NY, 11901": {
+    "lat": null,
+    "lon": null
+  },
+  "107 Old Riverhead Rd Westhampton Beach, NY, 11978": {
+    "lat": 40.8300726,
+    "lon": -72.6474301
+  },
+  "38 Montauk Hwy Quogue, NY, 11959": {
+    "lat": 40.8226189,
+    "lon": -72.6090401
+  },
+  "192 W Montauk hwy Hampton Bays, NY, 11946": {
+    "lat": 40.874857,
+    "lon": -72.536217
+  },
+  "250 E Montauk Hwy Hampton Bays, NY, 11946": {
+    "lat": null,
+    "lon": null
+  },
+  "816 CR-39 Southampton, NY, 11968": {
+    "lat": 40.8926889,
+    "lon": -72.4251772
+  },
+  "1138 Montauk Hwy Watermill, NY, 11976": {
+    "lat": null,
+    "lon": null
+  },
+  "668 Liberty St Springfield, MA, 01104": {
+    "lat": 42.1214212,
+    "lon": -72.5846698
+  },
+  "798 Carew St Springfield, MA, 01104": {
+    "lat": 42.1258915,
+    "lon": -72.5841307
+  },
+  "1037 St James Ave Springfield, MA, 01104": {
+    "lat": 42.1371817,
+    "lon": -72.5693712
+  },
+  "80 St James Blvd Springfield, MA, 01104": {
+    "lat": 42.1356575,
+    "lon": -72.5683105
+  },
+  "289 Carew St Springfield, MA, 01104": {
+    "lat": 42.1162253,
+    "lon": -72.5950036
+  },
+  "1271 Page Blvd Springfield, MA, 01104": {
+    "lat": 42.1498946,
+    "lon": -72.5374867
+  },
+  "20 East St Springfield, MA, 01104": {
+    "lat": 42.1481935,
+    "lon": -72.6069622
+  },
+  "2221 Main St Springfield, MA, 01104": {
+    "lat": 42.1101407,
+    "lon": -72.6006844
+  },
+  "1277 Liberty St Springfield, MA, 01104": {
+    "lat": 42.1373538,
+    "lon": -72.5820966
+  },
+  "77 West St Springfield, MA, 01104": {
+    "lat": 42.1101757,
+    "lon": -72.6104717
+  },
+  "173 Elm St West Springfield, MA, 01089": {
+    "lat": 42.1071429,
+    "lon": -72.6236243
+  },
+  "2284 Westfield St West Springfield, MA, 01089": {
+    "lat": 42.1044563,
+    "lon": -72.6774836
+  },
+  "884 Westfield St West Springfield, MA, 01089": {
+    "lat": 42.1041073,
+    "lon": -72.6386615
+  },
+  "562 Westfield Rd West Springfield, MA, 01089": {
+    "lat": 42.108423,
+    "lon": -72.683174
+  },
+  "341 Memorial Ave West Springfield, MA, 01089": {
+    "lat": 42.0958494,
+    "lon": -72.6025407
+  },
+  "143 Park Ave West Springfield, MA, 01089": {
+    "lat": 42.1047799,
+    "lon": -72.6193478
+  },
+  "22 Park St West Springfield, MA, 01089": {
+    "lat": 42.1080906,
+    "lon": -72.6171258
+  },
+  "518 Memorial Ave West Springfield, MA, 01089": {
+    "lat": 42.0960296,
+    "lon": -72.606093
+  },
+  "2044 Riverdale St West Springfield, MA, 01089": {
+    "lat": 42.1577219,
+    "lon": -72.6327404
+  },
+  "735 Westfield St West Springfield, MA, 01089": {
+    "lat": 42.1033308,
+    "lon": -72.6357365
+  },
+  "757 Riverdale St West Springfield, MA, 01089": {
+    "lat": 42.1246626,
+    "lon": -72.625502
+  },
+  "1247 Riverdale St West Springfield, MA, 01089": {
+    "lat": 42.1379202,
+    "lon": -72.6252571
+  },
+  "1130 Riverdale St West Springfield, MA, 01089": {
+    "lat": 42.1348232,
+    "lon": -72.6261928
+  },
+  "162 Southampton Rd, 01085": {
+    "lat": 42.1460884,
+    "lon": -72.7310211
+  },
+  "439 N Elm St Westfield, MA, 01085": {
+    "lat": 42.1401791,
+    "lon": -72.7333993
+  },
+  "1134 Southampton Rd Westfield, MA, 01085": {
+    "lat": 42.1825106,
+    "lon": -72.7271699
+  },
+  "41 Franklin St Westfield, MA, 01085": {
+    "lat": 42.1250645,
+    "lon": -72.7500438
+  },
+  "181 Elm St Westfield, MA, 01085": {
+    "lat": 42.1244206,
+    "lon": -72.7476514
+  },
+  "259 N Elm St Westfield, MA, 01085": {
+    "lat": 42.1359276,
+    "lon": -72.7389062
+  },
+  "330 E Main St Westfield, MA, 01085": {
+    "lat": 42.1137756,
+    "lon": -72.7238961
+  },
+  "88 S Maple St Westfield, MA, 01085": {
+    "lat": 42.1255038,
+    "lon": -72.748927
+  },
+  "234 E Main St Westfield, MA, 01085": {
+    "lat": 42.1150935,
+    "lon": -72.7284631
+  },
+  "947 Burnett Rd Chicopee, MA, 01020": {
+    "lat": 42.1753008,
+    "lon": -72.5287525
+  },
+  "451 Grattan St Chicopee, MA, 01020": {
+    "lat": 42.1684674,
+    "lon": -72.5940776
+  },
+  "672 Memorial Dr, 01020": {
+    "lat": 42.1759775,
+    "lon": -72.5763068
+  },
+  "2041 Memorial Dr Chicopee, MA, 01020": {
+    "lat": 42.2131424,
+    "lon": -72.5723361
+  },
+  "646 Grattan Street Chicopee, MA, 01020": {
+    "lat": 42.1730203,
+    "lon": -72.5984727
+  },
+  "1177 Granby Rd Chicopee, MA, 01020": {
+    "lat": 42.1739323,
+    "lon": -72.5872689
+  },
+  "500 Montgomery St Chicopee, MA, 01020": {
+    "lat": 42.1743862,
+    "lon": -72.5869497
+  },
+  "363 Burnett Rd Chicopee, MA, 01020": {
+    "lat": 42.1661787,
+    "lon": -72.5451161
+  },
+  "560 East St Chicopee, MA, 01020": {
+    "lat": 42.1480861,
+    "lon": -72.5642343
+  },
+  "817 Front St Chicopee, MA, 01020": {
+    "lat": 42.1498779,
+    "lon": -72.5862536
+  },
+  "1061 Memorial Dr Chicopee, MA, 01020": {
+    "lat": 42.1870792,
+    "lon": -72.5769006
+  },
+  "1875 Memorial Dr Chicopee, MA, 01020": {
+    "lat": 42.2082465,
+    "lon": -72.571413
+  },
+  "357 Burnett Rd Chicopee, MA, 01020": {
+    "lat": 42.1661237,
+    "lon": -72.546029
+  },
+  "2012 Memorial Dr Chicopee, MA, 01020": {
+    "lat": 42.210334,
+    "lon": -72.5714232
+  },
+  "27 Montgomery St Chicopee, MA, 01020": {
+    "lat": 42.1612887,
+    "lon": -72.5824657
+  },
+  "2265 Northampton, 01040": {
+    "lat": 42.1816881,
+    "lon": -72.6330639
+  },
+  "1635 Northampton St Holyoke, MA, 01040": {
+    "lat": 42.2088833,
+    "lon": -72.6308787
+  },
+  "2265 Northampton St Holyoke, MA, 01040": {
+    "lat": 42.1816881,
+    "lon": -72.6330639
+  },
+  "28 Lincoln St Holyoke, MA, 01040": {
+    "lat": 42.2142774,
+    "lon": -72.6181875
+  },
+  "1530 Northampton St Holyoke, MA, 01040": {
+    "lat": 42.211614,
+    "lon": -72.6296123
+  },
+  "1553 Dwight St Holyoke, MA, 01040": {
+    "lat": 42.21103,
+    "lon": -72.6281361
+  },
+  "568 Newton St South Hadley, MA, 01075": {
+    "lat": 42.2396215,
+    "lon": -72.5815538
+  },
+  "507 Newton St South Hadley, MA, 01075": {
+    "lat": 42.2374802,
+    "lon": -72.5816164
+  },
+  "467 Newton St South Hadley, MA, 01075": {
+    "lat": 42.235783,
+    "lon": -72.5828163
+  },
+  "483 Granby Rd South Hadley, MA, 01075": {
+    "lat": 42.2350955,
+    "lon": -72.5629626
+  },
+  "97 Union St Easthampton, MA, 01027": {
+    "lat": 42.2669407,
+    "lon": -72.6696351
+  },
+  "60 Union St Easthampton, MA, 01027": {
+    "lat": 42.2681716,
+    "lon": -72.6714491
+  },
+  "124 Northampton St Easthampton, MA, 01027": {
+    "lat": 42.2789978,
+    "lon": -72.6713843
+  },
+  "231 Northampton St Easthampton, MA, 01027": {
+    "lat": 42.2870731,
+    "lon": -72.6626681
+  },
+  "317 Main St Easthampton, MA, 01027": {
+    "lat": 42.2609805,
+    "lon": -72.6848749
+  },
+  "375 King St Northampton, MA, 01060": {
+    "lat": 42.3374852,
+    "lon": -72.6366284
+  },
+  "228 King St Northampton, MA, 01060": {
+    "lat": 42.3290172,
+    "lon": -72.6358623
+  },
+  "134 King St, 01060": {
+    "lat": 42.3374727,
+    "lon": -72.6373027
+  },
+  "15 Locust Northampton, MA, 01060": {
+    "lat": 42.3316863,
+    "lon": -72.6526156
+  },
+  "776 N King St Northampton, MA, 01060": {
+    "lat": 42.3622644,
+    "lon": -72.6390352
+  },
+  "506 Pleasant St Northampton, MA, 01060": {
+    "lat": 42.3114138,
+    "lon": -72.6238099
+  },
+  "109 Russell St Hadley, MA, 01035": {
+    "lat": 42.3414532,
+    "lon": -72.5946062
+  },
+  "446 Russell St Hadley, MA, 01035": {
+    "lat": 42.3646637,
+    "lon": -72.5379721
+  },
+  "110 Russell St Hadley, MA, 01035": {
+    "lat": 42.3424399,
+    "lon": -72.595176
+  },
+  "445 Russell St Hadley, MA, 01035": {
+    "lat": 42.3632797,
+    "lon": -72.5387719
+  },
+  "25 Russell St Hadley, MA, 01035": {
+    "lat": 42.33861,
+    "lon": -72.60906
+  },
+  "73 Russell St Hadley, MA, 01035": {
+    "lat": 42.3405615,
+    "lon": -72.6018812
+  },
+  "399 Northampton Rd Amherst, MA, 01002": {
+    "lat": 42.3661824,
+    "lon": -72.5351597
+  },
+  "468 West St South Amherst, MA, 01002": {
+    "lat": 42.3420911,
+    "lon": -72.5198559
+  },
+  "74 W State St Granby, MA, 01033": {
+    "lat": 42.2466124,
+    "lon": -72.5432172
+  },
+  "1 Sunderland Rd South Deerfield, MA, 01373": {
+    "lat": 42.468412,
+    "lon": -72.608969
+  },
+  "31 Elm St South Deerfield, MA, 01373": {
+    "lat": 42.4769319,
+    "lon": -72.6127799
+  },
+  "242 Conway Rd, 01373": {
+    "lat": 42.4973938,
+    "lon": -72.6367494
+  },
+  "1 Greenfield Rd South Deerfield, MA, 01373": {
+    "lat": 42.4899751,
+    "lon": -72.6098871
+  },
+  "142 Mohawk Tr Greenfield, MA, 01301": {
+    "lat": null,
+    "lon": null
+  },
+  "100 Mohawk Tr Greenfield, MA, 01301": {
+    "lat": null,
+    "lon": null
+  },
+  "488 Bernardston Rd Greenfield, MA, 01301": {
+    "lat": 42.6094682,
+    "lon": -72.5869418
+  },
+  "295 Federal St Greenfield, MA, 01301": {
+    "lat": 42.600351,
+    "lon": -72.5939125
+  },
+  "223 Mohawk Tr Greenfield, MA, 01301": {
+    "lat": null,
+    "lon": null
+  },
+  "63 Main St Greenfield, MA, 01301": {
+    "lat": 42.5871489,
+    "lon": -72.6066369
+  },
+  "109 Mohawk Trail Greenfield, MA, 01301": {
+    "lat": 42.5848575,
+    "lon": -72.6166793
+  },
+  "242 Mohawk Tr Greenfield, MA, 01301": {
+    "lat": null,
+    "lon": null
+  },
+  "650 Suffield St Agawam, MA, 01001": {
+    "lat": 42.0675744,
+    "lon": -72.6317643
+  },
+  "837 Suffield St Agawam, MA, 01001": {
+    "lat": 42.0606701,
+    "lon": -72.6315678
+  },
+  "1 River Rd Agawam, MA, 01001": {
+    "lat": 42.04632,
+    "lon": -72.6158718
+  },
+  "18 Springfield St Agawam, MA, 01001": {
+    "lat": 42.0897213,
+    "lon": -72.6280116
+  },
+  "6 Lealand Ave Agawam, MA, 01001": {
+    "lat": 42.071971,
+    "lon": -72.6152387
+  },
+  "308 Suffield St Agawam, MA, 01001": {
+    "lat": 42.0790669,
+    "lon": -72.6300928
   }
 }
