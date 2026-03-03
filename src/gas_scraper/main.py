@@ -27,7 +27,9 @@ from .user_interface import (
 )
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
-from selenium.common.exceptions import TimeoutException # New import for cookie banner handling
+from selenium.common.exceptions import (
+    TimeoutException,
+)  # New import for cookie banner handling
 from tenacity import retry, stop_after_attempt, wait_fixed
 from loguru import logger
 
@@ -138,10 +140,10 @@ def _log_retry(retry_state):
 
 
 @retry(
-    stop=stop_after_attempt(3), 
-    wait=wait_fixed(5), 
+    stop=stop_after_attempt(3),
+    wait=wait_fixed(5),
     before_sleep=_log_retry,
-    reraise=True
+    reraise=True,
 )
 def _get_page_with_retry(driver, url):
     """Declarative retry wrapper for driver.get()."""
@@ -167,7 +169,8 @@ def _get_page_with_retry(driver, url):
     title = driver.title
     if "GasBuddy" not in title:
         logger.warning(f"   ⚠️  Unexpected page title: '{title}'. Possible block.")
-        logger.debug(f"Source Snippet: {driver.page_source[:500].replace('\n', ' ')}")
+        snippet = driver.page_source[:500].replace("\n", " ")
+        logger.debug(f"Source Snippet: {snippet}")
 
 
 def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
@@ -192,7 +195,9 @@ def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
             logger.info("   Waiting for prices to load...")
             try:
                 WebDriverWait(driver, 20).until(
-                    EC.presence_of_element_located((By.XPATH, "//span[contains(text(), '$')]"))
+                    EC.presence_of_element_located(
+                        (By.XPATH, "//span[contains(text(), '$')]")
+                    )
                 )
             except Exception:
                 logger.warning(
@@ -209,8 +214,6 @@ def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
             logger.debug(f"   [DEBUG] Number of iframes: {len(iframes)}")
             exists = "StationDisplay-module__container" in page_source
             logger.debug(f"   [DEBUG] Container class exists in source: {exists}")
-
-
 
         for card_sel in cards:
             station_data = parse_station_card(card_sel, zip_code, city_name)
