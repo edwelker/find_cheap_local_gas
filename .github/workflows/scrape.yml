@@ -35,19 +35,19 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install .
 
       - name: Run Scraper (Maryland)
-        run: python gas.py 1
+        run: gas-scrape 1 --headless
 
       - name: Run Scraper (Long Island)
-        run: python gas.py 2
+        run: gas-scrape 2 --headless
 
       - name: Run Scraper (Western Mass)
-        run: python gas.py 3
+        run: gas-scrape 3 --headless
 
       - name: Cleanup Old History
-        run: python cleanup_history.py
+        run: gas-cleanup
 
       - name: Commit and Push Changes
         run: |

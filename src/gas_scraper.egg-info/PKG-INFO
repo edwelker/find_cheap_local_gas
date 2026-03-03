@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: gas_scraper
+Version: 0.1.0
+Summary: Gas Price Scraper from GasBuddy
+Author: E Welker
+Requires-Python: >=3.9
+Requires-Dist: pandas>=2.2.0
+Requires-Dist: selenium>=4.16.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: uszipcode>=1.0.1
+Requires-Dist: sqlalchemy-mate<1.5.0
+Requires-Dist: python-Levenshtein
+Requires-Dist: tzdata
+Requires-Dist: geopy
+Requires-Dist: click>=8.1.0

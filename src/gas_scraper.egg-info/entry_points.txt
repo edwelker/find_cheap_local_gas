@@ -1,0 +1,3 @@
+[console_scripts]
+gas-cleanup = gas_scraper.cleanup_history:cleanup
+gas-scrape = gas_scraper.main:main

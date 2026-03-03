@@ -21,3 +21,20 @@ Since I track prices in Western Mass for my sisters and in Maryland for my frien
 
 ### Why this matters
 This project shows how I approach problems: I saw a repetitive task (checking gas prices), I questioned the variables (loyalty cards), and I built a reliable, automated system to give me the answer.
+
+---
+
+### Use
+
+**Run the app:**
+```bash
+source venv/bin/activate
+python3 gas.py  # Interactive
+python3 gas.py 1 --headless  # Automated (Region 1, Maryland)
+```
+
+**Run tests w/ coverage:**
+```bash
+source venv/bin/activate
+pytest --cov=gas --cov-report=term-missing test_gas.py
+```
