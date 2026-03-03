@@ -758,5 +758,21 @@
   "308 Suffield St Agawam, MA, 01001": {
     "lat": 42.0790669,
     "lon": -72.6300928
+  },
+  "5651 Waterloo Rd Ellicott City, MD, 21043": {
+    "lat": 39.2160123,
+    "lon": -76.8043082
+  },
+  "7671 Arundel Mills Blvd Hanover, MD, 21076": {
+    "lat": 39.15227,
+    "lon": -76.7312534
+  },
+  "415 Flanders Rd Riverhead, NY, 11901": {
+    "lat": 40.9119534,
+    "lon": -72.6471547
+  },
+  "69 Main St Westfield, MA, 01085": {
+    "lat": 42.1202361,
+    "lon": -72.7456415
   }
 }
