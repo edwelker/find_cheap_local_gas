@@ -1,7 +1,7 @@
 import pytest
 from bs4 import BeautifulSoup
 from unittest.mock import MagicMock, patch
-from gas_scraper.parser import clean_address, get_state_hint, parse_station_card
+from gas_scraper.parser import clean_address, get_state_hint, parse_station_card, geocode_stations
 
 def test_clean_address():
     assert clean_address("123 Main St\nRegular") == "123 Main St"
@@ -26,22 +26,12 @@ def test_parse_station_card_valid():
     soup = BeautifulSoup(html, "html.parser")
     price_node = soup.find(string="$ 3.50")
     
-    geolocator = MagicMock()
-    mock_loc = MagicMock()
-    mock_loc.latitude = 40.0
-    mock_loc.longitude = -75.0
-    geolocator.geocode.return_value = mock_loc
-    
-    geo_cache = {}
-    
-    with patch("time.sleep"): # Skip sleep in tests
-        data = parse_station_card(price_node, "20723", "Scaggsville", geolocator, geo_cache)
+    data = parse_station_card(price_node, "20723", "Scaggsville")
     
     assert data["Station"] == "Royal Farms"
     assert data["Base"] == 3.50
     assert data["Net"] == 3.40 # 3.50 - 0.10 discount
-    assert data["Lat"] == 40.0
-    assert "123 Main St, 20723" in geo_cache
+    assert data["Street"] == "123 Main St"
 
 def test_parse_station_card_blocklisted():
     html = """
@@ -54,7 +44,7 @@ def test_parse_station_card_blocklisted():
     soup = BeautifulSoup(html, "html.parser")
     price_node = soup.find(string="$ 3.30")
     
-    data = parse_station_card(price_node, "20723", "Scaggsville", MagicMock(), {})
+    data = parse_station_card(price_node, "20723", "Scaggsville")
     assert data is None
 
 def test_parse_station_card_trend():
@@ -66,5 +56,23 @@ def test_parse_station_card_trend():
     soup = BeautifulSoup(html, "html.parser")
     price_node = soup.find(string="$ 3.40")
     
-    data = parse_station_card(price_node, "20723", "Scaggsville", MagicMock(), {})
+    data = parse_station_card(price_node, "20723", "Scaggsville")
     assert data is None
+
+def test_geocode_stations():
+    stations = [
+        {"Station": "S1", "Street": "123 Main St", "Zip": "20723"}
+    ]
+    geolocator = MagicMock()
+    mock_loc = MagicMock()
+    mock_loc.latitude = 40.0
+    mock_loc.longitude = -75.0
+    geolocator.geocode.return_value = mock_loc
+    
+    geo_cache = {}
+    
+    with patch("time.sleep"):
+        res = geocode_stations(stations, geolocator, geo_cache)
+        
+    assert res[0]["Lat"] == 40.0
+    assert "123 Main St, 20723" in geo_cache

@@ -218,8 +218,10 @@ def test_scrape_gasbuddy_comprehensive(mock_wait, mock_bs, mock_nominatim, mock_
         data2 = gas.scrape_gasbuddy(region_config, headless=True)
         assert len(data2) == 3
 
+@patch("gas_scraper.main.load_geo_cache")
 @patch("gas_scraper.main.init_driver")
-def test_scrape_gasbuddy_geocoding_error(mock_init_driver):
+def test_scrape_gasbuddy_geocoding_error(mock_init_driver, mock_load_cache):
+    mock_load_cache.return_value = {}
     mock_driver = MagicMock()
     mock_init_driver.return_value = mock_driver
     
@@ -247,8 +249,10 @@ def test_scrape_gasbuddy_geocoding_error(mock_init_driver):
                 assert len(data) == 1
                 assert data[0]["Lat"] is None
 
+@patch("gas_scraper.main.load_geo_cache")
 @patch("gas_scraper.main.init_driver")
-def test_scrape_gasbuddy_parsing_error(mock_init_driver):
+def test_scrape_gasbuddy_parsing_error(mock_init_driver, mock_load_cache):
+    mock_load_cache.return_value = {}
     mock_driver = MagicMock()
     mock_init_driver.return_value = mock_driver
     with patch("gas_scraper.main.BeautifulSoup") as mock_bs:
@@ -291,7 +295,7 @@ def test_scrape_gasbuddy_fault_tolerance(mock_sleep, mock_bs, mock_nominatim, mo
     
     # Mock parser to return data
     with patch("gas_scraper.main.parse_station_card") as mock_parse:
-        mock_parse.return_value = {"Station": "S1"}
+        mock_parse.return_value = {"Station": "S1", "Address": "A1", "Zip": "20723", "Street": "A1"}
         
         region_config = {"name": "T", "zips": ["20723", "21044"]}
         data = gas.scrape_gasbuddy(region_config, headless=True)

@@ -1,6 +1,32 @@
 import re
 import time
+import json
+import os
 from .config import BLOCKLIST, DISCOUNTS
+
+CACHE_FILE = "geocache.json"
+
+def load_geo_cache():
+    """
+    PERFORMANCE: Load previous geocoding results to skip API calls and 1.1s delays.
+    """
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, "r") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️  Error loading geocache: {e}")
+    return {}
+
+def save_geo_cache(cache):
+    """
+    PERFORMANCE: Save results to disk so they can be reused in future runs.
+    """
+    try:
+        with open(CACHE_FILE, "w") as f:
+            json.dump(cache, f, indent=2)
+    except Exception as e:
+        print(f"⚠️  Error saving geocache: {e}")
 
 def clean_address(full_text):
     """
@@ -47,10 +73,10 @@ def get_state_hint(zip_code):
     return None
 
 
-def parse_station_card(price_node, zip_code, city_name, geolocator, geo_cache):
+def parse_station_card(price_node, zip_code, city_name):
     """
-    Walks up from a price node to find the station card, extracts details,
-    applies business logic, and returns a dictionary of station data.
+    Walks up from a price node to find the station card and extracts details.
+    PERFORMANCE: Geocoding is deferred to a separate step to keep browser time minimal.
     """
     try:
         # 1. Parse Base Price
@@ -66,13 +92,11 @@ def parse_station_card(price_node, zip_code, city_name, geolocator, geo_cache):
         is_trend = False
 
         while card and depth < 8:
-            # Check if this element indicates a Price Trend panel
             if card.name:
                 classes = card.get("class", [])
                 if classes and any("PriceTrends" in c for c in classes):
                     is_trend = True
                     break
-
             if card.name == "div" and card.find("h3"):
                 break
             card = card.parent
@@ -91,7 +115,7 @@ def parse_station_card(price_node, zip_code, city_name, geolocator, geo_cache):
         street_addr = clean_address(full_text)
         full_address = f"{street_addr}, {zip_code}"
 
-        # 5. Filter Blocklist (Checks Name AND Address)
+        # 5. Filter Blocklist
         if any(b.lower() in name.lower() for b in BLOCKLIST):
             return None
         if any(b.lower() in full_address.lower() for b in BLOCKLIST):
@@ -106,9 +130,6 @@ def parse_station_card(price_node, zip_code, city_name, geolocator, geo_cache):
                 rule = brand
                 break
 
-        # 7. Geocoding logic
-        lat, lng = _geocode_station(name, street_addr, zip_code, geolocator, geo_cache)
-
         return {
             "City": city_name,
             "Zip": zip_code,
@@ -117,27 +138,44 @@ def parse_station_card(price_node, zip_code, city_name, geolocator, geo_cache):
             "Base": base_price,
             "Net": round(base_price - discount, 2),
             "Discount": rule,
-            "Lat": lat,
-            "Long": lng,
+            "Street": street_addr, # Helper for geocoding later
         }
 
     except Exception:
         return None
 
 
-def _geocode_station(name, street_addr, zip_code, geolocator, geo_cache):
+def geocode_stations(stations, geolocator, geo_cache):
     """
-    Helper to handle geocoding with caching and fallback logic.
+    PERFORMANCE: Batch geocode all found stations at once.
+    This allows us to close the browser earlier and avoid redundant lookups.
     """
-    # Determine cache key
-    if street_addr != "Unknown Address":
-        cache_key = f"{street_addr}, {zip_code}"
-    else:
-        cache_key = f"{name}, {zip_code}"
+    print(f"\n🌍 Geocoding {len(stations)} unique stations...")
+    
+    for s in stations:
+        name = s["Station"]
+        street_addr = s["Street"]
+        zip_code = s["Zip"]
+        
+        # Determine cache key
+        cache_key = f"{street_addr}, {zip_code}" if street_addr != "Unknown Address" else f"{name}, {zip_code}"
 
-    if cache_key in geo_cache:
-        return geo_cache[cache_key]
+        if cache_key in geo_cache:
+            lat, lng = geo_cache[cache_key]
+        else:
+            lat, lng = _perform_geocode(name, street_addr, zip_code, geolocator, geo_cache, cache_key)
+        
+        s["Lat"] = lat
+        s["Long"] = lng
+        # Remove helper field
+        if "Street" in s:
+            del s["Street"]
 
+    return stations
+
+
+def _perform_geocode(name, street_addr, zip_code, geolocator, geo_cache, cache_key):
+    """Helper to handle the actual API call with rate limiting."""
     try:
         # Rate limiting for Nominatim (1 sec)
         time.sleep(1.1)
@@ -145,37 +183,21 @@ def _geocode_station(name, street_addr, zip_code, geolocator, geo_cache):
         location = None
         state_hint = get_state_hint(zip_code)
 
-        # 1. Try Structured Query (Most Accurate)
+        # 1. Try Structured Query
         if street_addr != "Unknown Address":
-            query = {
-                "street": street_addr,
-                "postalcode": zip_code,
-                "country": "USA",
-            }
+            query = {"street": street_addr, "postalcode": zip_code, "country": "USA"}
             if state_hint:
                 query["state"] = state_hint
             location = geolocator.geocode(query)
 
-        # 2. Fallback: Free-form string query
+        # 2. Fallback
         if not location:
-            parts = []
-            if street_addr != "Unknown Address":
-                parts.append(street_addr)
-            else:
-                parts.append(name)
-            parts.append(zip_code)
-            if state_hint:
-                parts.append(state_hint)
+            parts = [street_addr if street_addr != "Unknown Address" else name, zip_code]
+            if state_hint: parts.append(state_hint)
             parts.append("USA")
+            location = geolocator.geocode(", ".join(parts))
 
-            q_str = ", ".join(parts)
-            location = geolocator.geocode(q_str)
-
-        if location:
-            res = (location.latitude, location.longitude)
-        else:
-            res = (None, None)
-
+        res = (location.latitude, location.longitude) if location else (None, None)
         geo_cache[cache_key] = res
         return res
 

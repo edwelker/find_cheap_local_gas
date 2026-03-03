@@ -3,10 +3,14 @@ import time
 import re
 import os
 import datetime
+import json
 from zoneinfo import ZoneInfo
 import pandas as pd
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from .browser import init_driver
-from .parser import parse_station_card
+from .parser import parse_station_card, load_geo_cache, save_geo_cache, geocode_stations
 from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
@@ -63,11 +67,13 @@ def calculate_radius_zips(center_zip, miles=15):
     # Always include the requested center zip at the start
     top_zips = [center_zip]
     count = 0
+    seen = {center_zip} # PERFORMANCE: Deduplicate zips to avoid redundant browser navigations
     for n in neighbors:
         if count >= 4:
             break  # Limit to +4 neighbors (5 total)
-        if n["zip"] != center_zip:
+        if n["zip"] not in seen:
             top_zips.append(n["zip"])
+            seen.add(n["zip"])
             count += 1
 
     print(f"   Targeting {len(top_zips)} key zip codes: {', '.join(top_zips)}")
@@ -127,14 +133,17 @@ def get_region_choice(cli_choice=None, cli_zip=None):
 def scrape_gasbuddy(region_config, headless=False):
     driver = init_driver(headless=headless)
 
-    # Initialize Geocoder with increased timeout (10s)
+    # PERFORMANCE: Initialize geocoding cache from disk to skip redundant API calls/delays
     geolocator = Nominatim(user_agent="gas_scraper_bot_v1", timeout=10)
-    geo_cache = {}
+    geo_cache = load_geo_cache()
 
     scraped_data = []
 
     try:
-        for zip_code in region_config["zips"]:
+        # PERFORMANCE: Deduplicate zip codes to avoid redundant navigations
+        zips = list(dict.fromkeys(region_config["zips"]))
+        
+        for zip_code in zips:
             city_name = ZIP_MAP.get(zip_code, zip_code)
             print(f"\n📍 Navigating to: {city_name} ({zip_code})...")
 
@@ -146,14 +155,24 @@ def scrape_gasbuddy(region_config, headless=False):
             for attempt in range(max_retries + 1):
                 try:
                     driver.get(url)
+                    # Check if we actually landed on the right page or a block page
+                    title = driver.title
+                    if "GasBuddy" not in title:
+                        print(f"   ⚠️  Unexpected page title: '{title}'. Possible block.")
+                    
                     success = True
                     break
                 except Exception as e:
                     if attempt < max_retries:
-                        print(f"   ⚠️  Timeout/Error loading {zip_code}. Retrying ({attempt+1}/{max_retries})...")
+                        print(f"   ⚠️  {type(e).__name__} loading {zip_code}. Retrying ({attempt+1}/{max_retries})...")
                         time.sleep(5)
                     else:
                         print(f"   ❌ Failed to load {zip_code} after {max_retries+1} attempts: {e}")
+                        try:
+                            print(f"      Current URL: {driver.current_url}")
+                            print(f"      Page Title:  {driver.title}")
+                        except:
+                            pass
 
             if not success:
                 continue
@@ -163,8 +182,14 @@ def scrape_gasbuddy(region_config, headless=False):
                 if not headless:
                     wait_for_user_to_confirm_prices(zip_code)
                 else:
-                    print("   Waiting for page to load (15s)...")
-                    time.sleep(15)
+                    # PERFORMANCE: Smart Wait proceeds as soon as prices appear (replaces fixed 15s sleep)
+                    print("   Waiting for prices to load...")
+                    try:
+                        WebDriverWait(driver, 20).until(
+                            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '$')]"))
+                        )
+                    except Exception:
+                        print("   ⚠️  Timed out waiting for prices. Attempting to parse anyway...")
 
                 soup = BeautifulSoup(driver.page_source, "html.parser")
 
@@ -175,9 +200,7 @@ def scrape_gasbuddy(region_config, headless=False):
                 print(f"   (Found {len(found_prices)} prices)")
 
                 for price_node in found_prices:
-                    station_data = parse_station_card(
-                        price_node, zip_code, city_name, geolocator, geo_cache
-                    )
+                    station_data = parse_station_card(price_node, zip_code, city_name)
                     if station_data:
                         scraped_data.append(station_data)
             except Exception as e:
@@ -185,14 +208,22 @@ def scrape_gasbuddy(region_config, headless=False):
                 continue
 
     finally:
+        # PERFORMANCE: Close browser before geocoding to free up system resources
         driver.quit()
 
-    return scraped_data
+    # PERFORMANCE: Defer geocoding to the end to avoid blocking browser loop
+    # Deduplicate results by Station/Address to avoid geocoding same station twice
+    unique_stations = { (s["Station"], s["Address"]): s for s in scraped_data }.values()
+    
+    initial_cache_size = len(geo_cache)
+    final_data = geocode_stations(list(unique_stations), geolocator, geo_cache)
+    
+    # PERFORMANCE: Only save if new entries were added to minimize disk writes
+    if len(geo_cache) > initial_cache_size:
+        save_geo_cache(geo_cache)
 
+    return final_data
 
-import click
-
-...
 
 def display_results(df):
     """
@@ -220,6 +251,8 @@ def display_results(df):
     print(df_sorted[cols].to_string(index=False))
     print("\n")
 
+
+import click
 
 @click.command()
 @click.argument("choice", required=False)
@@ -256,6 +289,7 @@ def main(choice, zip_code, headless, target_zip):
         return
 
     df = pd.DataFrame(data)
+    # Already deduplicated in scrape_gasbuddy, but safe to keep
     df = df.drop_duplicates(subset=["Station", "Address"])
 
     # --- SAVE TO HISTORY (Only for full regions/radius, not single zips) ---
