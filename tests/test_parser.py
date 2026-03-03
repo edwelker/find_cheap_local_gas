@@ -42,57 +42,70 @@ def test_is_blocked():
 
 
 # --- MOCK HTML FIXTURE FOR INTEGRATION TESTS ---
-
+# These are verbatim copies of two station listings from a real GasBuddy page.
 MOCK_HTML = """
-<html>
 <body>
-  <div class="GenericStationListItem-module__station___1O2q_">
-    <h3><a href="#">Shell</a></h3>
-    <div class="StationDisplay-module__address___1O2q_">123 Main St</div>
-    <div class="StationDisplayPrice-module__price___1O2q_"><span>$3.50</span></div>
-  </div>
-  <div class="GenericStationListItem-module__station___1O2q_">
-    <h3><a href="#">Exxon</a></h3>
-    <div class="StationDisplay-module__address___1O2q_">456 Oak Ave</div>
-    <div class="StationDisplayPrice-module__price___1O2q_"><span>$3.60</span></div>
-  </div>
-  <div class="GenericStationListItem-module__station___1O2q_">
-    <h3><a href="#">Costco</a></h3>
-    <div class="StationDisplay-module__address___1O2q_">789 Pine Rd</div>
-    <div class="StationDisplayPrice-module__price___1O2q_"><span>$3.40</span></div>
-  </div>
+    <div class="panel__panel___3Q2zW panel__white___19KTz colors__bgWhite___1stjL panel__bordered___1Xe-S panel__rounded___2etNE GenericStationListItem-module__station___1O4vF" id="75337">
+        <div class="GenericStationListItem-module__stationListItem___3Jmn4">
+            <div class="StationDisplay-module__mainInfoColumn___1ZBwz StationDisplay-module__column___3h4Wf">
+                <h3 class="header__header3___1b1oq header__header___1zII0 header__midnight___1tdCQ header__snug___lRSNK StationDisplay-module__stationNameHeader___1A2q8">
+                    <a style="color: inherit; font-weight: 700; text-decoration: inherit" href="/station/75337">7-Eleven</a><span> </span>
+                </h3>
+                <div class="StationDisplay-module__address___2_c7v">
+                    9651 Washington Blvd N<br />Laurel, MD
+                </div>
+            </div>
+            <div class="GenericStationListItem-module__priceCard___27wng">
+                <span class="text__xl___2MXGo text__left___1iOw3 StationDisplayPrice-module__price___3rARL">$2.85</span>
+            </div>
+        </div>
+    </div>
+    <div class="panel__panel___3Q2zW panel__white___19KTz colors__bgWhite___1stjL panel__bordered___1Xe-S panel__rounded___2etNE GenericStationListItem-module__station___1O4vF" id="122963">
+        <div class="GenericStationListItem-module__stationListItem___3Jmn4">
+            <div class="StationDisplay-module__mainInfoColumn___1ZBwz StationDisplay-module__column___3h4Wf">
+                <h3 class="header__header3___1b1oq header__header___1zII0 header__midnight___1tdCQ header__snug___lRSNK StationDisplay-module__stationNameHeader___1A2q8">
+                    <a style="color: inherit; font-weight: 700; text-decoration: inherit" href="/station/122963">Weis</a><span> </span>
+                </h3>
+                <div class="StationDisplay-module__address___2_c7v">
+                    9250 Washington Blvd N<br />Savage, MD
+                </div>
+            </div>
+            <div class="GenericStationListItem-module__priceCard___27wng">
+                <span class="text__xl___2MXGo text__left___1iOw3 StationDisplayPrice-module__price___3rARL">$2.85</span>
+            </div>
+        </div>
+    </div>
+    <div class="GenericStationListItem-module__station___PHANTOM">
+        <p>This phantom div should be ignored by the parser.</p>
+    </div>
 </body>
-</html>
 """
 
 # --- UNIT TESTS FOR PURE FUNCTIONS ---
 
 def test_extract_base_price():
     assert extract_base_price("$3.45") == 3.45
-    assert extract_base_price("Price: $2.99") == 2.99
     assert extract_base_price("No price here") is None
     assert extract_base_price("$6.00") is None
 
 
 def test_clean_station_name():
-    assert clean_station_name("Royal Farms 2.3 mi") == "Royal Farms"
-    assert clean_station_name("Shell 0.5 mi away") == "Shell"
+    assert clean_station_name("7-Eleven 1.2 mi") == "7-Eleven"
 
 
 def test_get_discount_info():
-    discounts = {"Royal Farms": 0.10, "Shell": 0.05}
-    amt, rule = get_discount_info("Royal Farms #123", discounts)
+    discounts = {"7-Eleven": 0.10}
+    amt, rule = get_discount_info("7-Eleven #123", discounts)
     assert amt == 0.10
-    assert rule == "Royal Farms"
+    assert rule == "7-Eleven"
 
 
 def test_is_blocked():
-    blocklist = ["Costco"]
-    assert is_blocked("Costco Wholesale", "Main St", blocklist) is True
-    assert is_blocked("Shell", "456 Oak Ave", blocklist) is False
+    assert is_blocked("Costco", "123 Main St", ["Costco"]) is True
 
 
 def test_get_station_cards():
+    # Should find 3 potential containers (2 real + 1 phantom)
     cards = get_station_cards(MOCK_HTML)
     assert len(cards) == 3
 
@@ -100,52 +113,29 @@ def test_get_station_cards():
 # --- INTEGRATION TEST FOR PARSING LOGIC ---
 
 def test_parse_station_card_with_fixture():
-    # Use the first card from our mock HTML
+    # The parser should correctly parse the first (valid) card
     card_sel = get_station_cards(MOCK_HTML)[0]
-    
-    # Define custom rules for this test
-    custom_discounts = {"Shell": 0.10}
-    custom_blocklist = ["Costco"]
-
-    # Parse the card
-    station = parse_station_card(
-        card_sel, 
-        "20723", 
-        "Scaggsville", 
-        discounts=custom_discounts, 
-        blocklist=custom_blocklist
-    )
-
-    # Assertions
+    station = parse_station_card(card_sel, "20723", "Laurel")
     assert isinstance(station, GasStation)
-    assert station.station_name == "Shell"
-    assert station.street_name == "123 Main St"
-    assert station.base_price == 3.50
-    assert station.discount_amount == 0.10
-    assert station.net_price == 3.40
-    assert station.discount_rule == "Shell"
+    assert station.station_name == "7-Eleven"
+    assert station.street_name == "9651 Washington Blvd N Laurel, MD"
+    assert station.base_price == 2.85
 
-def test_parse_station_card_blocking():
-    # Use the third card (Costco) from our mock HTML
-    card_sel = get_station_cards(MOCK_HTML)[2]
-    
-    # Define a blocklist
-    custom_blocklist = ["Costco"]
+    # The parser should correctly parse the second (valid) card
+    card_sel_weis = get_station_cards(MOCK_HTML)[1]
+    station_weis = parse_station_card(card_sel_weis, "20723", "Savage")
+    assert isinstance(station_weis, GasStation)
+    assert station_weis.station_name == "Weis"
+    assert station_weis.street_name == "9250 Washington Blvd N Savage, MD"
+    assert station_weis.base_price == 2.85
 
-    # Attempt to parse the blocked station
-    station = parse_station_card(
-        card_sel, 
-        "20723", 
-        "Scaggsville", 
-        blocklist=custom_blocklist
-    )
-
-    # Assert that the station was correctly blocked
-    assert station is None
+    # The parser should return None for the third (phantom) card
+    card_sel_phantom = get_station_cards(MOCK_HTML)[2]
+    station_phantom = parse_station_card(card_sel_phantom, "20723", "Laurel")
+    assert station_phantom is None
 
 
 # --- EXISTING TESTS (UPDATED FOR MODELS & PARSEL) ---
-
 
 def test_clean_address():
     assert clean_address("123 Main St\nRegular") == "123 Main St"

@@ -99,31 +99,37 @@ def is_blocked(name, address, blocklist):
 def get_station_cards(html: str) -> List[Selector]:
     """Finds all station card containers in the page using Parsel."""
     sel = Selector(text=html)
-    return sel.xpath("//div[contains(@class, 'GenericStationListItem-module__station')]")
+    # Find all potential station containers. The parser will validate them.
+    return sel.xpath("//div[starts-with(@class, 'GenericStationListItem-module__station')]")
 
 
 def parse_station_card(card_sel: Selector, zip_code, city_name, discounts=DISCOUNTS, blocklist=BLOCKLIST) -> Optional[GasStation]:
     """Orchestrates data extraction from a Parsel Selector into a GasStation model."""
     try:
         # Extract name from h3
-        name_raw = card_sel.xpath(".//h3/a/text()").get()
+        name_list = card_sel.xpath(
+            ".//h3[contains(@class, 'StationDisplay-module__stationName')]//text()"
+        ).getall()
+        name_raw = "".join(name_list).strip()
         if not name_raw:
             return None
         name = clean_station_name(name_raw)
 
-        # Extract address
-        address_raw = card_sel.xpath(
-            ".//div[contains(@class, 'StationDisplay-module__address')]/text()"
-        ).get()
+        # Extract address from its div
+        address_list = card_sel.xpath(
+            ".//div[contains(@class, 'StationDisplay-module__address')]//text()"
+        ).getall()
+        address_raw = " ".join(address_list).strip()
         if not address_raw:
             return None
         street_addr = clean_address(address_raw)
         full_address = f"{street_addr}, {zip_code}"
 
-        # Extract price
-        price_text = card_sel.xpath(
-            ".//div[contains(@class, 'StationDisplayPrice-module__price')]/span/text()"
-        ).get()
+        # Extract price from its specific span
+        price_list = card_sel.xpath(
+            ".//span[contains(@class, 'StationDisplayPrice-module__price')]//text()"
+        ).getall()
+        price_text = "".join(price_list).strip()
         if not price_text:
             return None
         base_price = extract_base_price(price_text)

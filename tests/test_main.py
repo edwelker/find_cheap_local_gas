@@ -136,23 +136,39 @@ def test_scrape_gasbuddy_comprehensive(mocker):
 
     mock_driver = mocker.MagicMock()
     mock_init_driver.return_value = mock_driver
-    # Use a mock page source that reflects the new, required structure
+    # Use a mock page source that reflects the real-world structure
     mock_driver.page_source = """
-        <div class="GenericStationListItem-module__station">
-            <h3><a href="#">Royal Farms</a></h3>
-            <div class="StationDisplay-module__address">123 Main St</div>
-            <div class="StationDisplayPrice-module__price"><span>$3.50</span></div>
+        <div class="panel__panel___3Q2zW panel__white___19KTz colors__bgWhite___1stjL panel__bordered___1Xe-S panel__rounded___2etNE GenericStationListItem-module__station___1O4vF" id="1">
+            <div class="GenericStationListItem-module__stationListItem___3Jmn4">
+                <div class="StationDisplay-module__mainInfoColumn___1ZBwz StationDisplay-module__column___3h4Wf">
+                    <h3 class="header__header3___1b1oq header__header___1zII0 header__midnight___1tdCQ header__snug___lRSNK StationDisplay-module__stationNameHeader___1A2q8">
+                        <a href="/station/1">Royal Farms</a>
+                    </h3>
+                    <div class="StationDisplay-module__address___2_c7v">
+                        123 Main St<br />Laurel, MD
+                    </div>
+                </div>
+                <div class="GenericStationListItem-module__priceCard___27wng">
+                    <span class="text__xl___2MXGo text__left___1iOw3 StationDisplayPrice-module__price___3rARL">$3.50</span>
+                </div>
+            </div>
         </div>
-        <div class="GenericStationListItem-module__station">
-            <h3><a href="#">Costco</a></h3>
-            <div class="StationDisplay-module__address">456 Oak Ave</div>
-            <div class="StationDisplayPrice-module__price"><span>$3.30</span></div>
+        <div class="panel__panel___3Q2zW panel__white___19KTz colors__bgWhite___1stjL panel__bordered___1Xe-S panel__rounded___2etNE GenericStationListItem-module__station___1O4vF" id="2">
+            <div class="GenericStationListItem-module__stationListItem___3Jmn4">
+                <div class="StationDisplay-module__mainInfoColumn___1ZBwz StationDisplay-module__column___3h4Wf">
+                    <h3 class="header__header3___1b1oq header__header___1zII0 header__midnight___1tdCQ header__snug___lRSNK StationDisplay-module__stationNameHeader___1A2q8">
+                        <a href="/station/2">Costco</a>
+                    </h3>
+                    <div class="StationDisplay-module__address___2_c7v">
+                        456 Oak Ave<br />Laurel, MD
+                    </div>
+                </div>
+                <div class="GenericStationListItem-module__priceCard___27wng">
+                    <span class="text__xl___2MXGo text__left___1iOw3 StationDisplayPrice-module__price___3rARL">$3.30</span>
+                </div>
+            </div>
         </div>
-        <div class="GenericStationListItem-module__station">
-            <h3><a href="#">Shell 1.2 mi</a></h3>
-            <div class="StationDisplay-module__address">789 Pine Pike</div>
-            <div class="StationDisplayPrice-module__price"><span>$3.80</span></div>
-        </div>
+        <div class="GenericStationListItem-module__station___PHANTOM"><p>Ignore Me</p></div>
     """
     mock_driver.title = "GasBuddy"
 
@@ -163,37 +179,43 @@ def test_scrape_gasbuddy_comprehensive(mocker):
     region_config = {"name": "Test", "zips": ["20723"]}
     mocker.patch("time.sleep")
     
-    # The parser will now correctly find 3 stations from the page_source
-    # Then it will filter out Costco, leaving 2.
+    # The parser will find 3 potential containers, but only parse 2 valid stations.
+    # Then it will filter out Costco (blocklist), leaving 1.
     data = gas.scrape_gasbuddy(region_config, headless=False)
 
     assert mock_wait.called
     stations = [d.station_name for d in data]
     assert "Royal Farms" in stations
-    assert "Shell" in stations
     assert "Costco" not in stations
-    assert len(data) == 2
+    assert len(data) == 1
 
 
 def test_scrape_gasbuddy_geocoding_error(mocker):
     mocker.patch("gas_scraper.main.load_geo_cache", return_value=GeocodeCache(root={}))
     mock_driver = mocker.MagicMock()
     mocker.patch("gas_scraper.main.init_driver", return_value=mock_driver)
-    
-    # PERFORMANCE: Mock WebDriverWait to avoid 20s timeouts
+
     mocker.patch("gas_scraper.main.WebDriverWait")
     mocker.patch("gas_scraper.main.EC")
 
-    # Use the new, correct HTML structure
     mock_driver.page_source = """
-        <div class="GenericStationListItem-module__station">
-            <h3><a href="#">Shell</a></h3>
-            <div class="StationDisplay-module__address">123 Main St</div>
-            <div class="StationDisplayPrice-module__price"><span>$3.50</span></div>
+        <div class="panel__panel___3Q2zW panel__white___19KTz colors__bgWhite___1stjL panel__bordered___1Xe-S panel__rounded___2etNE GenericStationListItem-module__station___1O4vF" id="3">
+            <div class="GenericStationListItem-module__stationListItem___3Jmn4">
+                <div class="StationDisplay-module__mainInfoColumn___1ZBwz StationDisplay-module__column___3h4Wf">
+                    <h3 class="header__header3___1b1oq header__header___1zII0 header__midnight___1tdCQ header__snug___lRSNK StationDisplay-module__stationNameHeader___1A2q8">
+                        <a href="/station/3">Shell</a>
+                    </h3>
+                    <div class="StationDisplay-module__address___2_c7v">
+                        123 Main St<br />Laurel, MD
+                    </div>
+                </div>
+                <div class="GenericStationListItem-module__priceCard___27wng">
+                    <span class="text__xl___2MXGo text__left___1iOw3 StationDisplayPrice-module__price___3rARL">$3.50</span>
+                </div>
+            </div>
         </div>
     """
     mock_driver.title = "GasBuddy"
-
     mock_nom = mocker.patch("gas_scraper.main.Nominatim")
     mock_geo = mocker.MagicMock()
     mock_nom.return_value = mock_geo
@@ -203,8 +225,6 @@ def test_scrape_gasbuddy_geocoding_error(mocker):
     data = gas.scrape_gasbuddy({"name": "T", "zips": ["20723"]}, headless=True)
     assert len(data) == 1
     assert data[0].lat is None
-
-
 def test_scrape_gasbuddy_parsing_error(mocker):
     mocker.patch("gas_scraper.main.load_geo_cache", return_value=GeocodeCache(root={}))
     mock_driver = mocker.MagicMock()

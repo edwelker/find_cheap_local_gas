@@ -179,6 +179,7 @@ def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
     Returns a list of GasStation objects.
     """
     url = f"https://www.gasbuddy.com/home?search={zip_code}&fuel=1"
+    logger.info(f"   (URL: {url})")
 
     try:
         _get_page_with_retry(driver, url)

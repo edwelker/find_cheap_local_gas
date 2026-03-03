@@ -4,13 +4,15 @@ This document contains foundational mandates for the Gemini agent working in thi
 
 ## Gas Station Parsing Heuristic
 
-The HTML parsing logic for extracting gas station data from GasBuddy is brittle and must adhere to the following structure. This is the single source of truth and should not be changed without explicit user direction.
+The HTML parsing logic for extracting gas station data from GasBuddy must follow a specific hierarchical approach. This is the single source of truth.
 
-1.  **Primary Container:** All station information (name, address, price) is contained within a `div` element that has a CSS class starting with `GenericStationListItem-module__station`. The parser must *first* locate these top-level containers.
+1.  **Find Primary Containers:** The top-level function (`get_station_cards`) must first find all potential station containers. A container is a `div` element whose `class` attribute **contains** `GenericStationListItem-module__station`.
 
-2.  **Data Extraction (Children of Primary Container):**
-    *   **Station Name:** The name is located within an `<h3>` tag.
-    *   **Address:** The address is within an element that has a class name starting with `StationDisplay-module__address`.
-    *   **Price:** The price is within an element that has a class name starting with `StationDisplayPrice-module__price`.
+2.  **Parse Each Container:** For each container found, the parsing function (`parse_station_card`) must search for the following **descendant** elements *within that container only*. If any of these are not found, the container should be considered invalid and skipped. Use the robust `//text()` approach to extract all text content from within the target element.
+    *   **Station Name:** The name is located within a descendant `<h3>` tag. The precise path is: `.//h3[contains(@class, 'StationDisplay-module__stationName')]//text()`
+    *   **Address:** The address is within a descendant `div`. The precise path is: `.//div[contains(@class, 'StationDisplay-module__address')]//text()`
+    *   **Price:** The price is within a descendant `span`. The precise path is: `.//span[contains(@class, 'StationDisplayPrice-module__price')]//text()`
 
-The parsing functions, specifically `get_station_cards` and `parse_station_card` in `src/gas_scraper/parser.py`, must be implemented using this container-based approach.
+## Logging Requirements
+
+-   **URL Logging:** The scraper must always output the URL being tested for each zip code. This allows for easy double-checking and debugging of the live scraping process.

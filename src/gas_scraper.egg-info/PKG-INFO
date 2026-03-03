@@ -6,10 +6,22 @@ Author: E Welker
 Requires-Python: >=3.9
 Requires-Dist: pandas>=2.2.0
 Requires-Dist: selenium>=4.16.0
-Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: parsel>=1.9.0
 Requires-Dist: uszipcode>=1.0.1
 Requires-Dist: sqlalchemy-mate<1.5.0
 Requires-Dist: python-Levenshtein
 Requires-Dist: tzdata
 Requires-Dist: geopy
 Requires-Dist: click>=8.1.0
+Requires-Dist: selenium-stealth>=1.0.6
+Requires-Dist: undetected-chromedriver>=3.5.0
+Requires-Dist: rich>=13.7.0
+Requires-Dist: pydantic>=2.6.0
+Requires-Dist: tenacity>=8.2.0
+Requires-Dist: loguru>=0.7.0
+Requires-Dist: setuptools>=61.0
+Provides-Extra: dev
+Requires-Dist: pytest-mock>=3.12.0; extra == "dev"
+Requires-Dist: black>=24.1.0; extra == "dev"
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
