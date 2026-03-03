@@ -21,9 +21,11 @@ def test_integration_single_zip_flow(mocker):
 
     # Mock the page source to simulate a GasBuddy result
     mock_driver.page_source = """
-    <div class="StationDisplay-module__stationName">Integration Test Station</div>
-    <div class="StationDisplay-module__address">123 Test St<br>Laurel, MD</div>
-    <span>$ 3.00</span>
+    <div class="GenericStationListItem-module__station">
+        <h3><a href="#">Integration Test Station</a></h3>
+        <div class="StationDisplay-module__address">123 Test St</div>
+        <div class="StationDisplayPrice-module__price"><span>$3.00</span></div>
+    </div>
     """
     mock_driver.title = "GasBuddy"
     

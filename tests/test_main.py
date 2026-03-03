@@ -127,7 +127,6 @@ def test_get_region_choice_custom_interactive(monkeypatch):
 
 def test_scrape_gasbuddy_comprehensive(mocker):
     mock_wait = mocker.patch("gas_scraper.main.wait_for_user_to_confirm_prices")
-    mock_get_cards = mocker.patch("gas_scraper.main.get_station_cards")
     mock_nominatim = mocker.patch("gas_scraper.main.Nominatim")
     mock_init_driver = mocker.patch("gas_scraper.main.init_driver")
     
@@ -137,72 +136,43 @@ def test_scrape_gasbuddy_comprehensive(mocker):
 
     mock_driver = mocker.MagicMock()
     mock_init_driver.return_value = mock_driver
-    mock_driver.page_source = "<html></html>"
+    # Use a mock page source that reflects the new, required structure
+    mock_driver.page_source = """
+        <div class="GenericStationListItem-module__station">
+            <h3><a href="#">Royal Farms</a></h3>
+            <div class="StationDisplay-module__address">123 Main St</div>
+            <div class="StationDisplayPrice-module__price"><span>$3.50</span></div>
+        </div>
+        <div class="GenericStationListItem-module__station">
+            <h3><a href="#">Costco</a></h3>
+            <div class="StationDisplay-module__address">456 Oak Ave</div>
+            <div class="StationDisplayPrice-module__price"><span>$3.30</span></div>
+        </div>
+        <div class="GenericStationListItem-module__station">
+            <h3><a href="#">Shell 1.2 mi</a></h3>
+            <div class="StationDisplay-module__address">789 Pine Pike</div>
+            <div class="StationDisplayPrice-module__price"><span>$3.80</span></div>
+        </div>
+    """
     mock_driver.title = "GasBuddy"
 
     mock_geolocator = mocker.MagicMock()
     mock_nominatim.return_value = mock_geolocator
-
-    def create_card_sel(html):
-        return Selector(text=html).xpath("//div")[0]
-
-    # 1. Normal Station (Royal Farms)
-    c1 = create_card_sel(
-        "<div><h3>Royal Farms</h3><span>123 Main St</span><span>$ 3.50</span></div>"
-    )
-
-    # 2. Blocklisted Station (Costco)
-    c2 = create_card_sel(
-        "<div><h3>Costco</h3><span>456 Oak Ave</span><span>$ 3.30</span></div>"
-    )
-
-    # 3. PriceTrends Card (Should be ignored by parser logic if class is present, or by selector)
-    # Our new get_station_cards selector already filters PriceTrends, but let's test parser robustness too.
-    c3 = create_card_sel(
-        '<div class="PriceTrends"><h3>Trends</h3><span>$ 3.40</span></div>'
-    )
-
-    # 4. Unknown Address Geocoding Fallback
-    c4 = create_card_sel(
-        "<div><h3>Mystery Station</h3><span>No Address Here</span><span>$ 3.60</span></div>"
-    )
-
-    # 5. Invalid/No Price
-    c5 = create_card_sel("<div><h3>No Price Station</h3><span>123 Main St</span></div>")
-
-    # 6. Station name with miles (should be cleaned)
-    c6 = create_card_sel(
-        "<div><h3>Shell 1.2 mi</h3><span>789 Pine Pike</span><span>$ 3.80</span></div>"
-    )
-
-    mock_get_cards.return_value = [c1, c2, c3, c4, c5, c6]
-
-    # Mock Geocoding
-    def mock_geocode(query):
-        if isinstance(query, dict) and query.get("street") == "123 Main St":
-            m = mocker.MagicMock()
-            m.latitude = 40.0
-            m.longitude = -75.0
-            return m
-        return None  # Fallback for others
-
-    mock_geolocator.geocode.side_effect = mock_geocode
+    mock_geolocator.geocode.return_value = None
 
     region_config = {"name": "Test", "zips": ["20723"]}
-
-    # Test with interactive mode (headless=False)
     mocker.patch("time.sleep")
+    
+    # The parser will now correctly find 3 stations from the page_source
+    # Then it will filter out Costco, leaving 2.
     data = gas.scrape_gasbuddy(region_config, headless=False)
 
     assert mock_wait.called
-    # Costco filtered (blocklist), c3 might be filtered by get_station_cards or parser
-    # c5 filtered (no price)
-    # Expected: Royal Farms, Mystery Station, Shell
     stations = [d.station_name for d in data]
     assert "Royal Farms" in stations
-    assert "Mystery Station" in stations
     assert "Shell" in stations
-    assert len(data) == 3
+    assert "Costco" not in stations
+    assert len(data) == 2
 
 
 def test_scrape_gasbuddy_geocoding_error(mocker):
@@ -214,14 +184,15 @@ def test_scrape_gasbuddy_geocoding_error(mocker):
     mocker.patch("gas_scraper.main.WebDriverWait")
     mocker.patch("gas_scraper.main.EC")
 
-    mock_driver.page_source = "<html></html>"
+    # Use the new, correct HTML structure
+    mock_driver.page_source = """
+        <div class="GenericStationListItem-module__station">
+            <h3><a href="#">Shell</a></h3>
+            <div class="StationDisplay-module__address">123 Main St</div>
+            <div class="StationDisplayPrice-module__price"><span>$3.50</span></div>
+        </div>
+    """
     mock_driver.title = "GasBuddy"
-
-    mock_get_cards = mocker.patch("gas_scraper.main.get_station_cards")
-    c1 = Selector(
-        text="<div><h3>Shell</h3><span>123 Main St</span><span>$ 3.50</span></div>"
-    ).xpath("//div")[0]
-    mock_get_cards.return_value = [c1]
 
     mock_nom = mocker.patch("gas_scraper.main.Nominatim")
     mock_geo = mocker.MagicMock()

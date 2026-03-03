@@ -99,52 +99,38 @@ def is_blocked(name, address, blocklist):
 def get_station_cards(html: str) -> List[Selector]:
     """Finds all station card containers in the page using Parsel."""
     sel = Selector(text=html)
-    # Strategy: Find any element that looks like a station name anchor.
-    # This includes the production 'stationName' class AND simpler 'h3' tags used in tests.
-    return sel.xpath(
-        "//*[contains(@class, 'StationDisplay-module__stationName') or (name()='h3' and not(ancestor::div[contains(@class, 'PriceTrends')]))]"
-    )
+    return sel.xpath("//div[contains(@class, 'GenericStationListItem-module__station')]")
 
 
-
-
-def parse_station_card(name_sel: Selector, zip_code, city_name, discounts=DISCOUNTS, blocklist=BLOCKLIST) -> Optional[GasStation]:
+def parse_station_card(card_sel: Selector, zip_code, city_name, discounts=DISCOUNTS, blocklist=BLOCKLIST) -> Optional[GasStation]:
     """Orchestrates data extraction from a Parsel Selector into a GasStation model."""
     try:
-        # We start from the name element. Let's find its container.
-        # Walk up until we find a div containing the price.
-        card_sel = name_sel
-        for _ in range(5):
-            # Robustness: Skip if we are inside a PriceTrends container
-            classes = card_sel.attrib.get("class", "")
-            if "PriceTrends" in classes:
-                return None
-
-            if card_sel.xpath(".//*[contains(text(), '$')]"):
-                break
-            # Move to parent
-            parent_xpath = ".."
-            new_sel = card_sel.xpath(parent_xpath)
-            if not new_sel: break
-            card_sel = new_sel[0]
-
-        # Extract all text from container to find the price
-        all_text = " ".join(card_sel.css("::text").getall())
-        base_price = extract_base_price(all_text)
-        if base_price is None: return None
-
-        # Name is in our initial anchor
-        name_raw = name_sel.xpath(".//text()").get("").strip()
-        if not name_raw: return None
+        # Extract name from h3
+        name_raw = card_sel.xpath(".//h3/a/text()").get()
+        if not name_raw:
+            return None
         name = clean_station_name(name_raw)
 
-        # Address is usually a sibling of the name container or nearby.
-        # Let's search the whole container for an address-like string.
-        full_text_blob = "\n".join([t.strip() for t in card_sel.css("::text").getall() if t.strip()])
-        street_addr = clean_address(full_text_blob)
-
+        # Extract address
+        address_raw = card_sel.xpath(
+            ".//div[contains(@class, 'StationDisplay-module__address')]/text()"
+        ).get()
+        if not address_raw:
+            return None
+        street_addr = clean_address(address_raw)
         full_address = f"{street_addr}, {zip_code}"
 
+        # Extract price
+        price_text = card_sel.xpath(
+            ".//div[contains(@class, 'StationDisplayPrice-module__price')]/span/text()"
+        ).get()
+        if not price_text:
+            return None
+        base_price = extract_base_price(price_text)
+        if base_price is None:
+            return None
+
+        # Run checks and compute final values
         if is_blocked(name, full_address, blocklist):
             return None
 
@@ -175,9 +161,11 @@ def geocode_stations(stations, geolocator, geo_cache: GeocodeCache):
         )
 
         if cache_key in geo_cache.root:
+            logger.debug(f"   Cache hit for: '{cache_key}'")
             coords = geo_cache.root[cache_key]
             s.lat, s.long = coords.lat, coords.lon
         else:
+            logger.info(f"   Geocoding new address: '{cache_key}'")
             coords = _perform_geocode(
                 s.station_name,
                 s.street_name,
