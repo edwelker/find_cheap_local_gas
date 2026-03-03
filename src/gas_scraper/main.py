@@ -147,20 +147,20 @@ def _get_page_with_retry(driver, url):
     """Declarative retry wrapper for driver.get()."""
     driver.get(url)
 
-    # Check for and accept cookie banner
+    # Check for and accept cookie banner (Fast check)
     try:
-        accept_button = WebDriverWait(driver, 10).until(
+        accept_button = WebDriverWait(driver, 3).until(
             EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
         )
         logger.info("🍪 Cookie banner detected, accepting...")
         accept_button.click()
-        # Wait for the banner to disappear
-        WebDriverWait(driver, 10).until_not(
+        # Wait briefly for the banner to disappear
+        WebDriverWait(driver, 5).until_not(
             EC.presence_of_element_located((By.ID, "onetrust-banner-sdk"))
         )
         logger.info("🍪 Cookie banner accepted.")
     except TimeoutException:
-        logger.debug("🍪 No cookie banner found or timed out waiting for it.")
+        logger.debug("🍪 Cookie banner not found (skipping).")
     except Exception as e:
         logger.warning(f"Error handling cookie banner: {e}")
 
