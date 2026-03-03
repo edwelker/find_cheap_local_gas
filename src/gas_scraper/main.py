@@ -139,29 +139,50 @@ def scrape_gasbuddy(region_config, headless=False):
             print(f"\n📍 Navigating to: {city_name} ({zip_code})...")
 
             url = f"https://www.gasbuddy.com/home?search={zip_code}&fuel=1"
-            driver.get(url)
+            
+            # --- RETRY LOGIC FOR PAGE LOAD ---
+            max_retries = 2
+            success = False
+            for attempt in range(max_retries + 1):
+                try:
+                    driver.get(url)
+                    success = True
+                    break
+                except Exception as e:
+                    if attempt < max_retries:
+                        print(f"   ⚠️  Timeout/Error loading {zip_code}. Retrying ({attempt+1}/{max_retries})...")
+                        time.sleep(5)
+                    else:
+                        print(f"   ❌ Failed to load {zip_code} after {max_retries+1} attempts: {e}")
 
-            # --- HUMAN INTERVENTION / WAIT ---
-            if not headless:
-                wait_for_user_to_confirm_prices(zip_code)
-            else:
-                print("   Waiting for page to load (15s)...")
-                time.sleep(15)
+            if not success:
+                continue
 
-            soup = BeautifulSoup(driver.page_source, "html.parser")
+            try:
+                # --- HUMAN INTERVENTION / WAIT ---
+                if not headless:
+                    wait_for_user_to_confirm_prices(zip_code)
+                else:
+                    print("   Waiting for page to load (15s)...")
+                    time.sleep(15)
 
-            # Parse Prices
-            price_regex = re.compile(r"\$\s*([2-5]\.\d{2})")
-            found_prices = soup.find_all(string=price_regex)
+                soup = BeautifulSoup(driver.page_source, "html.parser")
 
-            print(f"   (Found {len(found_prices)} prices)")
+                # Parse Prices
+                price_regex = re.compile(r"\$\s*([2-5]\.\d{2})")
+                found_prices = soup.find_all(string=price_regex)
 
-            for price_node in found_prices:
-                station_data = parse_station_card(
-                    price_node, zip_code, city_name, geolocator, geo_cache
-                )
-                if station_data:
-                    scraped_data.append(station_data)
+                print(f"   (Found {len(found_prices)} prices)")
+
+                for price_node in found_prices:
+                    station_data = parse_station_card(
+                        price_node, zip_code, city_name, geolocator, geo_cache
+                    )
+                    if station_data:
+                        scraped_data.append(station_data)
+            except Exception as e:
+                print(f"   ❌ Error parsing {zip_code}: {e}")
+                continue
 
     finally:
         driver.quit()
@@ -228,12 +249,6 @@ def main(choice, zip_code, headless, target_zip):
     cleaned_name = raw_name.replace("/", "_").replace(" ", "_").replace(":", "")
     safe_name = re.sub(r"[^\w\-_]", "", cleaned_name)
 
-    # Use Eastern Time for consistent naming
-    now = datetime.datetime.now(ZoneInfo("America/New_York"))
-
-    date_str = now.strftime("%Y-%m-%d_%H-%M")
-    filename = os.path.join(history_dir, f"gas_{safe_name}_{date_str}.csv")
-
     data = scrape_gasbuddy(region, headless=is_automated)
 
     if not data:
@@ -243,7 +258,16 @@ def main(choice, zip_code, headless, target_zip):
     df = pd.DataFrame(data)
     df = df.drop_duplicates(subset=["Station", "Address"])
 
-    df.to_csv(filename, index=False)
+    # --- SAVE TO HISTORY (Only for full regions/radius, not single zips) ---
+    is_single_zip = safe_name.startswith("Single_Zip_")
+    filename = None
+
+    if not is_single_zip:
+        # Use Eastern Time for consistent naming
+        now = datetime.datetime.now(ZoneInfo("America/New_York"))
+        date_str = now.strftime("%Y-%m-%d_%H-%M")
+        filename = os.path.join(history_dir, f"gas_{safe_name}_{date_str}.csv")
+        df.to_csv(filename, index=False)
 
     # Save a "latest" version in the root directory for easy access by external sites
     latest_filename = f"latest_{safe_name}.csv"
@@ -252,7 +276,8 @@ def main(choice, zip_code, headless, target_zip):
     print("\n" + "=" * 80)
     print("✅ DATA COLLECTED")
     print("=" * 80)
-    print(f"Historical File: {os.path.abspath(filename)}")
+    if filename:
+        print(f"Historical File: {os.path.abspath(filename)}")
     print(f"Latest Pointer:   {os.path.abspath(latest_filename)}")
 
     display_results(df)

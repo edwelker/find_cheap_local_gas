@@ -45,6 +45,8 @@ def test_integration_single_zip_flow(mock_nominatim, mock_init_driver):
         # Check for generated files
         files = os.listdir(".")
         assert any(f.startswith("latest_Single_Zip_20723") for f in files)
-        assert os.path.exists("history")
-        history_files = os.listdir("history")
-        assert any(f.endswith(".csv") for f in history_files)
+        
+        # history folder might be created, but should NOT contain the single zip file
+        if os.path.exists("history"):
+            history_files = os.listdir("history")
+            assert not any(f.startswith("gas_Single_Zip_20723") for f in history_files)

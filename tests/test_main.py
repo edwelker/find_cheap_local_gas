@@ -265,6 +265,41 @@ def test_scrape_gasbuddy_parsing_error(mock_init_driver):
 
 from click.testing import CliRunner
 
+@patch("gas_scraper.main.init_driver")
+@patch("gas_scraper.main.Nominatim")
+@patch("gas_scraper.main.BeautifulSoup")
+@patch("time.sleep") # Mock sleep to speed up test
+def test_scrape_gasbuddy_fault_tolerance(mock_sleep, mock_bs, mock_nominatim, mock_init_driver):
+    """
+    Ensures that if one zip code fails (e.g. timeout), others can still succeed.
+    """
+    mock_driver = MagicMock()
+    mock_init_driver.return_value = mock_driver
+    
+    # Simulate first zip success, second zip failure (Timeout)
+    def side_effect(url):
+        if "21044" in url:
+            raise Exception("Timeout")
+        return None
+    
+    mock_driver.get.side_effect = side_effect
+    
+    # Mock soup to return a price for the successful zip
+    mock_soup = MagicMock()
+    mock_bs.return_value = mock_soup
+    mock_soup.find_all.return_value = ["$ 3.50"]
+    
+    # Mock parser to return data
+    with patch("gas_scraper.main.parse_station_card") as mock_parse:
+        mock_parse.return_value = {"Station": "S1"}
+        
+        region_config = {"name": "T", "zips": ["20723", "21044"]}
+        data = gas.scrape_gasbuddy(region_config, headless=True)
+        
+    # Should have data from one zip, even though the other failed
+    assert len(data) == 1
+    assert data[0]["Station"] == "S1"
+
 # --- MAIN TESTS ---
 
 @patch("gas_scraper.main.scrape_gasbuddy")
@@ -320,17 +355,31 @@ def test_display_results(capsys):
     assert "📍 VIEW 1: GROUPED BY CITY" in captured.out
     assert "🏆 VIEW 2: CHEAPEST OVERALL" in captured.out
 
+@patch("os.makedirs")
+@patch("os.path.exists")
+@patch("pandas.DataFrame.to_csv")
 @patch("gas_scraper.main.scrape_gasbuddy")
-def test_main_single_zip(mock_scrape):
-    mock_scrape.return_value = []
+def test_main_single_zip(mock_scrape, mock_to_csv, mock_exists, mock_makedirs):
+    # Mock data so that df processing continues
+    mock_scrape.return_value = [{
+        "Station": "S1", "Address": "A1", "City": "C1",
+        "Net": 3.0, "Base": 3.1, "Discount": "-"
+    }]
+    mock_exists.return_value = True
+    
     runner = CliRunner()
     result = runner.invoke(gas.main, ["--zip", "20723", "--headless"])
     
     assert result.exit_code == 0
-    # Verify that scrape_gasbuddy was called with a config containing only the specified zip
+    # Verify that scrape_gasbuddy was called correctly
     args, kwargs = mock_scrape.call_args
     assert args[0]["zips"] == ["20723"]
-    assert args[0]["name"] == "Single_Zip_20723"
+    
+    # Should only be called ONCE (for the latest pointer), NOT for history
+    assert mock_to_csv.call_count == 1
+    # Check the filename of the single call
+    csv_args, _ = mock_to_csv.call_args
+    assert "latest_Single_Zip_20723.csv" in csv_args[0]
 
 # --- IMPORT TESTS (TRICKY) ---
 
