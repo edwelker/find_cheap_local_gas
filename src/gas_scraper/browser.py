@@ -1,12 +1,16 @@
 import undetected_chromedriver as uc
 from selenium_stealth import stealth
+from loguru import logger
+
 
 def init_driver(headless=False):
     """
     Initializes an undetected Chrome webdriver to bypass advanced bot detection.
     """
-    print(f"\n🚀 Launching Browser ({'Headless' if headless else 'Windowed'} mode)...")
-    
+    logger.info(
+        f"\n🚀 Launching Browser ({'Headless' if headless else 'Windowed'} mode)..."
+    )
+
     # RELIABILITY: Using undetected_chromedriver (uc) instead of standard Selenium
     # uc patches the chrome binary to remove 'cdc_' and other bot fingerprints.
     options = uc.ChromeOptions()
@@ -36,10 +40,7 @@ def init_driver(headless=False):
     # Initialize the patched driver
     # PERFORMANCE: Specify version to avoid mismatch issues
     driver = uc.Chrome(
-        options=options, 
-        headless=headless, 
-        use_subprocess=True,
-        version_main=145
+        options=options, headless=headless, use_subprocess=True, version_main=145
     )
 
     # RELIABILITY: Secondary layer using selenium-stealth to spoof hardware/browser traits

@@ -11,26 +11,45 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .browser import init_driver
-from .parser import parse_station_card, load_geo_cache, save_geo_cache, geocode_stations
-from .user_interface import (
-    display_region_menu, 
-    get_user_choice, 
-    get_user_zip, 
-    wait_for_user_to_confirm_prices, 
-    display_results
+from .parser import (
+    get_station_cards,
+    parse_station_card,
+    load_geo_cache,
+    save_geo_cache,
+    geocode_stations,
 )
-from bs4 import BeautifulSoup
+from .user_interface import (
+    display_region_menu,
+    get_user_choice,
+    get_user_zip,
+    wait_for_user_to_confirm_prices,
+    display_results,
+)
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
+from selenium.common.exceptions import TimeoutException # New import for cookie banner handling
+from tenacity import retry, stop_after_attempt, wait_fixed
+from loguru import logger
 
 # --- LIBRARY CHECK for Radius Search ---
 try:
     from uszipcode import SearchEngine
+
     HAS_RADIUS_LIB = True
 except ImportError:
     HAS_RADIUS_LIB = False
 
 from .config import REGION_DATA, ZIP_MAP, BLOCKLIST, DISCOUNTS
+
+
+def setup_logging():
+    """Configures Loguru to handle both clean console output and detailed file logging."""
+    logger.remove()
+    # User Console: Clean info
+    logger.add(sys.stdout, format="<level>{message}</level>", level="INFO")
+    # Developer File: Detailed debug
+    logger.add("scraper.log", rotation="1 MB", level="DEBUG")
+
 
 # --- 2. CONFIGURATION: RADIUS SEARCH ---
 def calculate_radius_zips(center_zip, miles=15):
@@ -39,19 +58,19 @@ def calculate_radius_zips(center_zip, miles=15):
     Returns the top 5 most populated zips to avoid scanning 50+ locations.
     """
     if not HAS_RADIUS_LIB:
-        print("\n⚠️  'uszipcode' library not found.")
-        print("   Running just the single zip code.")
-        print("   To enable radius calculation, run: pip install uszipcode")
+        logger.warning("⚠️  'uszipcode' library not found.")
+        logger.info("   Running just the single zip code.")
+        logger.info("   To enable radius calculation, run: pip install uszipcode")
         return [center_zip]
 
-    print(f"\n📐 Calculating zips within {miles} miles of {center_zip}...")
+    logger.info(f"📐 Calculating zips within {miles} miles of {center_zip}...")
     search = SearchEngine()
 
     # 1. Get neighbors
     results = search.by_zipcode(center_zip).radius(radius=miles, returns=50)
 
     if not results:
-        print("   No results found for that zip. Checking just the center.")
+        logger.warning("   No results found for that zip. Checking just the center.")
         return [center_zip]
 
     # 2. Convert to list of dicts for sorting
@@ -82,7 +101,7 @@ def calculate_radius_zips(center_zip, miles=15):
             seen.add(n["zip"])
             count += 1
 
-    print(f"   Targeting {len(top_zips)} key zip codes: {', '.join(top_zips)}")
+    logger.info(f"   Targeting {len(top_zips)} key zip codes: {', '.join(top_zips)}")
     return top_zips
 
 
@@ -111,39 +130,57 @@ def get_region_choice(cli_choice=None, cli_zip=None):
     }
 
 
+def _log_retry(retry_state):
+    """Callback to print a message before retrying."""
+    logger.warning(
+        f"   ⚠️  Error loading page. Retrying ({retry_state.attempt_number}/2)..."
+    )
+
+
+@retry(
+    stop=stop_after_attempt(3), 
+    wait=wait_fixed(5), 
+    before_sleep=_log_retry,
+    reraise=True
+)
+def _get_page_with_retry(driver, url):
+    """Declarative retry wrapper for driver.get()."""
+    driver.get(url)
+
+    # Check for and accept cookie banner
+    try:
+        accept_button = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
+        )
+        logger.info("🍪 Cookie banner detected, accepting...")
+        accept_button.click()
+        # Wait for the banner to disappear
+        WebDriverWait(driver, 10).until_not(
+            EC.presence_of_element_located((By.ID, "onetrust-banner-sdk"))
+        )
+        logger.info("🍪 Cookie banner accepted.")
+    except TimeoutException:
+        logger.debug("🍪 No cookie banner found or timed out waiting for it.")
+    except Exception as e:
+        logger.warning(f"Error handling cookie banner: {e}")
+
+    title = driver.title
+    if "GasBuddy" not in title:
+        logger.warning(f"   ⚠️  Unexpected page title: '{title}'. Possible block.")
+        logger.debug(f"Source Snippet: {driver.page_source[:500].replace('\n', ' ')}")
+
+
 def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
     """
     Handles the actual navigation, retries, and parsing for a single zip code.
-    Returns a list of station data dicts.
+    Returns a list of GasStation objects.
     """
     url = f"https://www.gasbuddy.com/home?search={zip_code}&fuel=1"
-    
-    # --- RETRY LOGIC FOR PAGE LOAD ---
-    max_retries = 2
-    success = False
-    for attempt in range(max_retries + 1):
-        try:
-            driver.get(url)
-            title = driver.title
-            if "GasBuddy" not in title:
-                print(f"   ⚠️  Unexpected page title: '{title}'. Possible block.")
-                try:
-                    snippet = driver.page_source[:500].replace("\n", " ")
-                    print(f"      Source Snippet: {snippet}...")
-                except:
-                    pass
-            
-            success = True
-            break
-        except Exception as e:
-            if attempt < max_retries:
-                print(f"   ⚠️  {type(e).__name__} loading {zip_code}. Retrying ({attempt+1}/{max_retries})...")
-                time.sleep(5)
-            else:
-                print(f"   ❌ Failed to load {zip_code} after {max_retries+1} attempts: {e}")
-                return []
 
-    if not success:
+    try:
+        _get_page_with_retry(driver, url)
+    except Exception as e:
+        logger.error(f"   ❌ Failed to load {zip_code} after 3 attempts: {e}")
         return []
 
     zip_scraped_data = []
@@ -152,29 +189,36 @@ def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
         if not headless:
             wait_for_user_to_confirm_prices(zip_code)
         else:
-            print("   Waiting for prices to load...")
+            logger.info("   Waiting for prices to load...")
             try:
                 WebDriverWait(driver, 20).until(
-                    EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '$')]"))
+                    EC.presence_of_element_located((By.XPATH, "//span[contains(text(), '$')]"))
                 )
             except Exception:
-                print("   ⚠️  Timed out waiting for prices. Attempting to parse anyway...")
+                logger.warning(
+                    "   ⚠️  Timed out waiting for prices. Attempting to parse anyway..."
+                )
 
-        soup = BeautifulSoup(driver.page_source, "html.parser")
+        # Find all station cards using Parsel
+        page_source = driver.page_source
+        cards = get_station_cards(page_source)
+        logger.info(f"   (Found {len(cards)} potential stations)")
 
-        # Parse Prices
-        price_regex = re.compile(r"\$\s*([2-5]\.\d{2})")
-        found_prices = soup.find_all(string=price_regex)
+        if len(cards) == 0:
+            iframes = driver.find_elements(By.TAG_NAME, "iframe")
+            logger.debug(f"   [DEBUG] Number of iframes: {len(iframes)}")
+            exists = "StationDisplay-module__container" in page_source
+            logger.debug(f"   [DEBUG] Container class exists in source: {exists}")
 
-        print(f"   (Found {len(found_prices)} prices)")
 
-        for price_node in found_prices:
-            station_data = parse_station_card(price_node, zip_code, city_name)
+
+        for card_sel in cards:
+            station_data = parse_station_card(card_sel, zip_code, city_name)
             if station_data:
                 zip_scraped_data.append(station_data)
-                
+
     except Exception as e:
-        print(f"   ❌ Error parsing {zip_code}: {e}")
+        logger.error(f"   ❌ Error parsing {zip_code}: {e}")
 
     return zip_scraped_data
 
@@ -189,27 +233,29 @@ def scrape_gasbuddy(region_config, headless=False):
 
     try:
         zips = list(dict.fromkeys(region_config["zips"]))
-        
+
         for zip_code in zips:
             city_name = ZIP_MAP.get(zip_code, zip_code)
-            print(f"\n📍 Navigating to: {city_name} ({zip_code})...")
+            logger.info(f"\n📍 Navigating to: {city_name} ({zip_code})...")
 
             if zips.index(zip_code) > 0:
                 delay = random.uniform(3.0, 7.0)
-                print(f"   (Waiting {delay:.1f}s to look human...)")
+                logger.info(f"   (Waiting {delay:.1f}s to look human...)")
                 time.sleep(delay)
 
-            zip_data = fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=headless)
+            zip_data = fetch_gas_prices_for_zip(
+                driver, zip_code, city_name, headless=headless
+            )
             scraped_data.extend(zip_data)
 
     finally:
         driver.quit()
 
-    unique_stations = { (s.station_name, s.address): s for s in scraped_data }.values()
-    
+    unique_stations = {(s.station_name, s.address): s for s in scraped_data}.values()
+
     initial_cache_size = len(geo_cache.root)
     final_data = geocode_stations(list(unique_stations), geolocator, geo_cache)
-    
+
     if len(geo_cache.root) > initial_cache_size:
         save_geo_cache(geo_cache)
 
@@ -223,15 +269,21 @@ from rich.panel import Panel
 
 console = Console()
 
+
 @click.command()
 @click.argument("choice", required=False)
 @click.argument("zip_code", required=False)
 @click.option("--headless", is_flag=True, help="Run browser in headless mode.")
-@click.option("--zip", "target_zip", help="Search a single specific zip code only (overrides CHOICE).")
+@click.option(
+    "--zip",
+    "target_zip",
+    help="Search a single specific zip code only (overrides CHOICE).",
+)
 def main(choice, zip_code, headless, target_zip):
     """
     Gas Price Scraper CLI.
     """
+    setup_logging()
     is_automated = (os.environ.get("GITHUB_ACTIONS") == "true") or headless
 
     if target_zip:
@@ -250,12 +302,12 @@ def main(choice, zip_code, headless, target_zip):
     data = scrape_gasbuddy(region, headless=is_automated)
 
     if not data:
-        print("❌ No data found.")
+        logger.error("❌ No data found.")
         return
 
     # PERFORMANCE: Deduplicate and convert to DataFrame using Pydantic aliases (for UI/CSV)
     # data is a list of GasStation objects
-    unique_data = { (s.station_name, s.address): s for s in data }.values()
+    unique_data = {(s.station_name, s.address): s for s in data}.values()
     df = pd.DataFrame([s.model_dump(by_alias=True) for s in unique_data])
 
     is_single_zip = safe_name.startswith("Single_Zip_")
@@ -272,9 +324,16 @@ def main(choice, zip_code, headless, target_zip):
 
     info_text = f"Historical File: {os.path.abspath(filename)}\n" if filename else ""
     info_text += f"Latest Pointer:   {os.path.abspath(latest_filename)}"
-    
+
     console.print()
-    console.print(Panel(info_text, title="[bold green]✅ DATA COLLECTED[/]", border_style="green", expand=False))
+    console.print(
+        Panel(
+            info_text,
+            title="[bold green]✅ DATA COLLECTED[/]",
+            border_style="green",
+            expand=False,
+        )
+    )
 
     display_results(df)
 

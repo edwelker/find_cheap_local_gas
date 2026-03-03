@@ -15,13 +15,15 @@ def test_integration_single_zip_flow(mocker):
     mock_driver = mocker.MagicMock()
     mock_init_driver.return_value = mock_driver
     
+    # PERFORMANCE: Mock WebDriverWait to avoid 20s timeouts in tests
+    mocker.patch("gas_scraper.main.WebDriverWait")
+    mocker.patch("gas_scraper.main.EC")
+
     # Mock the page source to simulate a GasBuddy result
     mock_driver.page_source = """
-    <div class="StationCard">
-        <h3>Integration Test Station</h3>
-        <span>123 Test St</span>
-        <div class="Price"><span>$ 3.00</span></div>
-    </div>
+    <div class="StationDisplay-module__stationName">Integration Test Station</div>
+    <div class="StationDisplay-module__address">123 Test St<br>Laurel, MD</div>
+    <span>$ 3.00</span>
     """
     mock_driver.title = "GasBuddy"
     

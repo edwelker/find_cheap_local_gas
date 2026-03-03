@@ -2,10 +2,14 @@ import re
 import time
 import json
 import os
+from typing import List, Optional
+from parsel import Selector
+from loguru import logger
 from .config import BLOCKLIST, DISCOUNTS
 from .models import GasStation, GeocodeCache, Coordinates
 
 CACHE_FILE = "geocache.json"
+
 
 def load_geo_cache() -> GeocodeCache:
     """PERFORMANCE: Load previous geocoding results as a Pydantic model."""
@@ -15,8 +19,9 @@ def load_geo_cache() -> GeocodeCache:
                 data = json.load(f)
                 return GeocodeCache.model_validate(data)
         except Exception as e:
-            print(f"⚠️  Error loading geocache: {e}")
+            logger.warning(f"⚠️  Error loading geocache: {e}")
     return GeocodeCache(root={})
+
 
 def save_geo_cache(cache: GeocodeCache):
     """PERFORMANCE: Save results to disk using Pydantic serialization."""
@@ -24,49 +29,58 @@ def save_geo_cache(cache: GeocodeCache):
         with open(CACHE_FILE, "w") as f:
             json.dump(cache.model_dump(), f, indent=2)
     except Exception as e:
-        print(f"⚠️  Error saving geocache: {e}")
+        logger.error(f"⚠️  Error saving geocache: {e}")
+
 
 def clean_address(full_text):
     """Parses a blob of text to find the street address line."""
     full_text = re.sub(r"\bPke\b", "Pike", full_text, flags=re.IGNORECASE)
     lines = re.split(r"\s{2,}|\n", full_text)
-    bad_keywords = ["Regular", "Premium", "Diesel", "Midgrade", "UNL88", "Cash", "Credit", "Payment", "Hours", "ago"]
+    bad_keywords = [
+        "Regular",
+        "Premium",
+        "Diesel",
+        "Midgrade",
+        "UNL88",
+        "Cash",
+        "Credit",
+        "Payment",
+        "Hours",
+        "ago",
+    ]
     addr_regex = re.compile(r"^\d{1,5}\s+[A-Za-z0-9\.\s\-\,']+", re.IGNORECASE)
 
     for line in lines:
         line = line.strip()
-        if any(bad in line for bad in bad_keywords): continue
+        if any(bad in line for bad in bad_keywords):
+            continue
         match = addr_regex.search(line)
-        if match: return match.group(0).strip()
+        if match:
+            return match.group(0).strip()
     return "Unknown Address"
+
 
 def get_state_hint(zip_code):
     """Returns state name based on zip code prefix."""
-    if zip_code.startswith(("20", "21")): return "Maryland"
-    if zip_code.startswith("11"): return "New York"
-    if zip_code.startswith("01"): return "Massachusetts"
+    if zip_code.startswith(("20", "21")):
+        return "Maryland"
+    if zip_code.startswith("11"):
+        return "New York"
+    if zip_code.startswith("01"):
+        return "Massachusetts"
     return None
+
 
 def extract_base_price(price_text):
     """Pure function: Extracts float price from string."""
     match = re.search(r"\$\s*([2-5]\.\d{2})", price_text)
     return float(match.group(1)) if match else None
 
-def find_station_card(price_node):
-    """Helper: Walks up from price node to find the station card container."""
-    card = price_node.parent
-    for _ in range(8):
-        if not card: break
-        if card.name == "div":
-            classes = card.get("class", [])
-            if classes and any("PriceTrends" in c for c in classes): return None
-            if card.find("h3"): return card
-        card = card.parent
-    return None
 
 def clean_station_name(raw_name):
     """Pure function: Removes distance markers from station name."""
     return re.sub(r"\d+(\.\d+)?\s*mi.*", "", raw_name).strip()
+
 
 def get_discount_info(name, discounts):
     """Pure function: Returns (amount, brand)."""
@@ -75,29 +89,64 @@ def get_discount_info(name, discounts):
             return float(amount), brand
     return 0.0, "-"
 
+
 def is_blocked(name, address, blocklist):
     """Pure function: Checks blocklist."""
     n, a = name.lower(), address.lower()
     return any(b.lower() in n or b.lower() in a for b in blocklist)
 
-def parse_station_card(price_node, zip_code, city_name, discounts=DISCOUNTS, blocklist=BLOCKLIST):
-    """Orchestrates data extraction into a GasStation model."""
+
+def get_station_cards(html: str) -> List[Selector]:
+    """Finds all station card containers in the page using Parsel."""
+    sel = Selector(text=html)
+    # Strategy: Find any element that looks like a station name anchor.
+    # This includes the production 'stationName' class AND simpler 'h3' tags used in tests.
+    return sel.xpath(
+        "//*[contains(@class, 'StationDisplay-module__stationName') or (name()='h3' and not(ancestor::div[contains(@class, 'PriceTrends')]))]"
+    )
+
+
+
+
+def parse_station_card(name_sel: Selector, zip_code, city_name, discounts=DISCOUNTS, blocklist=BLOCKLIST) -> Optional[GasStation]:
+    """Orchestrates data extraction from a Parsel Selector into a GasStation model."""
     try:
-        base_price = extract_base_price(price_node.get_text())
+        # We start from the name element. Let's find its container.
+        # Walk up until we find a div containing the price.
+        card_sel = name_sel
+        for _ in range(5):
+            # Robustness: Skip if we are inside a PriceTrends container
+            classes = card_sel.attrib.get("class", "")
+            if "PriceTrends" in classes:
+                return None
+
+            if card_sel.xpath(".//*[contains(text(), '$')]"):
+                break
+            # Move to parent
+            parent_xpath = ".."
+            new_sel = card_sel.xpath(parent_xpath)
+            if not new_sel: break
+            card_sel = new_sel[0]
+
+        # Extract all text from container to find the price
+        all_text = " ".join(card_sel.css("::text").getall())
+        base_price = extract_base_price(all_text)
         if base_price is None: return None
 
-        card = find_station_card(price_node)
-        if not card: return None
+        # Name is in our initial anchor
+        name_raw = name_sel.xpath(".//text()").get("").strip()
+        if not name_raw: return None
+        name = clean_station_name(name_raw)
 
-        name_tag = card.find("h3")
-        if not name_tag: return None
-        name = clean_station_name(name_tag.get_text(strip=True))
+        # Address is usually a sibling of the name container or nearby.
+        # Let's search the whole container for an address-like string.
+        full_text_blob = "\n".join([t.strip() for t in card_sel.css("::text").getall() if t.strip()])
+        street_addr = clean_address(full_text_blob)
 
-        full_text = card.get_text("\n", strip=True)
-        street_addr = clean_address(full_text)
         full_address = f"{street_addr}, {zip_code}"
 
-        if is_blocked(name, full_address, blocklist): return None
+        if is_blocked(name, full_address, blocklist):
+            return None
 
         discount_amount, discount_rule = get_discount_info(name, discounts)
 
@@ -109,27 +158,42 @@ def parse_station_card(price_node, zip_code, city_name, discounts=DISCOUNTS, blo
             Base=base_price,
             Discount=discount_rule,
             discount_amount=discount_amount,
-            Street=street_addr
+            Street=street_addr,
         )
     except Exception:
         return None
 
+
 def geocode_stations(stations, geolocator, geo_cache: GeocodeCache):
     """Batch geocodes GasStation objects using the structured cache model."""
-    print(f"\n🌍 Geocoding {len(stations)} unique stations...")
+    logger.info(f"\n🌍 Geocoding {len(stations)} unique stations...")
     for s in stations:
-        cache_key = f"{s.street_name}, {s.zip_code}" if s.street_name != "Unknown Address" else f"{s.station_name}, {s.zip_code}"
-        
+        cache_key = (
+            f"{s.street_name}, {s.zip_code}"
+            if s.street_name != "Unknown Address"
+            else f"{s.station_name}, {s.zip_code}"
+        )
+
         if cache_key in geo_cache.root:
             coords = geo_cache.root[cache_key]
             s.lat, s.long = coords.lat, coords.lon
         else:
-            coords = _perform_geocode(s.station_name, s.street_name, s.zip_code, geolocator, geo_cache, cache_key)
+            coords = _perform_geocode(
+                s.station_name,
+                s.street_name,
+                s.zip_code,
+                geolocator,
+                geo_cache,
+                cache_key,
+            )
             if coords:
                 s.lat, s.long = coords.lat, coords.lon
     return stations
 
-def _perform_geocode(name, street_addr, zip_code, geolocator, geo_cache: GeocodeCache, cache_key) -> Optional[Coordinates]:
+
+def _perform_geocode(
+    name, street_addr, zip_code, geolocator, geo_cache: GeocodeCache, cache_key
+) -> Optional[Coordinates]:
     """Helper for Nominatim API with rate limiting, returns Coordinates model."""
     try:
         time.sleep(1.1)
@@ -138,12 +202,17 @@ def _perform_geocode(name, street_addr, zip_code, geolocator, geo_cache: Geocode
 
         if street_addr != "Unknown Address":
             query = {"street": street_addr, "postalcode": zip_code, "country": "USA"}
-            if state_hint: query["state"] = state_hint
+            if state_hint:
+                query["state"] = state_hint
             location = geolocator.geocode(query)
 
         if not location:
-            parts = [street_addr if street_addr != "Unknown Address" else name, zip_code]
-            if state_hint: parts.append(state_hint)
+            parts = [
+                street_addr if street_addr != "Unknown Address" else name,
+                zip_code,
+            ]
+            if state_hint:
+                parts.append(state_hint)
             parts.append("USA")
             location = geolocator.geocode(", ".join(parts))
 
@@ -151,11 +220,11 @@ def _perform_geocode(name, street_addr, zip_code, geolocator, geo_cache: Geocode
             coords = Coordinates(lat=location.latitude, lon=location.longitude)
             geo_cache.root[cache_key] = coords
             return coords
-        
+
         coords = Coordinates(lat=None, lon=None)
         geo_cache.root[cache_key] = coords
         return coords
 
     except Exception as e:
-        print(f"   ⚠️ Geocoding error for '{cache_key}': {e}")
+        logger.error(f"   ⚠️ Geocoding error for '{cache_key}': {e}")
         return None
