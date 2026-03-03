@@ -4,6 +4,7 @@ import re
 import os
 import datetime
 import json
+import random
 from zoneinfo import ZoneInfo
 import pandas as pd
 from selenium.webdriver.common.by import By
@@ -147,6 +148,12 @@ def scrape_gasbuddy(region_config, headless=False):
             city_name = ZIP_MAP.get(zip_code, zip_code)
             print(f"\n📍 Navigating to: {city_name} ({zip_code})...")
 
+            # PERFORMANCE/RELIABILITY: Humanizing delay between zips to avoid Cloudflare/Bot detection
+            if zips.index(zip_code) > 0:
+                delay = random.uniform(3.0, 7.0)
+                print(f"   (Waiting {delay:.1f}s to look human...)")
+                time.sleep(delay)
+
             url = f"https://www.gasbuddy.com/home?search={zip_code}&fuel=1"
             
             # --- RETRY LOGIC FOR PAGE LOAD ---
@@ -159,6 +166,12 @@ def scrape_gasbuddy(region_config, headless=False):
                     title = driver.title
                     if "GasBuddy" not in title:
                         print(f"   ⚠️  Unexpected page title: '{title}'. Possible block.")
+                        # DIAGNOSTIC: Print snippet of body to see block type
+                        try:
+                            snippet = driver.page_source[:500].replace("\n", " ")
+                            print(f"      Source Snippet: {snippet}...")
+                        except:
+                            pass
                     
                     success = True
                     break
