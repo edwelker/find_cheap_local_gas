@@ -774,5 +774,53 @@
   "69 Main St Westfield, MA, 01085": {
     "lat": 42.1202361,
     "lon": -72.7456415
+  },
+  "1212 E Main St Riverhead, NY, 11901": {
+    "lat": 40.9308412,
+    "lon": -72.6498192
+  },
+  "112 Montauk Hwy Westhampton Beach, NY, 11978": {
+    "lat": 40.8222302,
+    "lon": -72.6464357
+  },
+  "2000 CR-39 Southampton, NY, 11968": {
+    "lat": 40.8949126,
+    "lon": -72.4661039
+  },
+  "13 CR-39 Southampton, NY, 11968": {
+    "lat": 40.8966904,
+    "lon": -72.3990073
+  },
+  "612 Carew St Springfield, MA, 01104": {
+    "lat": 42.1225238,
+    "lon": -72.5887328
+  },
+  "163 Meadow St Westfield, MA, 01085": {
+    "lat": 42.1206555,
+    "lon": -72.7397845
+  },
+  "27 Southwick Rd Westfield, MA, 01085": {
+    "lat": 42.1003913,
+    "lon": -72.7636975
+  },
+  "37 Montcalm St Chicopee, MA, 01020": {
+    "lat": 42.2021333,
+    "lon": -72.5807318
+  },
+  "54 Easthampton Rd Northampton, MA, 01060": {
+    "lat": 42.3052292,
+    "lon": -72.6491003
+  },
+  "317 Federal St Greenfield, MA, 01301": {
+    "lat": 42.6013026,
+    "lon": -72.593169
+  },
+  "416 Federal St Greenfield, MA, 01301": {
+    "lat": 42.6060538,
+    "lon": -72.5895143
+  },
+  "269 Mohawk Tr Shelburne Falls, MA, 01370": {
+    "lat": null,
+    "lon": null
   }
 }
