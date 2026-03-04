@@ -822,5 +822,33 @@
   "269 Mohawk Tr Shelburne Falls, MA, 01370": {
     "lat": null,
     "lon": null
+  },
+  "7910 Shipley Homestead Dr Hanover, MD, 21076": {
+    "lat": 39.1325985,
+    "lon": -76.7399104
+  },
+  "Speedway, 11975": {
+    "lat": 40.9487031,
+    "lon": -72.2446628
+  },
+  "278 Elm St Westfield, MA, 01085": {
+    "lat": 42.1256723,
+    "lon": -72.7476243
+  },
+  "1400 Russel Rd Westfield, MA, 01085": {
+    "lat": null,
+    "lon": null
+  },
+  "188 N King St Northampton, MA, 01060": {
+    "lat": 42.3287267,
+    "lon": -72.6335676
+  },
+  "389 College St Amherst, MA, 01002": {
+    "lat": 42.373216,
+    "lon": -72.5193521
+  },
+  "245 Federal St Greenfield, MA, 01301": {
+    "lat": 42.5980487,
+    "lon": -72.595861
   }
 }
