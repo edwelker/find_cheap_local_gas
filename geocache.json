@@ -878,5 +878,13 @@
   "1423 Memorial Dr Chicopee, MA, 01020": {
     "lat": 42.1960997,
     "lon": -72.5739353
+  },
+  "144 Hampton St Sag Harbor, NY, 11963": {
+    "lat": 40.9957393,
+    "lon": -72.2839455
+  },
+  "23 Three Mile Harbor Rd East Hampton, NY, 11937": {
+    "lat": 40.97458,
+    "lon": -72.1821194
   }
 }
