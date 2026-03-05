@@ -850,5 +850,33 @@
   "245 Federal St Greenfield, MA, 01301": {
     "lat": 42.5980487,
     "lon": -72.595861
+  },
+  "64 Frederick Rd Ellicott City, MD, 21043": {
+    "lat": 39.2695835,
+    "lon": -76.8059274
+  },
+  "7898 Ridge Rd Hanover, MD, 21076": {
+    "lat": 39.1309768,
+    "lon": -76.7382571
+  },
+  "8686 Washington Blvd Savage, MD, 20794": {
+    "lat": 39.1457337,
+    "lon": -76.8094061
+  },
+  "1655 Boston Rd Springfield, MA, 01104": {
+    "lat": 42.1245925,
+    "lon": -72.5382595
+  },
+  "549 Page Blvd Springfield, MA, 01104": {
+    "lat": 42.1395392,
+    "lon": -72.5601149
+  },
+  "2668 Westfield St West Springfield, MA, 01089": {
+    "lat": 42.1063429,
+    "lon": -72.6527704
+  },
+  "1423 Memorial Dr Chicopee, MA, 01020": {
+    "lat": 42.1960997,
+    "lon": -72.5739353
   }
 }
