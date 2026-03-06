@@ -914,5 +914,397 @@
   "225 Whiting Farms Rd Holyoke, MA, 01040": {
     "lat": 42.1748898,
     "lon": -72.6408246
+  },
+  "301 Flanders Rd Riverhead, NY, 11901": {
+    "lat": 40.9120984,
+    "lon": -72.6478696
+  },
+  "10781 Birmingham Way Woodstock, MD, 21163": {
+    "lat": 39.3080872,
+    "lon": -76.8892762
+  },
+  "2101 Roxbury Mills Rd Cooksville, MD, 21723": {
+    "lat": 39.3131592,
+    "lon": -77.0197157
+  },
+  "3901 Ten Oaks Rd Glenelg, MD, 21737": {
+    "lat": 39.2645324,
+    "lon": -76.9858863
+  },
+  "1400 Liberty Rd Eldersburg, MD, 21784": {
+    "lat": 39.402213,
+    "lon": -76.944181
+  },
+  "1631 W Liberty Rd Winfield, MD, 21784": {
+    "lat": 39.4490219,
+    "lon": -77.0613236
+  },
+  "6700 Sykesville Rd, 21784": {
+    "lat": 39.3910806,
+    "lon": -76.9619588
+  },
+  "6401 Ridge Rd Eldersburg, MD, 21784": {
+    "lat": 39.39371,
+    "lon": -76.93236
+  },
+  "1500 Liberty Rd, 21784": {
+    "lat": 39.400829,
+    "lon": -76.939151
+  },
+  "6323 Sykesville Rd Sykesville, MD, 21784": {
+    "lat": 39.399826,
+    "lon": -76.9516719
+  },
+  "1318 Londontown Blvd Eldersburg, MD, 21784": {
+    "lat": 39.4083322,
+    "lon": -76.9490677
+  },
+  "1305 Liberty Rd, 21784": {
+    "lat": 39.4034022,
+    "lon": -76.9503893
+  },
+  "1310 Liberty Rd Eldersburg, MD, 21784": {
+    "lat": 39.4038381,
+    "lon": -76.9503802
+  },
+  "1261 Liberty Rd Eldersburg, MD, 21784": {
+    "lat": 39.4045373,
+    "lon": -76.9517427
+  },
+  "887 Sandosky Rd Sykesville, MD, 21784": {
+    "lat": 39.366138,
+    "lon": -76.9651372
+  },
+  "10 Liberty Rd Eldersburg, MD, 21784": {
+    "lat": 39.4079843,
+    "lon": -76.9666105
+  },
+  "4 E Ridgville Blvd Mount Airy, MD, 21771": {
+    "lat": null,
+    "lon": null
+  },
+  "109 Ridgeside Ct Mount Airy, MD, 21771": {
+    "lat": 39.363781,
+    "lon": -77.1645562
+  },
+  "1610 RIDGESIDE DR Mount Airy, MD, 21771": {
+    "lat": 39.3635033,
+    "lon": -77.1631603
+  },
+  "1001 Twin Arch Rd Mount Airy, MD, 21771": {
+    "lat": 39.3680732,
+    "lon": -77.1445195
+  },
+  "502 E Ridgeville Blvd Mount Airy, MD, 21771": {
+    "lat": 39.3630121,
+    "lon": -77.1601868
+  },
+  "2605 Liberty Rd Taylorsville, MD, 21771": {
+    "lat": 39.4581114,
+    "lon": -77.088031
+  },
+  "4400 Mill Bottom Rd Mount Airy, MD, 21771": {
+    "lat": 39.3539588,
+    "lon": -77.1714016
+  },
+  "649 Lakeview Dr Mount Airy, MD, 21771": {
+    "lat": null,
+    "lon": null
+  },
+  "11719 Old National Pike, 21774": {
+    "lat": 39.3937185,
+    "lon": -77.3315807
+  },
+  "11780 Old National Pike New Market, MD, 21774": {
+    "lat": 39.3842372,
+    "lon": -77.2563552
+  },
+  "3737 Lawson Rd Ijamsville, MD, 21770": {
+    "lat": null,
+    "lon": null
+  },
+  "11791 Fingerboard Rd Monrovia, MD, 21770": {
+    "lat": null,
+    "lon": null
+  },
+  "10122 Old National Pike Ijamsville, MD, 21754": {
+    "lat": 39.3919073,
+    "lon": -77.3120405
+  },
+  "10210 Old National Pike New Market, MD, 21754": {
+    "lat": 39.3857621,
+    "lon": -77.2919191
+  },
+  "3359 Urbana Pike Urbana, MD, 21754": {
+    "lat": 39.3234078,
+    "lon": -77.3408281
+  },
+  "5943 Oakcross Ln Ijamsville, MD, 21754": {
+    "lat": 39.3951765,
+    "lon": -77.3233888
+  },
+  "9253 Fingerboard Rd Ijamsville, MD, 21754": {
+    "lat": 39.3273682,
+    "lon": -77.3428783
+  },
+  "1904 Urbana Pike Clarksburg, MD, 21754": {
+    "lat": null,
+    "lon": null
+  },
+  "9871 Main St Damascus, MD, 20872": {
+    "lat": 39.288635,
+    "lon": -77.2033016
+  },
+  "26241 Ridge Rd Damascus, MD, 20872": {
+    "lat": 39.2879496,
+    "lon": -77.2062264
+  },
+  "26300 Ridge Rd Damascus, MD, 20872": {
+    "lat": 39.2887375,
+    "lon": -77.2048713
+  },
+  "26234 Ridge Rd Damascus, MD, 20872": {
+    "lat": 39.2879879,
+    "lon": -77.207233
+  },
+  "9824 Liberty Rd Frederick, MD, 21701": {
+    "lat": 39.4541047,
+    "lon": -77.3228424
+  },
+  "242 S Jefferson St Frederick, MD, 21701": {
+    "lat": 39.4096067,
+    "lon": -77.4244053
+  },
+  "6067 Spring Ridge Pkwy Frederick, MD, 21701": {
+    "lat": 39.403557,
+    "lon": -77.3478271
+  },
+  "503 W 7th St Frederick, MD, 21701": {
+    "lat": 39.4242376,
+    "lon": -77.4150016
+  },
+  "400 S Jefferson St Frederick, MD, 21701": {
+    "lat": 39.4083014,
+    "lon": -77.4275253
+  },
+  "11922 Main St Libertytown, MD, 21701": {
+    "lat": 39.4835161,
+    "lon": -77.2518574
+  },
+  "342 S Jefferson St Frederick, MD, 21701": {
+    "lat": 39.4087437,
+    "lon": -77.426607
+  },
+  "1111 E Patrick St Frederick, MD, 21701": {
+    "lat": 39.4010802,
+    "lon": -77.3723473
+  },
+  "1300 E Patrick St Frederick, MD, 21701": {
+    "lat": 39.4136871,
+    "lon": -77.4030888
+  },
+  "1708 Monocacy Blvd Frederick, MD, 21701": {
+    "lat": 39.4464429,
+    "lon": -77.3841544
+  },
+  "1700 Kingfisher Dr, 21701": {
+    "lat": 39.4478199,
+    "lon": -77.3835177
+  },
+  "1730 Monocacy Blvd Frederick, MD, 21701": {
+    "lat": 39.4386369,
+    "lon": -77.3776528
+  },
+  "1301 N East St Frederick, MD, 21701": {
+    "lat": 39.4156063,
+    "lon": -77.4051545
+  },
+  "2 Old Camp Rd Frederick, MD, 21702": {
+    "lat": 39.422232,
+    "lon": -77.466165
+  },
+  "7729 Sundays Ln Frederick, MD, 21702": {
+    "lat": 39.4858245,
+    "lon": -77.3983281
+  },
+  "1704 Rosemont Ave Frederick, MD, 21702": {
+    "lat": 39.4277443,
+    "lon": -77.4321865
+  },
+  "1275 W Patrick St Frederick, MD, 21702": {
+    "lat": 39.4194983,
+    "lon": -77.4478184
+  },
+  "1561 Opossumtown Pike Frederick, MD, 21702": {
+    "lat": 39.4409168,
+    "lon": -77.4107626
+  },
+  "1380 W Patrick St Frederick, MD, 21702": {
+    "lat": 39.4172973,
+    "lon": -77.4436762
+  },
+  "1391 W 7th St Frederick, MD, 21702": {
+    "lat": 39.4308121,
+    "lon": -77.4204144
+  },
+  "1425 Porter St Frederick, MD, 21702": {
+    "lat": 39.4362989,
+    "lon": -77.4239801
+  },
+  "1600 Rosemont Ave Frederick, MD, 21702": {
+    "lat": 39.426862,
+    "lon": -77.430936
+  },
+  "23 Thomas Johnson Dr Frederick, MD, 21702": {
+    "lat": 39.4593648,
+    "lon": -77.4062931
+  },
+  "1001 W Patrick St Frederick, MD, 21702": {
+    "lat": 39.4172973,
+    "lon": -77.4436762
+  },
+  "W Express, 21702": {
+    "lat": null,
+    "lon": null
+  },
+  "1180 W Patrick St Frederick, MD, 21703": {
+    "lat": 39.4180675,
+    "lon": -77.450524
+  },
+  "5310 New Design Rd Frederick, MD, 21703": {
+    "lat": 39.3634604,
+    "lon": -77.4366514
+  },
+  "1000 W Patrick St Frederick, MD, 21703": {
+    "lat": 39.4166959,
+    "lon": -77.4417651
+  },
+  "6730 English Muffin Way Frederick, MD, 21703": {
+    "lat": 39.3620393,
+    "lon": -77.4311677
+  },
+  "5833 Ballenger Creek Pike Frederick, MD, 21703": {
+    "lat": 39.3921775,
+    "lon": -77.4382008
+  },
+  "5870 Ballenger Creek Pike Frederick, MD, 21703": {
+    "lat": 39.394018,
+    "lon": -77.4383189
+  },
+  "649 Himes Ave Frederick, MD, 21703": {
+    "lat": 39.4074431,
+    "lon": -77.4470426
+  },
+  "1200 W Patrick St Frederick, MD, 21703": {
+    "lat": 39.4166959,
+    "lon": -77.4417651
+  },
+  "9180 Fingerboard Rd Urbana, MD, 21704": {
+    "lat": 39.3276312,
+    "lon": -77.346555
+  },
+  "8816 Fingerboard Rd Urbana, MD, 21704": {
+    "lat": 39.3311118,
+    "lon": -77.3869896
+  },
+  "5498 Buckeystown Pike Frederick, MD, 21704": {
+    "lat": 39.37721,
+    "lon": -77.409536
+  },
+  "5440 Urbana Pike Frederick, MD, 21704": {
+    "lat": 39.3814473,
+    "lon": -77.4012549
+  },
+  "5601 Buckeystown Pike Frederick, MD, 21704": {
+    "lat": 39.3863292,
+    "lon": -77.4095815
+  },
+  "5841 Buckeystown Pike Frederick, MD, 21704": {
+    "lat": 39.3945061,
+    "lon": -77.4089957
+  },
+  "5703 Buckeystown Pike Frederick, MD, 21704": {
+    "lat": 39.3907132,
+    "lon": -77.4095055
+  },
+  "7402 Shockley Dr Frederick, MD, 21704": {
+    "lat": 39.3760946,
+    "lon": -77.4088403
+  },
+  "7301 Executive Way Frederick, MD, 21704": {
+    "lat": 39.3691771,
+    "lon": -77.4121205
+  },
+  "5831 Buckeystown Pike Frederick, MD, 21704": {
+    "lat": 39.3944389,
+    "lon": -77.4090023
+  },
+  "8900 Fingerboard Rd Urbana, MD, 21704": {
+    "lat": 39.3244476,
+    "lon": -77.3528585
+  },
+  "6050 Buckeystown Pike Frederick, MD, 21704": {
+    "lat": 39.3991965,
+    "lon": -77.4063109
+  },
+  "9210 Woodsboro Pike Walkersville, MD, 21793": {
+    "lat": 39.487169,
+    "lon": -77.3396205
+  },
+  "100 Sandstone Dr Walkersville, MD, 21793": {
+    "lat": 39.487852,
+    "lon": -77.342677
+  },
+  "8411 Woodsboro Pike, 21793": {
+    "lat": 39.4647068,
+    "lon": -77.36414
+  },
+  "8408 Woodsboro Pike Walkersville, MD, 21793": {
+    "lat": 39.4645149,
+    "lon": -77.3653857
+  },
+  "201 S Church St Middletown, MD, 21769": {
+    "lat": 39.4424907,
+    "lon": -77.5455705
+  },
+  "4304 Old National Pike Middletown, MD, 21769": {
+    "lat": 39.4350236,
+    "lon": -77.5183346
+  },
+  "211 E Main St Middletown, MD, 21769": {
+    "lat": 39.4373352,
+    "lon": -77.5260943
+  },
+  "4301 Old National Pike Middletown, MD, 21769": {
+    "lat": 39.4339699,
+    "lon": -77.5188683
+  },
+  "1595 Bowis Dr Point of Rocks, MD, 21777": {
+    "lat": 39.2756546,
+    "lon": -77.528993
+  },
+  "4607 LANDER RD Jefferson, MD, 21755": {
+    "lat": 39.3609836,
+    "lon": -77.5315929
+  },
+  "4010 Mountville Rd Jefferson, MD, 21755": {
+    "lat": 39.3584946,
+    "lon": -77.5300718
+  },
+  "1201 Dutchman's Creek Dr Brunswick, MD, 21758": {
+    "lat": null,
+    "lon": null
+  },
+  "19110 Keep Tryst Rd Knoxville, MD, 21758": {
+    "lat": null,
+    "lon": null
+  },
+  "3842 Burkittsville Rd Knoxville, MD, 21758": {
+    "lat": 39.3370038,
+    "lon": -77.640031
+  },
+  "98 Souder Rd, 21716": {
+    "lat": 39.3238019,
+    "lon": -77.6174184
   }
 }
