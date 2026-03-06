@@ -886,5 +886,33 @@
   "23 Three Mile Harbor Rd East Hampton, NY, 11937": {
     "lat": 40.97458,
     "lon": -72.1821194
+  },
+  "8411 Baltimore National Pike Ellicott City, MD, 21043": {
+    "lat": 39.2865722,
+    "lon": -76.8033853
+  },
+  "415 E Main St Riverhead, NY, 11901": {
+    "lat": 40.9182937,
+    "lon": -72.6568979
+  },
+  "378 Main St Sag Harbor, NY, 11963": {
+    "lat": 40.99052,
+    "lon": -72.3008221
+  },
+  "197 Grove St Chicopee, MA, 01020": {
+    "lat": 42.1536921,
+    "lon": -72.5840072
+  },
+  "3 Brown Ave Holyoke, MA, 01040": {
+    "lat": 42.1945515,
+    "lon": -72.6233582
+  },
+  "405 Beech St Holyoke, MA, 01040": {
+    "lat": 42.2021568,
+    "lon": -72.6208267
+  },
+  "225 Whiting Farms Rd Holyoke, MA, 01040": {
+    "lat": 42.1748898,
+    "lon": -72.6408246
   }
 }
