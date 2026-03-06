@@ -46,6 +46,9 @@ jobs:
       - name: Run Scraper (Western Mass)
         run: gas-scrape 3 --headless
 
+      - name: Run Scraper (Frederick)
+        run: gas-scrape 4 --headless
+
       - name: Cleanup Old History
         run: gas-cleanup
 

@@ -114,7 +114,7 @@ def get_region_choice(cli_choice=None, cli_zip=None):
         display_region_menu()
         choice = get_user_choice()
 
-    if choice == "4":
+    if choice == "5":
         if cli_zip:
             center = cli_zip
         else:
