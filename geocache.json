@@ -1306,5 +1306,21 @@
   "98 Souder Rd, 21716": {
     "lat": 39.3238019,
     "lon": -77.6174184
+  },
+  "239 W Montauk Hwy Hampton Bays, NY, 11946": {
+    "lat": 40.8659062,
+    "lon": -72.5490604
+  },
+  "148 N Main St East Hampton, NY, 11937": {
+    "lat": 40.9710495,
+    "lon": -72.1815024
+  },
+  "330 Main St Holyoke, MA, 01040": {
+    "lat": 42.2000394,
+    "lon": -72.6061084
+  },
+  "5550 Mountville Rd Adamstown, MD, 21710": {
+    "lat": 39.3113757,
+    "lon": -77.4750526
   }
 }
