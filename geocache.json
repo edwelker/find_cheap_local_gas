@@ -1322,5 +1322,21 @@
   "5550 Mountville Rd Adamstown, MD, 21710": {
     "lat": 39.3113757,
     "lon": -77.4750526
+  },
+  "1100 Page Blvd Springfield, MA, 01104": {
+    "lat": 42.1287182,
+    "lon": -72.5659366
+  },
+  "820 High St Holyoke, MA, 01040": {
+    "lat": 42.19763,
+    "lon": -72.6164858
+  },
+  "75 Monocacy Blvd Frederick, MD, 21701": {
+    "lat": 39.4079785,
+    "lon": -77.3879366
+  },
+  "1991 Monocacy Blvd Frederick, MD, 21701": {
+    "lat": 39.4479238,
+    "lon": -77.3865164
   }
 }
