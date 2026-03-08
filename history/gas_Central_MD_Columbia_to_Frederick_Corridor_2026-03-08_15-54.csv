@@ -1,50 +1,48 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Columbia (Town Center),21044,BP,"5485 HARPERS FARM RD Columbia, MD, 21044",3.61,BP,39.2222482,-76.8891396,3.56
-Columbia (Town Center),21044,Sunoco,"6440 Freetown Rd, 21044",3.75,Sunoco,39.1950229,-76.8817831,3.72
 Columbia (Town Center),21044,Exxon,"10611 Little Patuxent Pkwy Columbia, MD, 21044",3.79,Exxon,39.213332,-76.8709132,3.76
 Columbia (Town Center),21044,Exxon,"10141 Little Patuxent Pkwy Columbia, MD, 21044",3.89,Exxon,39.2181995,-76.8577067,3.86
+Columbia (Town Center),21044,Sunoco,"6440 Freetown Rd, 21044",3.75,Sunoco,39.1950229,-76.8817831,3.72
 Columbia (East),21045,Liberty,"6425 Dobbin Center Way Columbia, MD, 21045",3.29,-,,,3.29
 Columbia (East),21045,Mobil,"6251 Columbia Crossing Cir Columbia, MD, 21045",3.49,Mobil,39.1995215,-76.8147128,3.46
 Columbia (East),21045,Exxon,"6004 Foreland Garth Columbia, MD, 21045",3.45,Exxon,,,3.42
 Columbia (East),21045,7-Eleven,"5901 Stevens Forest Rd Columbia, MD, 21045",3.49,7-Eleven,39.2096156,-76.8479806,3.46
 Columbia (East),21045,7-Eleven,"8251 Snowden River Pkwy Columbia, MD, 21045",3.49,7-Eleven,39.2090716,-76.8034905,3.46
-Columbia (East),21045,Exxon,"7100 Minstrel Way Columbia, MD, 21045",3.49,Exxon,39.1770183,-76.8436668,3.46
 Columbia (East),21045,Shell,"7248 Cradlerock Way Columbia, MD, 21045",3.55,Shell,39.1860412,-76.8456123,3.5
+Columbia (East),21045,Exxon,"7100 Minstrel Way Columbia, MD, 21045",3.49,Exxon,39.1770183,-76.8436668,3.46
 Columbia (South),21046,Shell,"9101 Snowden River Pkwy Columbia, MD, 21046",3.45,Shell,39.1806134,-76.8250707,3.4
-Columbia (South),21046,Exxon,"6300 Stevens Forest, 21046",3.29,Exxon,39.1973061,-76.8530941,3.26
+Columbia (South),21046,Exxon,"6300 Stevens Forest, 21046",3.55,Exxon,39.1973061,-76.8530941,3.52
 Columbia (South),21046,Exxon,"7201 Eden Brook Dr, 21046",3.59,Exxon,39.1698781,-76.8656991,3.56
 Columbia (South),21046,Royal Farms,"7084 Minstrel Way Columbia, MD, 21046",3.49,Royal Farms,,,3.39
 Ellicott City (West),21042,Mobil,"9320 Baltimore National Pike Ellicott City, MD, 21042",3.45,Mobil,39.2779163,-76.8325436,3.42
 Ellicott City (West),21042,Carroll Motor Fuels,"9109 BALTIMORE NATIONAL PIKE Ellicott City, MD, 21042",3.41,-,39.2771741,-76.8262007,3.41
-Ellicott City (West),21042,Dash-In,"9075 Baltimore National Pike Ellicott City, MD, 21042",3.49,-,39.2762251,-76.8250029,3.49
 Ellicott City (West),21042,Sunoco,"10214 Baltimore National Pike, 21042",3.45,Sunoco,39.2803307,-76.8652201,3.42
+Ellicott City (West),21042,Dash-In,"9075 Baltimore National Pike Ellicott City, MD, 21042",3.49,-,39.2762251,-76.8250029,3.49
 Ellicott City (West),21042,Sunoco,"9395 Baltimore National Pike Ellicott City, MD, 21042",3.55,Sunoco,39.2772371,-76.8350415,3.52
 Ellicott City (West),21042,Shell,"4755 Dorsey Hall Dr Ellicott City, MD, 21042",3.69,Shell,39.2423537,-76.8403131,3.64
 Ellicott City (East),21043,BP,"8505 Baltimore National Pike Ellicott City, MD, 21043",3.21,BP,39.2842309,-76.8075056,3.16
-Ellicott City (East),21043,Shell,"64 Frederick Rd Ellicott City, MD, 21043",3.43,Shell,39.2695835,-76.8059274,3.38
-Ellicott City (East),21043,Carroll Motor Fuels,"4132 Old Columbia Pike Ellicott City, MD, 21043",3.41,-,39.2565046,-76.8197592,3.41
-Ellicott City (East),21043,Shell,"5651 Waterloo Rd Ellicott City, MD, 21043",3.49,Shell,39.2160123,-76.8043082,3.44
 Ellicott City (East),21043,Carroll Motor Fuels,"8720 Baltimore National Pike Ellicott City, MD, 21043",3.41,-,39.2808054,-76.8147058,3.41
+Ellicott City (East),21043,Carroll Motor Fuels,"4132 Old Columbia Pike Ellicott City, MD, 21043",3.41,-,39.2565046,-76.8197592,3.41
 Ellicott City (East),21043,Carroll Motor Fuels,"8300 Baltimore National Pike Ellicott City, MD, 21043",3.41,-,39.2895052,-76.7997418,3.41
 Ellicott City (East),21043,Sunoco,"8411 Baltimore National Pike Ellicott City, MD, 21043",3.43,Sunoco,39.2865722,-76.8033853,3.4
 Ellicott City (East),21043,Exxon,"4235 Montgomery Rd Ellicott City, MD, 21043",3.43,Exxon,39.2554156,-76.8184372,3.4
+Ellicott City (East),21043,Shell,"5651 Waterloo Rd Ellicott City, MD, 21043",3.49,Shell,39.2160123,-76.8043082,3.44
 Ellicott City (East),21043,Mobil,"4398 Montgomery Rd Ellicott City, MD, 21043",3.49,Mobil,39.2520755,-76.8165282,3.46
 Ellicott City (East),21043,Dash In,"4205 Montgomery Rd Ellicott City, MD, 21043",3.49,-,39.2561283,-76.8190081,3.49
+Ellicott City (East),21043,Shell,"64 Frederick Rd Ellicott City, MD, 21043",3.43,Shell,39.2695835,-76.8059274,3.38
 Ellicott City (East),21043,Exxon,"8850 Centre Park Dr Columbia, MD, 21043",3.59,Exxon,,,3.56
 Scaggsville/Laurel,20723,Weis,"9250 Washington Blvd N Savage, MD, 20723",3.29,-,,,3.29
-Scaggsville/Laurel,20723,Exxon,"8850 Gorman Rd Laurel, MD, 20723",3.49,Exxon,39.1315267,-76.8193204,3.46
-Scaggsville/Laurel,20723,Shell,"9280 All Saints Rd Laurel, MD, 20723",3.39,Shell,39.1195226,-76.8519516,3.34
 Scaggsville/Laurel,20723,7-Eleven,"9651 Washington Blvd N Laurel, MD, 20723",3.49,7-Eleven,39.1145065,-76.8332451,3.46
 Scaggsville/Laurel,20723,Exxon,"9275 All Saints Rd Laurel, MD, 20723",3.49,Exxon,39.1189484,-76.8513125,3.46
+Scaggsville/Laurel,20723,Exxon,"8850 Gorman Rd Laurel, MD, 20723",3.49,Exxon,39.1315267,-76.8193204,3.46
+Scaggsville/Laurel,20723,Shell,"9280 All Saints Rd Laurel, MD, 20723",3.39,Shell,39.1195226,-76.8519516,3.34
 Scaggsville/Laurel,20723,Exxon,"7500 Montpelier Rd Laurel, MD, 20723",3.59,Exxon,39.1605066,-76.8919581,3.56
 Clarksville,21029,Sunoco,"5015 Signal Bell Ln Clarksville, MD, 21029",3.65,Sunoco,39.2097731,-76.9388595,3.62
 Clarksville,21029,Exxon,"12405 Clarksville Pike Clarksville, MD, 21029",3.75,Exxon,39.2065148,-76.9427277,3.72
 Fulton,20759,High's,"11840 Lime Kiln Rd Fulton, MD, 20759",3.49,High's,39.1513419,-76.9241758,3.44
-Fulton,20759,BP,"8181 Maple Lawn Blvd Fulton, MD, 20759",3.59,BP,39.1471556,-76.9052212,3.54
 West Friendship,21163,Shell,"10781 Birmingham Way Woodstock, MD, 21163",3.49,Shell,39.3080872,-76.8892762,3.44
 Cooksville,21723,High's Dairy Store,"2101 Roxbury Mills Rd Cooksville, MD, 21723",3.49,High's,39.3131592,-77.0197157,3.44
 Glenelg,21737,Royal Farms,"3901 Ten Oaks Rd Glenelg, MD, 21737",3.49,Royal Farms,39.2645324,-76.9858863,3.39
-Sykesville/Eldersburg,21784,Marathon,"1631 W Liberty Rd Winfield, MD, 21784",2.99,-,39.4490219,-77.0613236,2.99
 Sykesville/Eldersburg,21784,High's Dairy Store,"6700 Sykesville Rd, 21784",3.29,High's,39.3910806,-76.9619588,3.24
 Sykesville/Eldersburg,21784,Martin's,"1318 Londontown Blvd Eldersburg, MD, 21784",3.49,-,39.4083322,-76.9490677,3.49
 Sykesville/Eldersburg,21784,7-Eleven,"6323 Sykesville Rd Sykesville, MD, 21784",3.49,7-Eleven,39.399826,-76.9516719,3.46
@@ -53,53 +51,55 @@ Sykesville/Eldersburg,21784,Shell,"6401 Ridge Rd Eldersburg, MD, 21784",3.47,She
 Sykesville/Eldersburg,21784,Wawa,"1310 Liberty Rd Eldersburg, MD, 21784",3.49,Wawa,39.4038381,-76.9503802,3.49
 Sykesville/Eldersburg,21784,Shell,"887 Sandosky Rd Sykesville, MD, 21784",3.49,Shell,39.366138,-76.9651372,3.44
 Sykesville/Eldersburg,21784,High's Dairy Store,"10 Liberty Rd Eldersburg, MD, 21784",3.49,High's,39.4079843,-76.9666105,3.44
+Sykesville/Eldersburg,21784,Marathon,"1631 W Liberty Rd Winfield, MD, 21784",3.49,-,39.4490219,-77.0613236,3.49
 Sykesville/Eldersburg,21784,Royal Farms,"1261 Liberty Rd Eldersburg, MD, 21784",3.49,Royal Farms,39.4045373,-76.9517427,3.39
 Sykesville/Eldersburg,21784,Carroll Motor Fuels,"1400 Liberty Rd Eldersburg, MD, 21784",3.43,-,39.402213,-76.944181,3.43
-Mount Airy,21771,High's Dairy Store,"109 Ridgeside Ct Mount Airy, MD, 21771",3.49,High's,39.363781,-77.1645562,3.44
 Mount Airy,21771,Ridgeville Service Center,"4 E Ridgville Blvd Mount Airy, MD, 21771",3.45,-,,,3.45
+Mount Airy,21771,High's Dairy Store,"109 Ridgeside Ct Mount Airy, MD, 21771",3.49,High's,39.363781,-77.1645562,3.44
 Mount Airy,21771,Carroll Motor Fuels,"502 E Ridgeville Blvd Mount Airy, MD, 21771",3.45,-,39.3630121,-77.1601868,3.45
 Mount Airy,21771,7-Eleven,"1610 RIDGESIDE DR Mount Airy, MD, 21771",3.49,7-Eleven,39.3635033,-77.1631603,3.46
-Mount Airy,21771,High's Dairy Store,"1001 Twin Arch Rd Mount Airy, MD, 21771",3.49,High's,39.3680732,-77.1445195,3.44
 Mount Airy,21771,Marathon,"2605 Liberty Rd Taylorsville, MD, 21771",3.49,-,39.4581114,-77.088031,3.49
+Mount Airy,21771,High's Dairy Store,"1001 Twin Arch Rd Mount Airy, MD, 21771",3.49,High's,39.3680732,-77.1445195,3.44
 Mount Airy,21771,Exxon,"4400 Mill Bottom Rd Mount Airy, MD, 21771",3.59,Exxon,39.3539588,-77.1714016,3.56
 Mount Airy,21771,Shell,"649 Lakeview Dr Mount Airy, MD, 21771",3.74,Shell,,,3.69
 New Market,21774,Falcon Fuel,"11719 Old National Pike, 21774",3.49,-,39.3937185,-77.3315807,3.49
 New Market,21774,High's Dairy Store,"11780 Old National Pike New Market, MD, 21774",3.49,High's,39.3842372,-77.2563552,3.44
 Monrovia,21770,Carroll Motor Fuels,"11791 Fingerboard Rd Monrovia, MD, 21770",3.43,-,,,3.43
-Ijamsville,21754,Gas & Go Express,"10122 Old National Pike Ijamsville, MD, 21754",3.09,-,39.3919073,-77.3120405,3.09
+Ijamsville,21754,Gas & Go Express,"10122 Old National Pike Ijamsville, MD, 21754",3.29,-,39.3919073,-77.3120405,3.29
 Ijamsville,21754,Sunoco,"10210 Old National Pike New Market, MD, 21754",3.29,Sunoco,39.3857621,-77.2919191,3.26
-Ijamsville,21754,Sheetz,"5943 Oakcross Ln Ijamsville, MD, 21754",3.49,Sheetz,39.3951765,-77.3233888,3.46
-Ijamsville,21754,Carroll Motor Fuels,"1904 Urbana Pike Clarksburg, MD, 21754",3.49,-,,,3.49
+Ijamsville,21754,Carroll Motor Fuels,"1904 Urbana Pike Clarksburg, MD, 21754",3.43,-,,,3.43
 Ijamsville,21754,Sheetz,"9253 Fingerboard Rd Ijamsville, MD, 21754",3.49,Sheetz,39.3273682,-77.3428783,3.46
 Ijamsville,21754,Dash In,"3359 Urbana Pike Urbana, MD, 21754",3.49,-,39.3234078,-77.3408281,3.49
-Damascus,20872,Liberty,"26241 Ridge Rd Damascus, MD, 20872",3.45,-,39.2879496,-77.2062264,3.45
+Ijamsville,21754,Sheetz,"5943 Oakcross Ln Ijamsville, MD, 21754",3.49,Sheetz,39.3951765,-77.3233888,3.46
+Damascus,20872,Liberty,"26241 Ridge Rd Damascus, MD, 20872",3.35,-,39.2879496,-77.2062264,3.35
+Damascus,20872,Carroll Motor Fuels,"26234 Ridge Rd Damascus, MD, 20872",3.43,-,39.2879879,-77.207233,3.43
 Damascus,20872,Safeway,"26300 Ridge Rd Damascus, MD, 20872",3.45,-,39.2887375,-77.2048713,3.45
 Damascus,20872,Zoom Fuel,"9871 Main St Damascus, MD, 20872",3.48,-,39.288635,-77.2033016,3.48
-Damascus,20872,Carroll Motor Fuels,"26234 Ridge Rd Damascus, MD, 20872",3.49,-,39.2879879,-77.207233,3.49
 Frederick (Downtown),21701,Exxon,"6067 Spring Ridge Pkwy Frederick, MD, 21701",3.23,Exxon,39.403557,-77.3478271,3.2
-Frederick (Downtown),21701,Jefferson Street Service Ctr,"242 S Jefferson St Frederick, MD, 21701",3.29,-,39.4096067,-77.4244053,3.29
 Frederick (Downtown),21701,Crown,"9824 Liberty Rd Frederick, MD, 21701",3.29,-,39.4541047,-77.3228424,3.29
+Frederick (Downtown),21701,Jefferson Street Service Ctr,"242 S Jefferson St Frederick, MD, 21701",3.29,-,39.4096067,-77.4244053,3.29
 Frederick (Downtown),21701,Sheetz,"1300 E Patrick St Frederick, MD, 21701",3.49,Sheetz,39.4136871,-77.4030888,3.46
 Frederick (Downtown),21701,Carroll Motor Fuels,"1111 E Patrick St Frederick, MD, 21701",3.41,-,39.4010802,-77.3723473,3.41
-Frederick (Downtown),21701,Express Fuel,"342 S Jefferson St Frederick, MD, 21701",3.49,-,39.4087437,-77.426607,3.49
 Frederick (Downtown),21701,Giant,"1700 Kingfisher Dr, 21701",3.49,Giant,39.4478199,-77.3835177,3.44
+Frederick (Downtown),21701,Express Fuel,"342 S Jefferson St Frederick, MD, 21701",3.49,-,39.4087437,-77.426607,3.49
 Frederick (Downtown),21701,Rutter's,"1730 Monocacy Blvd Frederick, MD, 21701",3.49,-,39.4386369,-77.3776528,3.49
 Frederick (Downtown),21701,7-Eleven,"11922 Main St Libertytown, MD, 21701",3.49,7-Eleven,39.4835161,-77.2518574,3.46
-Frederick (Downtown),21701,Royal Farms,"1708 Monocacy Blvd Frederick, MD, 21701",3.49,Royal Farms,39.4464429,-77.3841544,3.39
-Frederick (Downtown),21701,Royal Farms,"75 Monocacy Blvd Frederick, MD, 21701",3.49,Royal Farms,39.4079785,-77.3879366,3.39
 Frederick (Downtown),21701,Liberty,"1301 N East St Frederick, MD, 21701",3.49,-,39.4156063,-77.4051545,3.49
+Frederick (Downtown),21701,Royal Farms,"75 Monocacy Blvd Frederick, MD, 21701",3.49,Royal Farms,39.4079785,-77.3879366,3.39
+Frederick (Downtown),21701,Royal Farms,"1708 Monocacy Blvd Frederick, MD, 21701",3.49,Royal Farms,39.4464429,-77.3841544,3.39
 Frederick (Downtown),21701,Exxon,"400 S Jefferson St Frederick, MD, 21701",3.59,Exxon,39.4083014,-77.4275253,3.56
 Frederick (Downtown),21701,Exxon,"1991 Monocacy Blvd Frederick, MD, 21701",3.79,Exxon,39.4479238,-77.3865164,3.76
 Frederick (Northwest),21702,Rosemont Service Center,"1704 Rosemont Ave Frederick, MD, 21702",3.19,-,39.4277443,-77.4321865,3.19
-Frederick (Northwest),21702,7-Eleven,"7729 Sundays Ln Frederick, MD, 21702",3.19,7-Eleven,39.4858245,-77.3983281,3.16
+Frederick (Northwest),21702,W Express,"Unknown Address, 21702",3.38,-,,,3.38
 Frederick (Northwest),21702,GetGo,"1391 W 7th St Frederick, MD, 21702",3.49,-,39.4308121,-77.4204144,3.49
-Frederick (Northwest),21702,Weis Gas-N-Go,"2 Old Camp Rd Frederick, MD, 21702",3.47,-,39.422232,-77.466165,3.47
+Frederick (Northwest),21702,Sheetz,"23 Thomas Johnson Dr Frederick, MD, 21702",3.45,Sheetz,39.4593648,-77.4062931,3.42
 Frederick (Northwest),21702,Sheetz,"1600 Rosemont Ave Frederick, MD, 21702",3.49,Sheetz,39.426862,-77.430936,3.46
+Frederick (Northwest),21702,Weis Gas-N-Go,"2 Old Camp Rd Frederick, MD, 21702",3.47,-,39.422232,-77.466165,3.47
 Frederick (Northwest),21702,Wawa,"1001 W Patrick St Frederick, MD, 21702",3.49,Wawa,39.4172973,-77.4436762,3.49
 Frederick (Northwest),21702,Shell,"1275 W Patrick St Frederick, MD, 21702",3.49,Shell,39.4194983,-77.4478184,3.44
-Frederick (Northwest),21702,Sheetz,"23 Thomas Johnson Dr Frederick, MD, 21702",3.49,Sheetz,39.4593648,-77.4062931,3.46
-Frederick (Northwest),21702,AAFES,"1425 Porter St Frederick, MD, 21702",3.49,-,39.4362989,-77.4239801,3.49
+Frederick (Northwest),21702,7-Eleven,"7729 Sundays Ln Frederick, MD, 21702",3.49,7-Eleven,39.4858245,-77.3983281,3.46
 Frederick (Northwest),21702,Exxon,"1380 W Patrick St Frederick, MD, 21702",3.69,Exxon,39.4172973,-77.4436762,3.66
+Frederick (Northwest),21702,AAFES,"1425 Porter St Frederick, MD, 21702",3.49,-,39.4362989,-77.4239801,3.49
 Frederick (Southwest),21703,A-1 Mart,"649 Himes Ave Frederick, MD, 21703",3.39,-,39.4074431,-77.4470426,3.39
 Frederick (Southwest),21703,Carroll Motor Fuels,"1180 W Patrick St Frederick, MD, 21703",3.41,-,39.4180675,-77.450524,3.41
 Frederick (Southwest),21703,Giant,"5310 New Design Rd Frederick, MD, 21703",3.49,Giant,39.3634604,-77.4366514,3.44
@@ -110,29 +110,28 @@ Frederick (Southwest),21703,Sunoco,"1200 W Patrick St Frederick, MD, 21703",3.47
 Frederick (Southwest),21703,Royal Farms,"6730 English Muffin Way Frederick, MD, 21703",3.49,Royal Farms,39.3620393,-77.4311677,3.39
 Frederick (Ballenger Creek),21704,Shell,"5498 Buckeystown Pike Frederick, MD, 21704",3.49,Shell,39.37721,-77.409536,3.44
 Frederick (Ballenger Creek),21704,7-Eleven,"5703 Buckeystown Pike Frederick, MD, 21704",3.49,7-Eleven,39.3907132,-77.4095055,3.46
-Frederick (Ballenger Creek),21704,Royal Farms,"7402 Shockley Dr Frederick, MD, 21704",3.49,Royal Farms,39.3760946,-77.4088403,3.39
+Frederick (Ballenger Creek),21704,7-Eleven,"8900 Fingerboard Rd Urbana, MD, 21704",3.49,7-Eleven,39.3244476,-77.3528585,3.46
 Frederick (Ballenger Creek),21704,Sheetz,"7301 Executive Way Frederick, MD, 21704",3.49,Sheetz,39.3691771,-77.4121205,3.46
 Frederick (Ballenger Creek),21704,Sheetz,"6050 Buckeystown Pike Frederick, MD, 21704",3.49,Sheetz,39.3991965,-77.4063109,3.46
 Frederick (Ballenger Creek),21704,Royal Farms,"5831 Buckeystown Pike Frederick, MD, 21704",3.49,Royal Farms,39.3944389,-77.4090023,3.39
 Frederick (Ballenger Creek),21704,Royal Farms,"9180 Fingerboard Rd Urbana, MD, 21704",3.49,Royal Farms,39.3276312,-77.346555,3.39
-Frederick (Ballenger Creek),21704,7-Eleven,"8900 Fingerboard Rd Urbana, MD, 21704",3.49,7-Eleven,39.3244476,-77.3528585,3.46
-Frederick (Ballenger Creek),21704,Wawa,"5440 Urbana Pike Frederick, MD, 21704",3.49,Wawa,39.3814473,-77.4012549,3.49
 Frederick (Ballenger Creek),21704,Sheetz,"5601 Buckeystown Pike Frederick, MD, 21704",3.49,Sheetz,39.3863292,-77.4095815,3.46
+Frederick (Ballenger Creek),21704,Wawa,"5440 Urbana Pike Frederick, MD, 21704",3.49,Wawa,39.3814473,-77.4012549,3.49
+Frederick (Ballenger Creek),21704,Royal Farms,"7402 Shockley Dr Frederick, MD, 21704",3.49,Royal Farms,39.3760946,-77.4088403,3.39
 Frederick (Ballenger Creek),21704,Exxon,"8816 Fingerboard Rd Urbana, MD, 21704",3.59,Exxon,39.3311118,-77.3869896,3.56
-Frederick (Ballenger Creek),21704,Southern States,"5841 Buckeystown Pike Frederick, MD, 21704",3.49,-,39.3945061,-77.4089957,3.49
 Walkersville,21793,Rutter's,"9210 Woodsboro Pike Walkersville, MD, 21793",3.39,-,39.487169,-77.3396205,3.39
+Walkersville,21793,Liberty,"100 Sandstone Dr Walkersville, MD, 21793",3.39,-,39.487852,-77.342677,3.39
 Walkersville,21793,7-Eleven,"8411 Woodsboro Pike, 21793",3.49,7-Eleven,39.4647068,-77.36414,3.46
 Walkersville,21793,Sheetz,"8408 Woodsboro Pike Walkersville, MD, 21793",3.49,Sheetz,39.4645149,-77.3653857,3.46
-Walkersville,21793,Liberty,"100 Sandstone Dr Walkersville, MD, 21793",3.39,-,39.487852,-77.342677,3.39
 Middletown,21769,High's Dairy Store,"4301 Old National Pike Middletown, MD, 21769",3.49,High's,39.4339699,-77.5188683,3.44
 Middletown,21769,LDS,"201 S Church St Middletown, MD, 21769",3.47,-,39.4424907,-77.5455705,3.47
 Middletown,21769,Shell,"4304 Old National Pike Middletown, MD, 21769",3.49,Shell,39.4350236,-77.5183346,3.44
 Middletown,21769,BP,"211 E Main St Middletown, MD, 21769",3.49,BP,39.4373352,-77.5260943,3.44
 Adamstown,21710,Stup's Market,"5550 Mountville Rd Adamstown, MD, 21710",3.39,-,39.3113757,-77.4750526,3.39
 Point of Rocks,21777,Exxon,"1595 Bowis Dr Point of Rocks, MD, 21777",3.39,Exxon,39.2756546,-77.528993,3.36
-Jefferson,21755,BP,"4607 LANDER RD Jefferson, MD, 21755",3.39,BP,39.3609836,-77.5315929,3.34
+Jefferson,21755,BP,"4607 LANDER RD Jefferson, MD, 21755",3.49,BP,39.3609836,-77.5315929,3.44
 Jefferson,21755,Crown,"4010 Mountville Rd Jefferson, MD, 21755",3.49,-,39.3584946,-77.5300718,3.49
 Knoxville,21758,Weis Gas N Go,"1201 Dutchman's Creek Dr Brunswick, MD, 21758",3.27,-,,,3.27
-Knoxville,21758,Sheetz,"3842 Burkittsville Rd Knoxville, MD, 21758",3.29,Sheetz,39.3370038,-77.640031,3.26
-Knoxville,21758,Hillside Station,"19110 Keep Tryst Rd Knoxville, MD, 21758",3.28,-,,,3.28
+Knoxville,21758,Sheetz,"3842 Burkittsville Rd Knoxville, MD, 21758",3.27,Sheetz,39.3370038,-77.640031,3.24
+Knoxville,21758,Hillside Station,"19110 Keep Tryst Rd Knoxville, MD, 21758",3.38,-,,,3.38
 Brunswick,21716,Crown,"98 Souder Rd, 21716",3.27,-,39.3238019,-77.6174184,3.27
