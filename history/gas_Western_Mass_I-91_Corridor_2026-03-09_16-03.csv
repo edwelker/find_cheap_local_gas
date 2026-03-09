@@ -1,62 +1,65 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Springfield (East),01104,BJ’s Wholesale Club,"1655 Boston Rd Springfield, MA, 01104",2.99,-,42.1245925,-72.5382595,2.99
-Springfield (East),01104,Liberty Gas,"668 Liberty St Springfield, MA, 01104",3.09,-,42.1214212,-72.5846698,3.09
-Springfield (East),01104,Cumberland Farms,"798 Carew St Springfield, MA, 01104",3.17,Cumberland,42.1258915,-72.5841307,3.07
-Springfield (East),01104,Stop & Shop,"1277 Liberty St Springfield, MA, 01104",3.17,Stop & Shop,42.1373538,-72.5820966,3.07
 Springfield (East),01104,CITGO,"1271 Page Blvd Springfield, MA, 01104",3.19,-,42.1498946,-72.5374867,3.19
+Springfield (East),01104,CITGO,"289 Carew St Springfield, MA, 01104",3.19,-,42.1162253,-72.5950036,3.19
+Springfield (East),01104,Cumberland Farms,"798 Carew St Springfield, MA, 01104",3.29,Cumberland,42.1258915,-72.5841307,3.19
+Springfield (East),01104,Stop & Shop,"1277 Liberty St Springfield, MA, 01104",3.29,Stop & Shop,42.1373538,-72.5820966,3.19
 Springfield (East),01104,Racing Mart,"1037 St James Ave Springfield, MA, 01104",3.29,-,42.1371817,-72.5693712,3.29
-Springfield (East),01104,Speedway,"80 St James Blvd Springfield, MA, 01104",3.29,Speedway,42.1356575,-72.5683105,3.24
-Springfield (East),01104,BD Mart,"20 East St Springfield, MA, 01104",3.24,-,42.1481935,-72.6069622,3.24
 Springfield (East),01104,Pride,"549 Page Blvd Springfield, MA, 01104",3.29,Pride,42.1395392,-72.5601149,3.19
-Springfield (East),01104,Pride,"77 West St Springfield, MA, 01104",3.39,Pride,42.1101757,-72.6104717,3.29
+Springfield (East),01104,Racing Mart,"612 Carew St Springfield, MA, 01104",3.29,-,42.1225238,-72.5887328,3.29
+Springfield (East),01104,Speedway,"80 St James Blvd Springfield, MA, 01104",3.29,Speedway,42.1356575,-72.5683105,3.24
+Springfield (East),01104,Liberty Gas,"668 Liberty St Springfield, MA, 01104",3.29,-,42.1214212,-72.5846698,3.29
+Springfield (East),01104,Pride,"77 West St Springfield, MA, 01104",3.49,Pride,42.1101757,-72.6104717,3.39
+Springfield (East),01104,BD Mart,"20 East St Springfield, MA, 01104",3.24,-,42.1481935,-72.6069622,3.24
 Springfield (East),01104,Gulf,"1100 Page Blvd Springfield, MA, 01104",3.49,-,42.1287182,-72.5659366,3.49
-West Springfield,01089,Cumberland Farms,"143 Park Ave West Springfield, MA, 01089",3.09,Cumberland,42.1047799,-72.6193478,2.99
 West Springfield,01089,Mobil,"562 Westfield Rd West Springfield, MA, 01089",3.09,Mobil,42.108423,-72.683174,3.06
 West Springfield,01089,Shell,"173 Elm St West Springfield, MA, 01089",3.09,Shell,42.1071429,-72.6236243,3.04
-West Springfield,01089,Cumberland Farms,"22 Park St West Springfield, MA, 01089",3.09,Cumberland,42.1080906,-72.6171258,2.99
 West Springfield,01089,Sunny's Convenience Store,"2284 Westfield St West Springfield, MA, 01089",3.19,-,42.1044563,-72.6774836,3.19
 West Springfield,01089,Speedway,"341 Memorial Ave West Springfield, MA, 01089",3.25,Speedway,42.0958494,-72.6025407,3.2
-West Springfield,01089,Pride,"1247 Riverdale St West Springfield, MA, 01089",3.29,Pride,42.1379202,-72.6252571,3.19
+West Springfield,01089,Cumberland Farms,"143 Park Ave West Springfield, MA, 01089",3.34,Cumberland,42.1047799,-72.6193478,3.24
 West Springfield,01089,Nouria,"518 Memorial Ave West Springfield, MA, 01089",3.34,-,42.0960296,-72.606093,3.34
-West Springfield,01089,Pride,"757 Riverdale St West Springfield, MA, 01089",3.39,Pride,42.1246626,-72.625502,3.29
+West Springfield,01089,Cumberland Farms,"22 Park St West Springfield, MA, 01089",3.34,Cumberland,42.1080906,-72.6171258,3.24
 West Springfield,01089,Shell,"2044 Riverdale St West Springfield, MA, 01089",3.39,Shell,42.1577219,-72.6327404,3.34
 West Springfield,01089,Shell,"1130 Riverdale St West Springfield, MA, 01089",3.39,Shell,42.1348232,-72.6261928,3.34
 West Springfield,01089,Sunoco,"735 Westfield St West Springfield, MA, 01089",3.39,Sunoco,42.1033308,-72.6357365,3.36
+West Springfield,01089,Pride,"757 Riverdale St West Springfield, MA, 01089",3.49,Pride,42.1246626,-72.625502,3.39
+West Springfield,01089,Pride,"1247 Riverdale St West Springfield, MA, 01089",3.49,Pride,42.1379202,-72.6252571,3.39
 West Springfield,01089,Sunoco,"2668 Westfield St West Springfield, MA, 01089",3.39,Sunoco,42.1063429,-72.6527704,3.36
-West Springfield,01089,CITGO,"884 Westfield St West Springfield, MA, 01089",3.25,-,42.1041073,-72.6386615,3.25
-Westfield,01085,Mobil,"162 Southampton Rd, 01085",3.09,Mobil,42.1460884,-72.7310211,3.06
 Westfield,01085,Cumberland Farms,"1134 Southampton Rd Westfield, MA, 01085",3.12,Cumberland,42.1825106,-72.7271699,3.02
+Westfield,01085,Shell,"259 N Elm St Westfield, MA, 01085",3.15,Shell,42.1359276,-72.7389062,3.1
+Westfield,01085,Mobil,"162 Southampton Rd, 01085",3.19,Mobil,42.1460884,-72.7310211,3.16
+Westfield,01085,Mobil,"181 Elm St Westfield, MA, 01085",3.19,Mobil,42.1244206,-72.7476514,3.16
 Westfield,01085,CITGO,"41 Franklin St Westfield, MA, 01085",3.17,-,42.1250645,-72.7500438,3.17
 Westfield,01085,CITGO,"439 N Elm St Westfield, MA, 01085",3.19,-,42.1401791,-72.7333993,3.19
-Westfield,01085,Shell,"259 N Elm St Westfield, MA, 01085",3.15,Shell,42.1359276,-72.7389062,3.1
+Westfield,01085,Gulf,"278 Elm St Westfield, MA, 01085",3.29,-,42.1256723,-72.7476243,3.29
 Westfield,01085,Irving,"1400 Russel Rd Westfield, MA, 01085",3.49,-,,,3.49
+Westfield,01085,Pride,"234 E Main St Westfield, MA, 01085",3.49,Pride,42.1150935,-72.7284631,3.39
 Westfield,01085,Big Y Express,"330 E Main St Westfield, MA, 01085",3.29,Big Y,42.1137756,-72.7238961,3.24
 Chicopee,01020,Gulf,"646 Grattan Street Chicopee, MA, 01020",3.11,-,42.1730203,-72.5984727,3.11
-Chicopee,01020,CITGO,"817 Front St Chicopee, MA, 01020",3.04,-,42.1498779,-72.5862536,3.04
 Chicopee,01020,Stop & Shop,"672 Memorial Dr, 01020",3.13,Stop & Shop,42.1759775,-72.5763068,3.03
-Chicopee,01020,Pilot,"357 Burnett Rd Chicopee, MA, 01020",3.09,-,42.1661237,-72.546029,3.09
 Chicopee,01020,Sunoco,"2041 Memorial Dr Chicopee, MA, 01020",3.09,Sunoco,42.2131424,-72.5723361,3.06
-Chicopee,01020,Pride,"363 Burnett Rd Chicopee, MA, 01020",3.09,Pride,42.1661787,-72.5451161,2.99
 Chicopee,01020,BP,"1423 Memorial Dr Chicopee, MA, 01020",3.15,BP,42.1960997,-72.5739353,3.1
-Chicopee,01020,Shell,"197 Grove St Chicopee, MA, 01020",3.14,Shell,42.1536921,-72.5840072,3.09
-Chicopee,01020,CITGO,"1875 Memorial Dr Chicopee, MA, 01020",3.09,-,42.2082465,-72.571413,3.09
+Chicopee,01020,Pilot,"357 Burnett Rd Chicopee, MA, 01020",3.19,-,42.1661237,-72.546029,3.19
 Chicopee,01020,CITGO,"451 Grattan St Chicopee, MA, 01020",3.19,-,42.1684674,-72.5940776,3.19
 Chicopee,01020,Big Y Express,"1177 Granby Rd Chicopee, MA, 01020",3.24,Big Y,42.1739323,-72.5872689,3.19
-Chicopee,01020,Cumberland Farms,"1061 Memorial Dr Chicopee, MA, 01020",3.13,Cumberland,42.1870792,-72.5769006,3.03
 Chicopee,01020,Pride,"27 Montgomery St Chicopee, MA, 01020",3.29,Pride,42.1612887,-72.5824657,3.19
 Chicopee,01020,F.L. Roberts,"2012 Memorial Dr Chicopee, MA, 01020",3.29,-,42.210334,-72.5714232,3.29
-Chicopee,01020,Cumberland Farms,"37 Montcalm St Chicopee, MA, 01020",3.09,Cumberland,42.2021333,-72.5807318,2.99
-Chicopee,01020,Sunoco,"500 Montgomery St Chicopee, MA, 01020",3.39,Sunoco,42.1743862,-72.5869497,3.36
 Chicopee,01020,Sunoco,"560 East St Chicopee, MA, 01020",3.29,Sunoco,42.1480861,-72.5642343,3.26
-Holyoke,01040,City Gas,"3 Brown Ave Holyoke, MA, 01040",3.14,-,42.1945515,-72.6233582,3.14
-Holyoke,01040,Stop and Shop,"2265 Northampton, 01040",3.19,-,42.1816881,-72.6330639,3.19
+Chicopee,01020,Sunoco,"500 Montgomery St Chicopee, MA, 01020",3.39,Sunoco,42.1743862,-72.5869497,3.36
+Chicopee,01020,CITGO,"817 Front St Chicopee, MA, 01020",3.04,-,42.1498779,-72.5862536,3.04
+Chicopee,01020,CITGO,"1875 Memorial Dr Chicopee, MA, 01020",3.09,-,42.2082465,-72.571413,3.09
+Chicopee,01020,Pride,"363 Burnett Rd Chicopee, MA, 01020",3.09,Pride,42.1661787,-72.5451161,2.99
+Chicopee,01020,Shell,"197 Grove St Chicopee, MA, 01020",3.14,Shell,42.1536921,-72.5840072,3.09
+Chicopee,01020,Cumberland Farms,"1061 Memorial Dr Chicopee, MA, 01020",3.13,Cumberland,42.1870792,-72.5769006,3.03
+Holyoke,01040,City Gas,"3 Brown Ave Holyoke, MA, 01040",3.15,-,42.1945515,-72.6233582,3.15
 Holyoke,01040,Holyoke Station,"1635 Northampton St Holyoke, MA, 01040",3.19,-,42.2088833,-72.6308787,3.19
+Holyoke,01040,Stop and Shop,"2265 Northampton, 01040",3.19,-,42.1816881,-72.6330639,3.19
 Holyoke,01040,Stop & Shop,"2265 Northampton St Holyoke, MA, 01040",3.19,Stop & Shop,42.1816881,-72.6330639,3.09
 Holyoke,01040,Racing Mart,"580 South St Holyoke, MA, 01040",3.27,-,42.1946675,-72.6284783,3.27
-Holyoke,01040,Stop & Shop,"28 Lincoln St Holyoke, MA, 01040",3.29,Stop & Shop,42.2142774,-72.6181875,3.19
 Holyoke,01040,Shell,"1530 Northampton St Holyoke, MA, 01040",3.39,Shell,42.211614,-72.6296123,3.34
 Holyoke,01040,Gulf,"820 High St Holyoke, MA, 01040",3.39,-,42.19763,-72.6164858,3.39
 Holyoke,01040,Shell,"225 Whiting Farms Rd Holyoke, MA, 01040",3.39,Shell,42.1748898,-72.6408246,3.34
+Holyoke,01040,Stop & Shop,"28 Lincoln St Holyoke, MA, 01040",3.49,Stop & Shop,42.2142774,-72.6181875,3.39
 South Hadley,01075,White Wing,"568 Newton St South Hadley, MA, 01075",2.85,-,42.2396215,-72.5815538,2.85
 South Hadley,01075,Cumberland Farms,"507 Newton St South Hadley, MA, 01075",3.03,Cumberland,42.2374802,-72.5816164,2.93
 South Hadley,01075,Big Y Express,"467 Newton St South Hadley, MA, 01075",3.04,Big Y,42.235783,-72.5828163,2.99
@@ -65,40 +68,38 @@ Easthampton,01027,Pride,"60 Union St Easthampton, MA, 01027",3.29,Pride,42.26817
 Easthampton,01027,7-Eleven,"97 Union St Easthampton, MA, 01027",3.29,7-Eleven,42.2669407,-72.6696351,3.26
 Easthampton,01027,Gulf,"317 Main St Easthampton, MA, 01027",3.19,-,42.2609805,-72.6848749,3.19
 Easthampton,01027,F.L. Roberts,"124 Northampton St Easthampton, MA, 01027",3.39,-,42.2789978,-72.6713843,3.39
-Northampton,01060,Cumberland Farms,"134 King St, 01060",3.07,Cumberland,42.3374727,-72.6373027,2.97
-Northampton,01060,Big Y Express,"188 N King St Northampton, MA, 01060",3.09,Big Y,42.3287267,-72.6335676,3.04
-Northampton,01060,Sunoco,"776 N King St Northampton, MA, 01060",3.19,Sunoco,42.3622644,-72.6390352,3.16
-Northampton,01060,Shell,"506 Pleasant St Northampton, MA, 01060",3.25,Shell,42.3114138,-72.6238099,3.2
+Northampton,01060,Stop & Shop,"228 King St Northampton, MA, 01060",3.29,Stop & Shop,42.3290172,-72.6358623,3.19
+Northampton,01060,Shell,"506 Pleasant St Northampton, MA, 01060",3.29,Shell,42.3114138,-72.6238099,3.24
 Northampton,01060,Pride,"375 King St Northampton, MA, 01060",3.39,Pride,42.3374852,-72.6366284,3.29
-Northampton,01060,Stop & Shop,"228 King St Northampton, MA, 01060",3.09,Stop & Shop,42.3290172,-72.6358623,2.99
-Hadley,01035,Pride,"445 Russell St Hadley, MA, 01035",3.15,Pride,42.3632797,-72.5387719,3.05
+Northampton,01060,Big Y Express,"188 N King St Northampton, MA, 01060",3.09,Big Y,42.3287267,-72.6335676,3.04
+Northampton,01060,Cumberland Farms,"134 King St, 01060",3.07,Cumberland,42.3374727,-72.6373027,2.97
+Northampton,01060,Sunoco,"776 N King St Northampton, MA, 01060",3.19,Sunoco,42.3622644,-72.6390352,3.16
+Hadley,01035,Pride,"25 Russell St Hadley, MA, 01035",3.09,Pride,42.33861,-72.60906,2.99
+Hadley,01035,Big Y Express,"73 Russell St Hadley, MA, 01035",3.09,Big Y,42.3405615,-72.6018812,3.04
 Hadley,01035,Cumberland Farms,"109 Russell St Hadley, MA, 01035",3.19,Cumberland,42.3414532,-72.5946062,3.09
-Hadley,01035,Pride,"25 Russell St Hadley, MA, 01035",2.89,Pride,42.33861,-72.60906,2.79
-Hadley,01035,Big Y Express,"73 Russell St Hadley, MA, 01035",2.89,Big Y,42.3405615,-72.6018812,2.84
+Hadley,01035,Pride,"445 Russell St Hadley, MA, 01035",3.15,Pride,42.3632797,-72.5387719,3.05
 Hadley,01035,Mobil,"110 Russell St Hadley, MA, 01035",3.29,Mobil,42.3424399,-72.595176,3.26
 Hadley,01035,Stop & Shop,"446 Russell St Hadley, MA, 01035",3.29,Stop & Shop,42.3646637,-72.5379721,3.19
 Amherst,01002,Speedway,"468 West St South Amherst, MA, 01002",3.29,Speedway,42.3420911,-72.5198559,3.24
-Amherst,01002,Cumberland Farms,"389 College St Amherst, MA, 01002",3.15,Cumberland,42.373216,-72.5193521,3.05
 Amherst,01002,F.L. Roberts,"399 Northampton Rd Amherst, MA, 01002",3.39,-,42.3661824,-72.5351597,3.39
 Ludlow,01033,Cumberland Farms,"74 W State St Granby, MA, 01033",3.19,Cumberland,42.2466124,-72.5432172,3.09
 South Deerfield,01373,Irving,"1 Greenfield Rd South Deerfield, MA, 01373",3.09,-,42.4899751,-72.6098871,3.09
-South Deerfield,01373,Irving,"1 Sunderland Rd South Deerfield, MA, 01373",2.85,-,42.468412,-72.608969,2.85
+South Deerfield,01373,Neighbors Convenience Store,"242 Conway Rd, 01373",3.49,-,42.4973938,-72.6367494,3.49
 South Deerfield,01373,Cumberland Farms,"31 Elm St South Deerfield, MA, 01373",3.49,Cumberland,42.4769319,-72.6127799,3.39
+South Deerfield,01373,Irving,"1 Sunderland Rd South Deerfield, MA, 01373",2.85,-,42.468412,-72.608969,2.85
 Greenfield,01301,Stop & Shop,"488 Bernardston Rd Greenfield, MA, 01301",3.22,Stop & Shop,42.6094682,-72.5869418,3.12
 Greenfield,01301,Sandri,"295 Federal St Greenfield, MA, 01301",3.19,-,42.600351,-72.5939125,3.19
-Greenfield,01301,Cumberland Farms,"317 Federal St Greenfield, MA, 01301",3.22,Cumberland,42.6013026,-72.593169,3.12
 Greenfield,01301,Speedway,"245 Federal St Greenfield, MA, 01301",3.29,Speedway,42.5980487,-72.595861,3.24
+Greenfield,01301,Cumberland Farms,"317 Federal St Greenfield, MA, 01301",3.39,Cumberland,42.6013026,-72.593169,3.29
+Greenfield,01301,Shell,"100 Mohawk Tr Greenfield, MA, 01301",3.39,Shell,,,3.34
+Greenfield,01301,Irving,"223 Mohawk Tr Greenfield, MA, 01301",3.49,-,,,3.49
 Greenfield,01301,Planet,"109 Mohawk Trail Greenfield, MA, 01301",3.39,-,42.5848575,-72.6166793,3.39
 Greenfield,01301,Mobil,"142 Mohawk Tr Greenfield, MA, 01301",3.39,Mobil,,,3.36
-Greenfield,01301,Shell,"100 Mohawk Tr Greenfield, MA, 01301",3.39,Shell,,,3.34
 Greenfield,01301,F.L. Roberts,"63 Main St Greenfield, MA, 01301",3.39,-,42.5871489,-72.6066369,3.39
-Greenfield,01301,Sunoco,"416 Federal St Greenfield, MA, 01301",3.29,Sunoco,42.6060538,-72.5895143,3.26
-Greenfield,01301,Irving,"223 Mohawk Tr Greenfield, MA, 01301",3.49,-,,,3.49
-Greenfield,01301,Shell,"242 Mohawk Tr Greenfield, MA, 01301",3.49,Shell,,,3.44
 Shelburne Falls,01370,Mobil,"269 Mohawk Tr Shelburne Falls, MA, 01370",3.19,Mobil,,,3.16
 Agawam,01001,Shell,"6 Lealand Ave Agawam, MA, 01001",3.09,Shell,42.071971,-72.6152387,3.04
-Agawam,01001,Cumberland Farms,"837 Suffield St Agawam, MA, 01001",3.24,Cumberland,42.0606701,-72.6315678,3.14
+Agawam,01001,CITGO,"1 River Rd Agawam, MA, 01001",3.19,-,42.04632,-72.6158718,3.19
 Agawam,01001,CITGO,"650 Suffield St Agawam, MA, 01001",3.19,-,42.0675744,-72.6317643,3.19
 Agawam,01001,Gulf,"18 Springfield St Agawam, MA, 01001",3.19,-,42.0897213,-72.6280116,3.19
-Agawam,01001,CITGO,"1 River Rd Agawam, MA, 01001",3.19,-,42.04632,-72.6158718,3.19
 Agawam,01001,Mobil,"308 Suffield St Agawam, MA, 01001",3.25,Mobil,42.0790669,-72.6300928,3.22
+Agawam,01001,Cumberland Farms,"837 Suffield St Agawam, MA, 01001",3.34,Cumberland,42.0606701,-72.6315678,3.24
