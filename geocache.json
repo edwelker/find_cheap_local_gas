@@ -1342,5 +1342,17 @@
   "580 South St Holyoke, MA, 01040": {
     "lat": 42.1946675,
     "lon": -72.6284783
+  },
+  "12170 Clarksville Pike Clarksville, MD, 21029": {
+    "lat": 39.2138379,
+    "lon": -76.9362359
+  },
+  "60 King St Northampton, MA, 01060": {
+    "lat": 42.3205763,
+    "lon": -72.6313212
+  },
+  "3612 Buckeystown Pike Buckeystown, MD, 21717": {
+    "lat": 39.3327487,
+    "lon": -77.4323293
   }
 }
