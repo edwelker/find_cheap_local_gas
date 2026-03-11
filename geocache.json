@@ -1354,5 +1354,13 @@
   "3612 Buckeystown Pike Buckeystown, MD, 21717": {
     "lat": 39.3327487,
     "lon": -77.4323293
+  },
+  "19 Bridge St, 01075": {
+    "lat": 42.2152143,
+    "lon": -72.5942742
+  },
+  "325 Main St Agawam, MA, 01001": {
+    "lat": 42.082285,
+    "lon": -72.6158119
   }
 }
