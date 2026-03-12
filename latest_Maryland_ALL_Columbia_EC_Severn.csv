@@ -1,65 +1,64 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
-Scaggsville/Laurel,20723,Weis,"9250 Washington Blvd N Savage, MD, 20723",3.49,-,,,3.49
-Scaggsville/Laurel,20723,7-Eleven,"9651 Washington Blvd N Laurel, MD, 20723",3.49,7-Eleven,39.1145065,-76.8332451,3.46
-Scaggsville/Laurel,20723,Shell,"9280 All Saints Rd Laurel, MD, 20723",3.69,Shell,39.1195226,-76.8519516,3.64
-Scaggsville/Laurel,20723,Exxon,"7500 Montpelier Rd Laurel, MD, 20723",3.69,Exxon,39.1605066,-76.8919581,3.66
 Scaggsville/Laurel,20723,Exxon,"9275 All Saints Rd Laurel, MD, 20723",3.49,Exxon,39.1189484,-76.8513125,3.46
-Columbia (Town Center),21044,BP,"5485 HARPERS FARM RD Columbia, MD, 21044",3.89,BP,39.2222482,-76.8891396,3.84
+Scaggsville/Laurel,20723,7-Eleven,"9651 Washington Blvd N Laurel, MD, 20723",3.49,7-Eleven,39.1145065,-76.8332451,3.46
+Scaggsville/Laurel,20723,Weis,"9250 Washington Blvd N Savage, MD, 20723",3.49,-,,,3.49
+Scaggsville/Laurel,20723,Shell,"9280 All Saints Rd Laurel, MD, 20723",3.69,Shell,39.1195226,-76.8519516,3.64
+Scaggsville/Laurel,20723,Exxon,"7500 Montpelier Rd Laurel, MD, 20723",3.89,Exxon,39.1605066,-76.8919581,3.86
 Columbia (Town Center),21044,Exxon,"10141 Little Patuxent Pkwy Columbia, MD, 21044",3.99,Exxon,39.2181995,-76.8577067,3.96
 Columbia (Town Center),21044,Exxon,"10611 Little Patuxent Pkwy Columbia, MD, 21044",3.99,Exxon,39.213332,-76.8709132,3.96
+Columbia (Town Center),21044,BP,"5485 HARPERS FARM RD Columbia, MD, 21044",3.89,BP,39.2222482,-76.8891396,3.84
 Columbia (Town Center),21044,Sunoco,"6440 Freetown Rd, 21044",3.89,Sunoco,39.1950229,-76.8817831,3.86
 Columbia (East),21045,Liberty,"6425 Dobbin Center Way Columbia, MD, 21045",3.37,-,,,3.37
+Columbia (East),21045,7-Eleven,"5901 Stevens Forest Rd Columbia, MD, 21045",3.47,7-Eleven,39.2096156,-76.8479806,3.44
 Columbia (East),21045,Exxon,"6004 Foreland Garth Columbia, MD, 21045",3.45,Exxon,,,3.42
-Columbia (East),21045,7-Eleven,"8251 Snowden River Pkwy Columbia, MD, 21045",3.49,7-Eleven,39.2090716,-76.8034905,3.46
+Columbia (East),21045,7-Eleven,"8251 Snowden River Pkwy Columbia, MD, 21045",3.48,7-Eleven,39.2090716,-76.8034905,3.45
 Columbia (East),21045,Exxon,"7100 Minstrel Way Columbia, MD, 21045",3.49,Exxon,39.1770183,-76.8436668,3.46
-Columbia (East),21045,7-Eleven,"5901 Stevens Forest Rd Columbia, MD, 21045",3.49,7-Eleven,39.2096156,-76.8479806,3.46
 Columbia (East),21045,Mobil,"6251 Columbia Crossing Cir Columbia, MD, 21045",3.59,Mobil,39.1995215,-76.8147128,3.56
 Columbia (East),21045,Shell,"7248 Cradlerock Way Columbia, MD, 21045",3.55,Shell,39.1860412,-76.8456123,3.5
-Columbia (South),21046,Exxon,"6300 Stevens Forest, 21046",3.29,Exxon,39.1973061,-76.8530941,3.26
 Columbia (South),21046,Royal Farms,"7084 Minstrel Way Columbia, MD, 21046",3.49,Royal Farms,,,3.39
+Columbia (South),21046,Exxon,"6300 Stevens Forest, 21046",3.59,Exxon,39.1973061,-76.8530941,3.56
 Columbia (South),21046,Shell,"9101 Snowden River Pkwy Columbia, MD, 21046",3.69,Shell,39.1806134,-76.8250707,3.64
-Ellicott City (West),21042,Dash-In,"9075 Baltimore National Pike Ellicott City, MD, 21042",3.49,-,39.2762251,-76.8250029,3.49
 Ellicott City (West),21042,Carroll Motor Fuels,"9109 BALTIMORE NATIONAL PIKE Ellicott City, MD, 21042",3.41,-,39.2771741,-76.8262007,3.41
+Ellicott City (West),21042,Dash-In,"9075 Baltimore National Pike Ellicott City, MD, 21042",3.49,-,39.2762251,-76.8250029,3.49
 Ellicott City (West),21042,Sunoco,"10214 Baltimore National Pike, 21042",3.49,Sunoco,39.2803307,-76.8652201,3.46
 Ellicott City (West),21042,Shell,"4755 Dorsey Hall Dr Ellicott City, MD, 21042",3.69,Shell,39.2423537,-76.8403131,3.64
-Ellicott City (West),21042,Mobil,"9320 Baltimore National Pike Ellicott City, MD, 21042",3.45,Mobil,39.2779163,-76.8325436,3.42
+Ellicott City (East),21043,BP,"8505 Baltimore National Pike Ellicott City, MD, 21043",3.41,BP,39.2842309,-76.8075056,3.36
 Ellicott City (East),21043,Carroll Motor Fuels,"4132 Old Columbia Pike Ellicott City, MD, 21043",3.41,-,39.2565046,-76.8197592,3.41
-Ellicott City (East),21043,Carroll Motor Fuels,"8720 Baltimore National Pike Ellicott City, MD, 21043",3.41,-,39.2808054,-76.8147058,3.41
 Ellicott City (East),21043,Exxon,"4235 Montgomery Rd Ellicott City, MD, 21043",3.43,Exxon,39.2554156,-76.8184372,3.4
+Ellicott City (East),21043,Carroll Motor Fuels,"8720 Baltimore National Pike Ellicott City, MD, 21043",3.41,-,39.2808054,-76.8147058,3.41
 Ellicott City (East),21043,High's,"3095 Rogers Ave Ellicott City, MD, 21043",3.47,High's,39.2874075,-76.8091156,3.42
-Ellicott City (East),21043,Mobil,"4398 Montgomery Rd Ellicott City, MD, 21043",3.49,Mobil,39.2520755,-76.8165282,3.46
+Ellicott City (East),21043,Shell,"64 Frederick Rd Ellicott City, MD, 21043",3.49,Shell,39.2695835,-76.8059274,3.44
 Ellicott City (East),21043,Dash In,"4205 Montgomery Rd Ellicott City, MD, 21043",3.49,-,39.2561283,-76.8190081,3.49
+Ellicott City (East),21043,Mobil,"4398 Montgomery Rd Ellicott City, MD, 21043",3.49,Mobil,39.2520755,-76.8165282,3.46
 Ellicott City (East),21043,Exxon,"8850 Centre Park Dr Columbia, MD, 21043",3.59,Exxon,,,3.56
-Ellicott City (East),21043,Shell,"5651 Waterloo Rd Ellicott City, MD, 21043",3.49,Shell,39.2160123,-76.8043082,3.44
+Ellicott City (East),21043,Shell,"5651 Waterloo Rd Ellicott City, MD, 21043",3.69,Shell,39.2160123,-76.8043082,3.64
+Severn,21144,7-Eleven,"500 Donaldson Ave Severn, MD, 21144",3.47,7-Eleven,39.136636,-76.659232,3.44
 Severn,21144,Royal Farms,"7843 Telegraph Rd Severn, MD, 21144",3.49,Royal Farms,39.1373727,-76.684828,3.39
-Severn,21144,7-Eleven,"500 Donaldson Ave Severn, MD, 21144",3.49,7-Eleven,39.136636,-76.659232,3.46
 Severn,21144,Exxon,"805 Reece Rd Severn, MD, 21144",3.59,Exxon,39.1361231,-76.6867451,3.56
-Hanover (Arundel Mills),21076,7-Eleven,"1075 Dorsey Rd Hanover, MD, 21076",3.49,7-Eleven,,,3.46
+Hanover (Arundel Mills),21076,7-Eleven,"1075 Dorsey Rd Hanover, MD, 21076",3.46,7-Eleven,,,3.43
 Hanover (Arundel Mills),21076,Shell,"2631 Old Annapolis Rd Hanover, MD, 21076",3.49,Shell,,,3.44
-Hanover (Arundel Mills),21076,Wawa,"7710 Milestone Pkwy Hanover, MD, 21076",3.49,Wawa,39.154105,-76.744585,3.49
+Hanover (Arundel Mills),21076,Wawa,"7710 Milestone Pkwy Hanover, MD, 21076",3.53,Wawa,39.154105,-76.744585,3.53
 Hanover (Arundel Mills),21076,Exxon,"7671 Arundel Mills Blvd Hanover, MD, 21076",3.69,Exxon,39.15227,-76.7312534,3.66
+Hanover (Arundel Mills),21076,Exxon,"7898 Ridge Rd Hanover, MD, 21076",3.69,Exxon,39.1309768,-76.7382571,3.66
 Hanover (Arundel Mills),21076,Exxon,"7043 Arundel Mills Cir Hanover, MD, 21076",3.69,Exxon,39.1539236,-76.7222726,3.66
-Jessup,20794,Sunoco,"2739 Annapolis Rd, 20794",3.39,Sunoco,39.1365014,-76.7506844,3.36
 Jessup,20794,Shell,"2753 Annapolis Rd Hanover, MD, 20794",3.49,Shell,39.1377885,-76.7521393,3.44
+Jessup,20794,BP,"7879 Pocomoke Dr Jessup, MD, 20794",3.49,BP,,,3.44
+Jessup,20794,Sunoco,"2739 Annapolis Rd, 20794",3.49,Sunoco,39.1365014,-76.7506844,3.46
+Jessup,20794,Shell,"8755 Washington Blvd Savage, MD, 20794",3.47,Shell,39.1447238,-76.8087484,3.42
+Jessup,20794,Royal Farms,"8686 Washington Blvd Savage, MD, 20794",3.49,Royal Farms,39.1457337,-76.8094061,3.39
 Jessup,20794,BP,"8810 Washington Blvd Savage, MD, 20794",3.47,BP,39.1437661,-76.8101858,3.42
 Jessup,20794,High's Dairy Store,"2861 Jessup Rd Hanover, MD, 20794",3.47,High's,,,3.42
-Jessup,20794,Royal Farms,"8686 Washington Blvd Savage, MD, 20794",3.49,Royal Farms,39.1457337,-76.8094061,3.39
-Jessup,20794,Royal Farms,"7136 Montevideo Rd Jessup, MD, 20794",3.49,Royal Farms,39.1743215,-76.7771879,3.39
-Jessup,20794,BP,"7879 Pocomoke Dr Jessup, MD, 20794",3.49,BP,,,3.44
 Fulton,20759,High's,"11840 Lime Kiln Rd Fulton, MD, 20759",3.49,High's,39.1513419,-76.9241758,3.44
-Fulton,20759,BP,"8181 Maple Lawn Blvd Fulton, MD, 20759",3.59,BP,39.1471556,-76.9052212,3.54
+Fulton,20759,BP,"8181 Maple Lawn Blvd Fulton, MD, 20759",3.89,BP,39.1471556,-76.9052212,3.84
 Burtonsville,20866,Freestate,"15411 Old Columbia Pike, 20866",3.37,-,39.1083747,-76.9358213,3.37
 Clarksville,21029,Sunoco,"5015 Signal Bell Ln Clarksville, MD, 21029",3.69,Sunoco,39.2097731,-76.9388595,3.66
 Clarksville,21029,Exxon,"12405 Clarksville Pike Clarksville, MD, 21029",3.75,Exxon,39.2065148,-76.9427277,3.72
-Clarksville,21029,Freestate,"12170 Clarksville Pike Clarksville, MD, 21029",3.69,-,39.2138379,-76.9362359,3.69
+Elkridge,21075,Shell,"7894 Washington Blvd Elkridge, MD, 21075",3.49,Shell,39.1727025,-76.7849234,3.44
 Elkridge,21075,Royal Farms,"8268 Lark Brown Rd Elkridge, MD, 21075",3.49,Royal Farms,39.1890762,-76.7957888,3.39
-Elkridge,21075,Shell,"6295 Washington Blvd Elkridge, MD, 21075",3.59,Shell,39.2073558,-76.7270995,3.54
-Elkridge,21075,Shell,"7894 Washington Blvd Elkridge, MD, 21075",3.39,Shell,39.1727025,-76.7849234,3.34
-Elkridge,21075,XtraFuels,"7300 Washington Blvd Elkridge, MD, 21075",3.45,-,39.1840122,-76.7645677,3.45
-Elkridge,21075,BP,"5816 WASHINGTON BLVD Elkridge, MD, 21075",3.59,BP,39.2160163,-76.7108429,3.54
-Elkridge,21075,Exxon,"7311 Washington Blvd Elkridge, MD, 21075",3.49,Exxon,39.1829419,-76.7637364,3.46
-Elkridge,21075,Exxon,"6070 Marshalee Dr Elkridge, MD, 21075",3.53,Exxon,39.2084335,-76.7778553,3.5
+Elkridge,21075,Marathon,"6315 Washington Blvd Elkridge, MD, 21075",3.59,-,39.2062192,-76.7275618,3.59
 Elkridge,21075,Exxon,"6310 Washington Blvd Elkridge, MD, 21075",3.59,Exxon,39.2071708,-76.7278267,3.56
+Elkridge,21075,Shell,"6295 Washington Blvd Elkridge, MD, 21075",3.59,Shell,39.2073558,-76.7270995,3.54
+Elkridge,21075,BP,"5816 WASHINGTON BLVD Elkridge, MD, 21075",3.59,BP,39.2160163,-76.7108429,3.54
 Odenton,21113,Sunoco,"1433 Annapolis Rd Odenton, MD, 21113",3.49,Sunoco,39.0909128,-76.7130138,3.46
 Odenton,21113,High's Dairy Store,"1624 Annapolis Rd Odenton, MD, 21113",3.49,High's,39.1057505,-76.7217641,3.44
 Odenton,21113,Royal Farms,"1558 Annapolis Rd Odenton, MD, 21113",3.49,Royal Farms,39.100476,-76.720547,3.39
