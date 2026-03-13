@@ -74,7 +74,7 @@ REGION_DATA = {
             "21046": "Columbia (South)",
             "21042": "Ellicott City (West)",
             "21043": "Ellicott City (East)",
-            "20723": "Scaggsville/Laurel",
+            "20723": "Scaggsville / Laurel",
             "21029": "Clarksville",
             "20759": "Fulton",
             "21163": "West Friendship",

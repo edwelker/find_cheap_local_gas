@@ -101,7 +101,7 @@ def test_get_region_choice_custom(monkeypatch):
         "gas_scraper.main.calculate_radius_zips",
         lambda center, miles=15: ["20723", "21044"],
     )
-    res = gas.get_region_choice(cli_choice="4", cli_zip="20723")
+    res = gas.get_region_choice(cli_choice="5", cli_zip="20723")
     assert res["name"] == "Custom_Radius_20723"
     assert res["zips"] == ["20723", "21044"]
 
@@ -113,10 +113,9 @@ def test_get_region_choice_interactive(monkeypatch):
 
 
 def test_get_region_choice_custom_interactive(monkeypatch):
-    monkeypatch.setattr("gas_scraper.main.get_user_choice", lambda: "4")
+    monkeypatch.setattr("gas_scraper.main.get_user_choice", lambda: "5")
     monkeypatch.setattr("gas_scraper.main.get_user_zip", lambda: "20723")
-    monkeypatch.setattr(
-        "gas_scraper.main.calculate_radius_zips", lambda center, miles=15: ["20723"]
+    monkeypatch.setattr(        "gas_scraper.main.calculate_radius_zips", lambda center, miles=15: ["20723"]
     )
     res = gas.get_region_choice()
     assert res["name"] == "Custom_Radius_20723"

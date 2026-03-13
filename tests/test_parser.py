@@ -2,14 +2,16 @@ import pytest
 from parsel import Selector
 from gas_scraper.parser import (
     clean_address,
-    get_state_hint,
     parse_station_card,
-    geocode_stations,
     extract_base_price,
     clean_station_name,
     get_discount_info,
     is_blocked,
     get_station_cards,
+)
+from gas_scraper.geocode import (
+    get_state_hint,
+    geocode_stations,
 )
 from gas_scraper.models import GasStation, GeocodeCache, Coordinates
 
@@ -118,7 +120,7 @@ def test_parse_station_card_with_fixture():
     station = parse_station_card(card_sel, "20723", "Laurel")
     assert isinstance(station, GasStation)
     assert station.station_name == "7-Eleven"
-    assert station.street_name == "9651 Washington Blvd N Laurel, MD"
+    assert station.street_name == "9651 Washington Blvd N"
     assert station.base_price == 2.85
 
     # The parser should correctly parse the second (valid) card
@@ -126,7 +128,7 @@ def test_parse_station_card_with_fixture():
     station_weis = parse_station_card(card_sel_weis, "20723", "Savage")
     assert isinstance(station_weis, GasStation)
     assert station_weis.station_name == "Weis"
-    assert station_weis.street_name == "9250 Washington Blvd N Savage, MD"
+    assert station_weis.street_name == "9250 Washington Blvd N"
     assert station_weis.base_price == 2.85
 
     # The parser should return None for the third (phantom) card

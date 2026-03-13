@@ -1,35 +1,10 @@
 import re
-import time
-import json
-import os
 from typing import List, Optional
 from parsel import Selector
 from loguru import logger
 from .config import BLOCKLIST, DISCOUNTS
-from .models import GasStation, GeocodeCache, Coordinates
-
-CACHE_FILE = "geocache.json"
-
-
-def load_geo_cache() -> GeocodeCache:
-    """PERFORMANCE: Load previous geocoding results as a Pydantic model."""
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE, "r") as f:
-                data = json.load(f)
-                return GeocodeCache.model_validate(data)
-        except Exception as e:
-            logger.warning(f"⚠️  Error loading geocache: {e}")
-    return GeocodeCache(root={})
-
-
-def save_geo_cache(cache: GeocodeCache):
-    """PERFORMANCE: Save results to disk using Pydantic serialization."""
-    try:
-        with open(CACHE_FILE, "w") as f:
-            json.dump(cache.model_dump(), f, indent=2)
-    except Exception as e:
-        logger.error(f"⚠️  Error saving geocache: {e}")
+from .models import GasStation
+from .geocode import load_geo_cache, save_geo_cache, get_state_hint, geocode_stations
 
 
 def clean_address(full_text):
@@ -58,17 +33,6 @@ def clean_address(full_text):
         if match:
             return match.group(0).strip()
     return "Unknown Address"
-
-
-def get_state_hint(zip_code):
-    """Returns state name based on zip code prefix."""
-    if zip_code.startswith(("20", "21")):
-        return "Maryland"
-    if zip_code.startswith("11"):
-        return "New York"
-    if zip_code.startswith("01"):
-        return "Massachusetts"
-    return None
 
 
 def extract_base_price(price_text):
@@ -119,7 +83,7 @@ def parse_station_card(card_sel: Selector, zip_code, city_name, discounts=DISCOU
         address_list = card_sel.xpath(
             ".//div[contains(@class, 'StationDisplay-module__address')]//text()"
         ).getall()
-        address_raw = " ".join(address_list).strip()
+        address_raw = "\n".join(address_list).strip()
         if not address_raw:
             return None
         street_addr = clean_address(address_raw)
@@ -153,72 +117,4 @@ def parse_station_card(card_sel: Selector, zip_code, city_name, discounts=DISCOU
             Street=street_addr,
         )
     except Exception:
-        return None
-
-
-def geocode_stations(stations, geolocator, geo_cache: GeocodeCache):
-    """Batch geocodes GasStation objects using the structured cache model."""
-    logger.info(f"\n🌍 Geocoding {len(stations)} unique stations...")
-    for s in stations:
-        cache_key = (
-            f"{s.street_name}, {s.zip_code}"
-            if s.street_name != "Unknown Address"
-            else f"{s.station_name}, {s.zip_code}"
-        )
-
-        if cache_key in geo_cache.root:
-            logger.debug(f"   Cache hit for: '{cache_key}'")
-            coords = geo_cache.root[cache_key]
-            s.lat, s.long = coords.lat, coords.lon
-        else:
-            logger.info(f"   Geocoding new address: '{cache_key}'")
-            coords = _perform_geocode(
-                s.station_name,
-                s.street_name,
-                s.zip_code,
-                geolocator,
-                geo_cache,
-                cache_key,
-            )
-            if coords:
-                s.lat, s.long = coords.lat, coords.lon
-    return stations
-
-
-def _perform_geocode(
-    name, street_addr, zip_code, geolocator, geo_cache: GeocodeCache, cache_key
-) -> Optional[Coordinates]:
-    """Helper for Nominatim API with rate limiting, returns Coordinates model."""
-    try:
-        time.sleep(1.1)
-        location = None
-        state_hint = get_state_hint(zip_code)
-
-        if street_addr != "Unknown Address":
-            query = {"street": street_addr, "postalcode": zip_code, "country": "USA"}
-            if state_hint:
-                query["state"] = state_hint
-            location = geolocator.geocode(query)
-
-        if not location:
-            parts = [
-                street_addr if street_addr != "Unknown Address" else name,
-                zip_code,
-            ]
-            if state_hint:
-                parts.append(state_hint)
-            parts.append("USA")
-            location = geolocator.geocode(", ".join(parts))
-
-        if location:
-            coords = Coordinates(lat=location.latitude, lon=location.longitude)
-            geo_cache.root[cache_key] = coords
-            return coords
-
-        coords = Coordinates(lat=None, lon=None)
-        geo_cache.root[cache_key] = coords
-        return coords
-
-    except Exception as e:
-        logger.error(f"   ⚠️ Geocoding error for '{cache_key}': {e}")
         return None

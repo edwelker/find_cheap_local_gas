@@ -3,10 +3,6 @@
     "lat": 39.1145065,
     "lon": -76.8332451
   },
-  "9250 Washington Blvd N Savage, MD, 20723": {
-    "lat": null,
-    "lon": null
-  },
   "9280 All Saints Rd Laurel, MD, 20723": {
     "lat": 39.1195226,
     "lon": -76.8519516
@@ -43,17 +39,9 @@
     "lat": 39.1770183,
     "lon": -76.8436668
   },
-  "6425 Dobbin Center Way Columbia, MD, 21045": {
-    "lat": null,
-    "lon": null
-  },
   "7248 Cradlerock Way Columbia, MD, 21045": {
     "lat": 39.1860412,
     "lon": -76.8456123
-  },
-  "6004 Foreland Garth Columbia, MD, 21045": {
-    "lat": null,
-    "lon": null
   },
   "6251 Columbia Crossing Cir Columbia, MD, 21045": {
     "lat": 39.1995215,
@@ -78,10 +66,6 @@
   "9101 Snowden River Pkwy Columbia, MD, 21046": {
     "lat": 39.1806134,
     "lon": -76.8250707
-  },
-  "7084 Minstrel Way Columbia, MD, 21046": {
-    "lat": null,
-    "lon": null
   },
   "9109 BALTIMORE NATIONAL PIKE Ellicott City, MD, 21042": {
     "lat": 39.2771741,
@@ -139,10 +123,6 @@
     "lat": 39.2561283,
     "lon": -76.8190081
   },
-  "8850 Centre Park Dr Columbia, MD, 21043": {
-    "lat": null,
-    "lon": null
-  },
   "8272 Quarterfield Rd Severn, MD, 21144": {
     "lat": 39.1165734,
     "lon": -76.681597
@@ -159,17 +139,9 @@
     "lat": 39.1373727,
     "lon": -76.684828
   },
-  "1075 Dorsey Rd Hanover, MD, 21076": {
-    "lat": null,
-    "lon": null
-  },
   "7043 Arundel Mills Cir Hanover, MD, 21076": {
     "lat": 39.1539236,
     "lon": -76.7222726
-  },
-  "2631 Old Annapolis Rd Hanover, MD, 21076": {
-    "lat": null,
-    "lon": null
   },
   "7710 Milestone Pkwy Hanover, MD, 21076": {
     "lat": 39.154105,
@@ -199,17 +171,9 @@
     "lat": 39.1743215,
     "lon": -76.7771879
   },
-  "7879 Pocomoke Dr Jessup, MD, 20794": {
-    "lat": null,
-    "lon": null
-  },
   "7930 Washington Blvd Jessup, MD, 20794": {
     "lat": 39.1711851,
     "lon": -76.7868219
-  },
-  "2861 Jessup Rd Hanover, MD, 20794": {
-    "lat": null,
-    "lon": null
   },
   "2850 Jessup Rd Jessup, MD, 20794": {
     "lat": 39.1424361,
@@ -327,14 +291,6 @@
     "lat": 40.9283279,
     "lon": -72.6857992
   },
-  "1050 Osborne Ave Riverhead, NY, 11901": {
-    "lat": null,
-    "lon": null
-  },
-  "1879 Old Country Rd 58 Riverhead, NY, 11901": {
-    "lat": null,
-    "lon": null
-  },
   "9 Lake Ave Riverhead, NY, 11901": {
     "lat": 40.9142638,
     "lon": -72.6632928
@@ -343,17 +299,9 @@
     "lat": 40.9346058,
     "lon": -72.6699464
   },
-  "640 Main Rd Aquebogue, NY, 11901": {
-    "lat": null,
-    "lon": null
-  },
   "640 Old Country Rd Riverhead, NY, 11901": {
     "lat": 40.935281,
     "lon": -72.6648692
-  },
-  "1429 Main Rd Jamesport, NY, 11901": {
-    "lat": null,
-    "lon": null
   },
   "107 Old Riverhead Rd Westhampton Beach, NY, 11978": {
     "lat": 40.8300726,
@@ -367,17 +315,9 @@
     "lat": 40.874857,
     "lon": -72.536217
   },
-  "250 E Montauk Hwy Hampton Bays, NY, 11946": {
-    "lat": null,
-    "lon": null
-  },
   "816 CR-39 Southampton, NY, 11968": {
     "lat": 40.8926889,
     "lon": -72.4251772
-  },
-  "1138 Montauk Hwy Watermill, NY, 11976": {
-    "lat": null,
-    "lon": null
   },
   "668 Liberty St Springfield, MA, 01104": {
     "lat": 42.1214212,
@@ -703,14 +643,6 @@
     "lat": 42.4899751,
     "lon": -72.6098871
   },
-  "142 Mohawk Tr Greenfield, MA, 01301": {
-    "lat": null,
-    "lon": null
-  },
-  "100 Mohawk Tr Greenfield, MA, 01301": {
-    "lat": null,
-    "lon": null
-  },
   "488 Bernardston Rd Greenfield, MA, 01301": {
     "lat": 42.6094682,
     "lon": -72.5869418
@@ -719,10 +651,6 @@
     "lat": 42.600351,
     "lon": -72.5939125
   },
-  "223 Mohawk Tr Greenfield, MA, 01301": {
-    "lat": null,
-    "lon": null
-  },
   "63 Main St Greenfield, MA, 01301": {
     "lat": 42.5871489,
     "lon": -72.6066369
@@ -730,10 +658,6 @@
   "109 Mohawk Trail Greenfield, MA, 01301": {
     "lat": 42.5848575,
     "lon": -72.6166793
-  },
-  "242 Mohawk Tr Greenfield, MA, 01301": {
-    "lat": null,
-    "lon": null
   },
   "650 Suffield St Agawam, MA, 01001": {
     "lat": 42.0675744,
@@ -819,10 +743,6 @@
     "lat": 42.6060538,
     "lon": -72.5895143
   },
-  "269 Mohawk Tr Shelburne Falls, MA, 01370": {
-    "lat": null,
-    "lon": null
-  },
   "7910 Shipley Homestead Dr Hanover, MD, 21076": {
     "lat": 39.1325985,
     "lon": -76.7399104
@@ -834,10 +754,6 @@
   "278 Elm St Westfield, MA, 01085": {
     "lat": 42.1256723,
     "lon": -72.7476243
-  },
-  "1400 Russel Rd Westfield, MA, 01085": {
-    "lat": null,
-    "lon": null
   },
   "188 N King St Northampton, MA, 01060": {
     "lat": 42.3287267,
@@ -979,10 +895,6 @@
     "lat": 39.4079843,
     "lon": -76.9666105
   },
-  "4 E Ridgville Blvd Mount Airy, MD, 21771": {
-    "lat": null,
-    "lon": null
-  },
   "109 Ridgeside Ct Mount Airy, MD, 21771": {
     "lat": 39.363781,
     "lon": -77.1645562
@@ -1007,10 +919,6 @@
     "lat": 39.3539588,
     "lon": -77.1714016
   },
-  "649 Lakeview Dr Mount Airy, MD, 21771": {
-    "lat": null,
-    "lon": null
-  },
   "11719 Old National Pike, 21774": {
     "lat": 39.3937185,
     "lon": -77.3315807
@@ -1018,14 +926,6 @@
   "11780 Old National Pike New Market, MD, 21774": {
     "lat": 39.3842372,
     "lon": -77.2563552
-  },
-  "3737 Lawson Rd Ijamsville, MD, 21770": {
-    "lat": null,
-    "lon": null
-  },
-  "11791 Fingerboard Rd Monrovia, MD, 21770": {
-    "lat": null,
-    "lon": null
   },
   "10122 Old National Pike Ijamsville, MD, 21754": {
     "lat": 39.3919073,
@@ -1046,10 +946,6 @@
   "9253 Fingerboard Rd Ijamsville, MD, 21754": {
     "lat": 39.3273682,
     "lon": -77.3428783
-  },
-  "1904 Urbana Pike Clarksburg, MD, 21754": {
-    "lat": null,
-    "lon": null
   },
   "9871 Main St Damascus, MD, 20872": {
     "lat": 39.288635,
@@ -1162,10 +1058,6 @@
   "1001 W Patrick St Frederick, MD, 21702": {
     "lat": 39.4172973,
     "lon": -77.4436762
-  },
-  "W Express, 21702": {
-    "lat": null,
-    "lon": null
   },
   "1180 W Patrick St Frederick, MD, 21703": {
     "lat": 39.4180675,
@@ -1291,14 +1183,6 @@
     "lat": 39.3584946,
     "lon": -77.5300718
   },
-  "1201 Dutchman's Creek Dr Brunswick, MD, 21758": {
-    "lat": null,
-    "lon": null
-  },
-  "19110 Keep Tryst Rd Knoxville, MD, 21758": {
-    "lat": null,
-    "lon": null
-  },
   "3842 Burkittsville Rd Knoxville, MD, 21758": {
     "lat": 39.3370038,
     "lon": -77.640031
@@ -1366,5 +1250,9 @@
   "372 State Rd. Whately, MA, 01373": {
     "lat": 42.4694152,
     "lon": -72.6145614
+  },
+  "A1, 20723": {
+    "lat": 1.0,
+    "lon": 1.0
   }
 }
