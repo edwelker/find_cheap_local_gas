@@ -5,6 +5,7 @@ src/gas_scraper/__main__.py
 src/gas_scraper/browser.py
 src/gas_scraper/cleanup_history.py
 src/gas_scraper/config.py
+src/gas_scraper/geocode.py
 src/gas_scraper/main.py
 src/gas_scraper/models.py
 src/gas_scraper/parser.py
@@ -17,7 +18,9 @@ src/gas_scraper.egg-info/requires.txt
 src/gas_scraper.egg-info/top_level.txt
 tests/test_browser.py
 tests/test_config.py
+tests/test_geocode.py
 tests/test_integration.py
 tests/test_live.py
+tests/test_live_geocode.py
 tests/test_main.py
 tests/test_parser.py
