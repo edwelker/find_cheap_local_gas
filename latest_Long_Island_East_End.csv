@@ -1,20 +1,20 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Riverhead,11901,Empire,"1050 Osborne Ave, 11901",3.22,-,40.8032257,-72.7577586,3.22
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.39,Mobil,40.9252206,-72.6951725,3.36
 Riverhead,11901,Shell,"1733 Old Country Rd, 11901",3.41,Shell,40.9239801,-72.7023482,3.36
-Riverhead,11901,76,"7 Peconic Ave, 11901",3.35,-,40.9149773,-72.6623567,3.35
 Riverhead,11901,Sunoco,"1879 Old Country Rd 58, 11901",3.39,Sunoco,,,3.36
 Riverhead,11901,Speedway,"870 Old Country Rd, 11901",3.39,Speedway,40.9346058,-72.6699464,3.34
-Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.39,Mobil,40.9252206,-72.6951725,3.36
+Riverhead,11901,76,"7 Peconic Ave, 11901",3.35,-,40.9149773,-72.6623567,3.35
 Riverhead,11901,BP,"626 W Main St, 11901",3.59,BP,40.9184063,-72.6731535,3.54
-Riverhead,11901,Shell,"9 Lake Ave, 11901",3.59,Shell,40.9142638,-72.6632928,3.54
 Riverhead,11901,Valero,"1356 OLD COUNTRY RD, 11901",3.59,-,40.9283279,-72.6857992,3.59
+Riverhead,11901,Shell,"9 Lake Ave, 11901",3.59,Shell,40.9142638,-72.6632928,3.54
 Riverhead,11901,OK Petroleum,"1212 E Main St, 11901",3.45,-,40.9308412,-72.6498192,3.45
 Riverhead,11901,Empire,"640 Main Rd, 11901",3.45,-,40.9396238,-72.6416222,3.45
 Riverhead,11901,CITGO,"1429 Main Rd, 11901",3.59,-,40.9391677,-72.6428426,3.59
+Westhampton Beach,11978,Valero,"112 Montauk Hwy, 11978",3.09,-,40.8012031,-72.7825196,3.09
 Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",3.49,7-Eleven,40.8300726,-72.6474301,3.46
 Quogue,11959,Speedway,"38 Montauk Hwy, 11959",3.49,Speedway,40.88464,-72.4264717,3.44
-Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",3.39,7-Eleven,40.8766328,-72.5321733,3.36
-Hampton Bays,11946,Mobil,"239 W Montauk Hwy, 11946",3.39,Mobil,40.8659062,-72.5490604,3.36
+Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",3.49,7-Eleven,40.8766328,-72.5321733,3.46
 Southampton,11968,Speedway,"816 CR-39, 11968",3.49,Speedway,40.8926889,-72.4251772,3.44
 Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",3.49,Speedway,40.9192162,-72.3436923,3.44
 Wainscott,11975,Speedway,"Unknown Address, 11975",3.69,Speedway,40.9487031,-72.2446628,3.64
