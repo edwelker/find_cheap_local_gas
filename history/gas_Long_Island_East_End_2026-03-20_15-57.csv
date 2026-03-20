@@ -1,13 +1,20 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Riverhead,11901,Sunoco,"1879 Old Country Rd 58, 11901",3.41,Sunoco,,,3.38
-Riverhead,11901,Shell,"1733 Old Country Rd, 11901",3.49,Shell,40.9239801,-72.7023482,3.44
+Riverhead,11901,76,"301 Flanders Rd, 11901",3.59,-,40.9120984,-72.6478696,3.59
+Riverhead,11901,Shell,"1733 Old Country Rd, 11901",3.59,Shell,40.9239801,-72.7023482,3.54
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.59,Mobil,40.9252206,-72.6951725,3.56
+Riverhead,11901,Valero,"1356 OLD COUNTRY RD, 11901",3.59,-,40.9283279,-72.6857992,3.59
+Riverhead,11901,Empire,"1050 Osborne Ave, 11901",3.57,-,40.8032257,-72.7577586,3.57
+Riverhead,11901,76,"7 Peconic Ave, 11901",3.59,-,40.9149773,-72.6623567,3.59
+Riverhead,11901,BP,"626 W Main St, 11901",3.69,BP,40.9184063,-72.6731535,3.64
+Riverhead,11901,Shell,"9 Lake Ave, 11901",3.69,Shell,40.9142638,-72.6632928,3.64
 Riverhead,11901,Speedway,"870 Old Country Rd, 11901",3.79,Speedway,40.9346058,-72.6699464,3.74
 Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",3.79,7-Eleven,40.8300726,-72.6474301,3.76
 Quogue,11959,Speedway,"38 Montauk Hwy, 11959",3.79,Speedway,40.88464,-72.4264717,3.74
 Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",3.49,7-Eleven,40.8766328,-72.5321733,3.46
 Hampton Bays,11946,Mobil,"239 W Montauk Hwy, 11946",3.6,Mobil,40.8659062,-72.5490604,3.57
 Southampton,11968,Speedway,"816 CR-39, 11968",3.79,Speedway,40.8926889,-72.4251772,3.74
-Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",3.49,Speedway,40.9192162,-72.3436923,3.44
+Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",3.79,Speedway,40.9192162,-72.3436923,3.74
 Sag Harbor,11963,Gulf,"144 Hampton St, 11963",4.19,-,40.9957393,-72.2839455,4.19
-Wainscott,11975,Speedway,"Unknown Address, 11975",3.69,Speedway,40.9487031,-72.2446628,3.64
+Wainscott,11975,Speedway,"Unknown Address, 11975",3.89,Speedway,40.9487031,-72.2446628,3.84
 East Hampton,11937,ROYAL,"23 Three Mile Harbor Rd, 11937",4.33,-,40.97458,-72.1821194,4.33
