@@ -1,40 +1,37 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Columbia (Town Center),21044,BP,"5485 HARPERS FARM RD, 21044",4.28,BP,39.2220799,-76.8907487,4.23
-Columbia (Town Center),21044,Exxon,"10611 Little Patuxent Pkwy, 21044",4.29,Exxon,39.213332,-76.8709132,4.26
-Columbia (Town Center),21044,Exxon,"10141 Little Patuxent Pkwy, 21044",4.49,Exxon,39.2181995,-76.8577067,4.46
 Columbia (Town Center),21044,Sunoco,"6440 Freetown Rd, 21044",4.49,Sunoco,39.1950229,-76.8817831,4.46
+Columbia (Town Center),21044,Exxon,"10141 Little Patuxent Pkwy, 21044",4.49,Exxon,39.2181995,-76.8577067,4.46
+Columbia (Town Center),21044,Exxon,"10611 Little Patuxent Pkwy, 21044",4.29,Exxon,39.213332,-76.8709132,4.26
 Columbia (East),21045,Liberty,"6425 Dobbin Center Way, 21045",3.89,-,39.1968235,-76.8216821,3.89
 Columbia (East),21045,Mobil,"6251 Columbia Crossing Cir, 21045",3.99,Mobil,39.1995215,-76.8147128,3.96
-Columbia (East),21045,7-Eleven,"5901 Stevens Forest Rd, 21045",3.99,7-Eleven,39.210533,-76.847772,3.96
+Columbia (East),21045,7-Eleven,"5901 Stevens Forest Rd, 21045",3.98,7-Eleven,39.210533,-76.847772,3.95
+Columbia (East),21045,7-Eleven,"8251 Snowden River Pkwy, 21045",3.98,7-Eleven,39.2090716,-76.8034905,3.95
 Columbia (East),21045,Exxon,"7100 Minstrel Way, 21045",3.99,Exxon,39.177736,-76.84448,3.96
-Columbia (East),21045,7-Eleven,"8251 Snowden River Pkwy, 21045",3.99,7-Eleven,39.2090716,-76.8034905,3.96
 Columbia (East),21045,Shell,"7248 Cradlerock Way, 21045",3.99,Shell,39.1862523,-76.8457193,3.94
 Columbia (East),21045,Exxon,"6004 Foreland Garth, 21045",3.99,Exxon,39.2049806,-76.8164844,3.96
 Columbia (South),21046,Exxon,"6300 Stevens Forest, 21046",3.89,Exxon,39.1973061,-76.8530941,3.86
 Columbia (South),21046,Shell,"9101 Snowden River Pkwy, 21046",3.99,Shell,39.1827983,-76.8205935,3.94
 Columbia (South),21046,Royal Farms,"7084 Minstrel Way, 21046",3.99,Royal Farms,39.1759477,-76.8444624,3.89
-Columbia (South),21046,Exxon,"7201 Eden Brook Dr, 21046",4.19,Exxon,39.1698781,-76.8656991,4.16
 Ellicott City (West),21042,Mobil,"9320 Baltimore National Pike, 21042",3.95,Mobil,39.2779163,-76.8325436,3.92
-Ellicott City (West),21042,Sunoco,"10214 Baltimore National Pike, 21042",3.95,Sunoco,39.2803307,-76.8652201,3.92
-Ellicott City (West),21042,Carroll Motor Fuels,"9109 BALTIMORE NATIONAL PIKE, 21042",3.92,-,39.2771741,-76.8262007,3.92
-Ellicott City (West),21042,Dash-In,"9075 Baltimore National Pike, 21042",3.99,-,39.2762251,-76.8250029,3.99
 Ellicott City (West),21042,Sunoco,"9395 Baltimore National Pike, 21042",3.95,Sunoco,39.2772371,-76.8350415,3.92
+Ellicott City (West),21042,Sunoco,"10214 Baltimore National Pike, 21042",3.95,Sunoco,39.2803307,-76.8652201,3.92
+Ellicott City (West),21042,Dash-In,"9075 Baltimore National Pike, 21042",3.99,-,39.2762251,-76.8250029,3.99
+Ellicott City (West),21042,Carroll Motor Fuels,"9109 BALTIMORE NATIONAL PIKE, 21042",3.92,-,39.2771741,-76.8262007,3.92
 Ellicott City (West),21042,Exxon,"10193 Baltimore National Pike, 21042",3.99,Exxon,39.2793591,-76.8636316,3.96
 Ellicott City (West),21042,Shell,"4755 Dorsey Hall Dr, 21042",4.09,Shell,39.2423537,-76.8403131,4.04
 Ellicott City (East),21043,BP,"8505 Baltimore National Pike, 21043",3.87,BP,39.2842309,-76.8075056,3.82
 Ellicott City (East),21043,Shell,"64 Frederick Rd, 21043",3.93,Shell,39.2654947,-76.7906258,3.88
 Ellicott City (East),21043,Carroll Motor Fuels,"4132 Old Columbia Pike, 21043",3.91,-,39.2565046,-76.8197592,3.91
+Ellicott City (East),21043,High's,"3095 Rogers Ave, 21043",3.93,High's,39.2874075,-76.8091156,3.88
 Ellicott City (East),21043,Exxon,"8850 Centre Park Dr, 21043",3.99,Exxon,39.2279074,-76.8127674,3.96
 Ellicott City (East),21043,Exxon,"4235 Montgomery Rd, 21043",3.93,Exxon,39.2554156,-76.8184372,3.9
 Ellicott City (East),21043,Mobil,"4398 Montgomery Rd, 21043",3.99,Mobil,39.2520755,-76.8165282,3.96
 Ellicott City (East),21043,Dash In,"4205 Montgomery Rd, 21043",3.99,-,39.2561283,-76.8190081,3.99
-Ellicott City (East),21043,Carroll Motor Fuels,"8720 Baltimore National Pike, 21043",3.93,-,39.2808054,-76.8147058,3.93
-Ellicott City (East),21043,Shell,"5651 Waterloo Rd, 21043",4.09,Shell,39.2170938,-76.806013,4.04
-Scaggsville / Laurel,20723,Weis,"9250 Washington Blvd N, 20723",3.79,-,42.739557,-83.0334814,3.79
 Scaggsville / Laurel,20723,7-Eleven,"9651 Washington Blvd N, 20723",3.99,7-Eleven,42.739557,-83.0334814,3.96
-Scaggsville / Laurel,20723,Exxon,"7500 Montpelier Rd, 20723",4.19,Exxon,39.159558,-76.893227,4.16
+Scaggsville / Laurel,20723,Weis,"9250 Washington Blvd N, 20723",3.99,-,42.739557,-83.0334814,3.99
 Scaggsville / Laurel,20723,Exxon,"8850 Gorman Rd, 20723",4.19,Exxon,39.1315805,-76.8205188,4.16
-Scaggsville / Laurel,20723,Exxon,"9275 All Saints Rd, 20723",4.19,Exxon,39.1189484,-76.8513125,4.16
+Scaggsville / Laurel,20723,Exxon,"7500 Montpelier Rd, 20723",4.19,Exxon,39.159558,-76.893227,4.16
 Clarksville,21029,Sunoco,"5015 Signal Bell Ln, 21029",4.09,Sunoco,39.2097731,-76.9388595,4.06
 Clarksville,21029,Exxon,"12405 Clarksville Pike, 21029",4.19,Exxon,39.2065148,-76.9427277,4.16
 Fulton,20759,High's,"11840 Lime Kiln Rd, 20759",3.99,High's,39.1513419,-76.9241758,3.94
@@ -44,65 +41,62 @@ Cooksville,21723,High's Dairy Store,"2101 Roxbury Mills Rd, 21723",3.79,High's,3
 Glenelg,21737,Royal Farms,"3901 Ten Oaks Rd, 21737",3.99,Royal Farms,39.2645324,-76.9858863,3.89
 Sykesville/Eldersburg,21784,Carroll Motor Fuels,"1400 Liberty Rd, 21784",3.83,-,39.402213,-76.944181,3.83
 Sykesville/Eldersburg,21784,High's Dairy Store,"6700 Sykesville Rd, 21784",3.97,High's,39.3910806,-76.9619588,3.92
-Sykesville/Eldersburg,21784,Shell,"6401 Ridge Rd, 21784",3.97,Shell,39.39371,-76.93236,3.92
-Sykesville/Eldersburg,21784,7-Eleven,"6323 Sykesville Rd, 21784",3.99,7-Eleven,39.399826,-76.9516719,3.96
 Sykesville/Eldersburg,21784,Martin's,"1318 Londontown Blvd, 21784",3.99,-,39.4083322,-76.9490677,3.99
-Sykesville/Eldersburg,21784,Shell,"887 Sandosky Rd, 21784",3.99,Shell,39.366138,-76.9651372,3.94
+Sykesville/Eldersburg,21784,7-Eleven,"6323 Sykesville Rd, 21784",3.99,7-Eleven,39.399826,-76.9516719,3.96
+Sykesville/Eldersburg,21784,Wawa,"1310 Liberty Rd, 21784",3.99,Wawa,39.4038381,-76.9503802,3.99
+Sykesville/Eldersburg,21784,Shell,"6401 Ridge Rd, 21784",3.97,Shell,39.39371,-76.93236,3.92
 Sykesville/Eldersburg,21784,Exxon,"1305 Liberty Rd, 21784",3.99,Exxon,39.4034022,-76.9503893,3.96
+Sykesville/Eldersburg,21784,Shell,"887 Sandosky Rd, 21784",3.99,Shell,39.366138,-76.9651372,3.94
+Sykesville/Eldersburg,21784,Royal Farms,"1261 Liberty Rd, 21784",3.99,Royal Farms,39.4045373,-76.9517427,3.89
 Sykesville/Eldersburg,21784,High's Dairy Store,"10 Liberty Rd, 21784",3.99,High's,39.4240768,-76.9961772,3.94
 Sykesville/Eldersburg,21784,Marathon,"1631 W Liberty Rd, 21784",3.99,-,39.4447168,-77.0506223,3.99
-Sykesville/Eldersburg,21784,Wawa,"1310 Liberty Rd, 21784",3.99,Wawa,39.4038381,-76.9503802,3.99
-Mount Airy,21771,Ridgeville Service Center,"4 E Ridgville Blvd, 21771",3.79,-,,,3.79
-Mount Airy,21771,7-Eleven,"1610 RIDGESIDE DR, 21771",3.99,7-Eleven,39.3635033,-77.1631603,3.96
-Mount Airy,21771,Exxon,"4400 Mill Bottom Rd, 21771",4.03,Exxon,39.3539588,-77.1714016,4.0
-Mount Airy,21771,Marathon,"2605 Liberty Rd, 21771",3.99,-,39.4581114,-77.088031,3.99
-Mount Airy,21771,Carroll Motor Fuels,"502 E Ridgeville Blvd, 21771",3.93,-,39.3630121,-77.1601868,3.93
+Mount Airy,21771,Ridgeville Service Center,"4 E Ridgville Blvd, 21771",3.93,-,,,3.93
 Mount Airy,21771,High's Dairy Store,"1001 Twin Arch Rd, 21771",3.99,High's,39.3680732,-77.1445195,3.94
-New Market,21774,High's Dairy Store,"11780 Old National Pike, 21774",3.99,High's,39.3842372,-77.2563552,3.94
+Mount Airy,21771,7-Eleven,"1610 RIDGESIDE DR, 21771",3.99,7-Eleven,39.3635033,-77.1631603,3.96
+Mount Airy,21771,Marathon,"2605 Liberty Rd, 21771",3.99,-,39.4581114,-77.088031,3.99
+Mount Airy,21771,Exxon,"4400 Mill Bottom Rd, 21771",4.03,Exxon,39.3539588,-77.1714016,4.0
+Mount Airy,21771,Shell,"649 Lakeview Dr, 21771",4.22,Shell,39.3536202,-77.1701334,4.17
+Mount Airy,21771,Carroll Motor Fuels,"502 E Ridgeville Blvd, 21771",3.93,-,39.3630121,-77.1601868,3.93
 Monrovia,21770,Carroll Motor Fuels,"11791 Fingerboard Rd, 21770",3.93,-,39.3437797,-77.2549934,3.93
 Monrovia,21770,Green Valley Convenient Store,"3737 Lawson Rd, 21770",3.89,-,39.3387445,-77.2690275,3.89
-Ijamsville,21754,Gas & Go Express,"10122 Old National Pike, 21754",3.99,-,39.3899693,-77.3107474,3.99
 Ijamsville,21754,Sunoco,"10210 Old National Pike, 21754",3.99,Sunoco,39.3897563,-77.3098508,3.96
+Ijamsville,21754,Gas & Go Express,"10122 Old National Pike, 21754",3.99,-,39.3899693,-77.3107474,3.99
 Ijamsville,21754,Sheetz,"5943 Oakcross Ln, 21754",3.99,Sheetz,39.3951765,-77.3233888,3.96
 Ijamsville,21754,Sheetz,"9253 Fingerboard Rd, 21754",3.99,Sheetz,39.3273682,-77.3428783,3.96
 Ijamsville,21754,Dash In,"3359 Urbana Pike, 21754",3.99,-,39.3234078,-77.3408281,3.99
-Ijamsville,21754,Carroll Motor Fuels,"1904 Urbana Pike, 21754",3.93,-,39.2944817,-77.3157875,3.93
-Damascus,20872,Safeway,"26300 Ridge Rd, 20872",3.87,-,39.2887375,-77.2048713,3.87
-Damascus,20872,Liberty,"26241 Ridge Rd, 20872",3.73,-,39.2879496,-77.2062264,3.73
+Damascus,20872,Liberty,"26241 Ridge Rd, 20872",3.79,-,39.2879496,-77.2062264,3.79
+Damascus,20872,Safeway,"26300 Ridge Rd, 20872",3.79,-,39.2887375,-77.2048713,3.79
 Damascus,20872,Carroll Motor Fuels,"26234 Ridge Rd, 20872",3.73,-,39.2879879,-77.207233,3.73
 Frederick (Downtown),21701,Crown,"9824 Liberty Rd, 21701",3.75,-,39.4541047,-77.3228424,3.75
-Frederick (Downtown),21701,Shell,"342 S Jefferson St, 21701",3.89,Shell,39.4087437,-77.426607,3.84
-Frederick (Downtown),21701,Sheetz,"1300 E Patrick St, 21701",3.99,Sheetz,39.4065678,-77.3879765,3.96
 Frederick (Downtown),21701,Jefferson Street Service Ctr,"242 S Jefferson St, 21701",3.75,-,39.4096067,-77.4244053,3.75
+Frederick (Downtown),21701,Shell,"342 S Jefferson St, 21701",3.93,Shell,39.4087437,-77.426607,3.88
+Frederick (Downtown),21701,Sheetz,"1300 E Patrick St, 21701",3.99,Sheetz,39.4065678,-77.3879765,3.96
 Frederick (Downtown),21701,Giant,"1700 Kingfisher Dr, 21701",3.99,Giant,39.4478199,-77.3835177,3.94
+Frederick (Downtown),21701,7-Eleven,"11922 Main St, 21701",3.99,7-Eleven,28.0718039,-82.6265505,3.96
 Frederick (Downtown),21701,Exxon,"6067 Spring Ridge Pkwy, 21701",3.93,Exxon,39.403557,-77.3478271,3.9
 Frederick (Downtown),21701,Rutter's,"1730 Monocacy Blvd, 21701",3.99,-,39.4386369,-77.3776528,3.99
-Frederick (Downtown),21701,7-Eleven,"11922 Main St, 21701",3.99,7-Eleven,28.0718039,-82.6265505,3.96
 Frederick (Downtown),21701,Liberty,"1301 N East St, 21701",3.99,-,39.4168512,-77.4049713,3.99
 Frederick (Downtown),21701,Exxon,"400 S Jefferson St, 21701",4.15,Exxon,39.4083014,-77.4275253,4.12
-Frederick (Downtown),21701,BP,"503 W 7th St, 21701",4.08,BP,39.4242376,-77.4150016,4.03
 Frederick (Downtown),21701,Royal Farms,"75 Monocacy Blvd, 21701",3.99,Royal Farms,39.4079785,-77.3879366,3.89
 Frederick (Northwest),21702,Rosemont Service Center,"1704 Rosemont Ave, 21702",3.75,-,39.4278438,-77.4321436,3.75
 Frederick (Northwest),21702,W Express,"Unknown Address, 21702",3.88,-,,,3.88
-Frederick (Northwest),21702,Weis Gas-N-Go,"2 Old Camp Rd, 21702",3.97,-,39.422232,-77.466165,3.97
 Frederick (Northwest),21702,AAFES,"1425 Porter St, 21702",3.99,-,39.4362989,-77.4239801,3.99
 Frederick (Northwest),21702,GetGo,"1391 W 7th St, 21702",3.99,-,39.4308121,-77.4204144,3.99
-Frederick (Northwest),21702,Shell,"1275 W Patrick St, 21702",3.99,Shell,39.4194983,-77.4478184,3.94
-Frederick (Northwest),21702,Wawa,"1001 W Patrick St, 21702",3.99,Wawa,39.4161019,-77.4386975,3.99
+Frederick (Northwest),21702,Weis Gas-N-Go,"2 Old Camp Rd, 21702",3.97,-,39.422232,-77.466165,3.97
 Frederick (Northwest),21702,Sheetz,"23 Thomas Johnson Dr, 21702",3.99,Sheetz,39.4593648,-77.4062931,3.96
 Frederick (Northwest),21702,Sheetz,"1600 Rosemont Ave, 21702",3.99,Sheetz,39.426862,-77.430936,3.96
+Frederick (Northwest),21702,Wawa,"1001 W Patrick St, 21702",3.99,Wawa,39.4161019,-77.4386975,3.99
+Frederick (Northwest),21702,Shell,"1275 W Patrick St, 21702",3.99,Shell,39.4194983,-77.4478184,3.94
+Frederick (Northwest),21702,Exxon,"1561 Opossumtown Pike, 21702",4.05,Exxon,39.4409168,-77.4107626,4.02
 Frederick (Northwest),21702,7-Eleven,"7729 Sundays Ln, 21702",3.99,7-Eleven,39.4858245,-77.3983281,3.96
 Frederick (Northwest),21702,Exxon,"1380 W Patrick St, 21702",4.14,Exxon,39.4186679,-77.4582166,4.11
-Frederick (Northwest),21702,Exxon,"1561 Opossumtown Pike, 21702",4.09,Exxon,39.4409168,-77.4107626,4.06
-Frederick (Northwest),21702,Royal Farms,"2050 Yellow Springs Rd, 21702",3.99,Royal Farms,39.4407348,-77.4374792,3.89
 Frederick (Southwest),21703,Carroll Motor Fuels,"1180 W Patrick St, 21703",3.91,-,39.4180675,-77.450524,3.91
-Frederick (Southwest),21703,A-1 Mart,"649 Himes Ave, 21703",3.96,-,39.4074431,-77.4470426,3.96
 Frederick (Southwest),21703,Sunoco,"1200 W Patrick St, 21703",3.97,Sunoco,39.4166959,-77.4417651,3.94
 Frederick (Southwest),21703,GetGo,"1000 W Patrick St, 21703",3.99,-,39.416091,-77.438647,3.99
 Frederick (Southwest),21703,Giant,"5310 New Design Rd, 21703",3.99,Giant,39.3713461,-77.4261823,3.94
-Frederick (Southwest),21703,Wawa,"5833 Ballenger Creek Pike, 21703",3.99,Wawa,39.3921775,-77.4382008,3.99
+Frederick (Southwest),21703,A-1 Mart,"649 Himes Ave, 21703",3.96,-,39.4074431,-77.4470426,3.96
 Frederick (Southwest),21703,Royal Farms,"6730 English Muffin Way, 21703",3.99,Royal Farms,39.3620393,-77.4311677,3.89
-Frederick (Southwest),21703,Exxon,"5870 Ballenger Creek Pike, 21703",3.99,Exxon,39.3932575,-77.4383819,3.96
+Frederick (Southwest),21703,Wawa,"5833 Ballenger Creek Pike, 21703",3.99,Wawa,39.3921775,-77.4382008,3.99
 Frederick (Ballenger Creek),21704,Shell,"5498 Buckeystown Pike, 21704",3.99,Shell,39.37721,-77.409536,3.94
 Frederick (Ballenger Creek),21704,Southern States,"5841 Buckeystown Pike, 21704",3.99,-,39.3945061,-77.4089957,3.99
 Frederick (Ballenger Creek),21704,7-Eleven,"5703 Buckeystown Pike, 21704",3.99,7-Eleven,39.3907132,-77.4095055,3.96
@@ -114,20 +108,20 @@ Frederick (Ballenger Creek),21704,7-Eleven,"8900 Fingerboard Rd, 21704",3.99,7-E
 Frederick (Ballenger Creek),21704,Royal Farms,"9180 Fingerboard Rd, 21704",3.99,Royal Farms,39.3276312,-77.346555,3.89
 Frederick (Ballenger Creek),21704,Wawa,"5440 Urbana Pike, 21704",3.99,Wawa,39.3814473,-77.4012549,3.99
 Frederick (Ballenger Creek),21704,Sheetz,"5601 Buckeystown Pike, 21704",3.99,Sheetz,39.3863292,-77.4095815,3.96
-Frederick (Ballenger Creek),21704,Exxon,"8816 Fingerboard Rd, 21704",3.99,Exxon,39.3311118,-77.3869896,3.96
-Walkersville,21793,7-Eleven,"8411 Woodsboro Pike, 21793",3.99,7-Eleven,39.4647068,-77.36414,3.96
+Frederick (Ballenger Creek),21704,Exxon,"8816 Fingerboard Rd, 21704",4.09,Exxon,39.3311118,-77.3869896,4.06
 Walkersville,21793,Rutter's,"9210 Woodsboro Pike, 21793",3.99,-,39.487169,-77.3396205,3.99
+Walkersville,21793,7-Eleven,"8411 Woodsboro Pike, 21793",3.99,7-Eleven,39.4647068,-77.36414,3.96
 Walkersville,21793,Sheetz,"8408 Woodsboro Pike, 21793",3.99,Sheetz,39.4645149,-77.3653857,3.96
-Middletown,21769,High's Dairy Store,"4301 Old National Pike, 21769",3.99,High's,39.4339699,-77.5188683,3.94
 Middletown,21769,LDS,"201 S Church St, 21769",3.97,-,39.4424907,-77.5455705,3.97
 Middletown,21769,Shell,"4304 Old National Pike, 21769",3.99,Shell,39.4350236,-77.5183346,3.94
+Middletown,21769,High's Dairy Store,"4301 Old National Pike, 21769",3.99,High's,39.4339699,-77.5188683,3.94
 Middletown,21769,BP,"211 E Main St, 21769",3.99,BP,39.4592562,-77.7452054,3.94
 Adamstown,21710,Stup's Market,"5550 Mountville Rd, 21710",3.79,-,39.3113757,-77.4750526,3.79
 Buckeystown,21717,Carroll Motor Fuels,"3612 Buckeystown Pike, 21717",3.91,-,39.3327487,-77.4323293,3.91
 Point of Rocks,21777,Exxon,"1595 Bowis Dr, 21777",3.89,Exxon,39.2756546,-77.528993,3.86
-Jefferson,21755,Crown,"4010 Mountville Rd, 21755",3.93,-,39.3584946,-77.5300718,3.93
 Jefferson,21755,BP,"4607 LANDER RD, 21755",3.99,BP,39.3609836,-77.5315929,3.94
+Jefferson,21755,Crown,"4010 Mountville Rd, 21755",3.93,-,39.3584946,-77.5300718,3.93
 Knoxville,21758,Weis Gas N Go,"1201 Dutchman's Creek Dr, 21758",3.79,-,34.4229808,-80.8830658,3.79
 Knoxville,21758,Sheetz,"3842 Burkittsville Rd, 21758",3.89,Sheetz,39.3370038,-77.640031,3.86
 Knoxville,21758,Hillside Station,"19110 Keep Tryst Rd, 21758",3.95,-,39.3302021,-77.7018826,3.95
-Brunswick,21716,Crown,"98 Souder Rd, 21716",3.87,-,39.3238019,-77.6174184,3.87
+Brunswick,21716,Crown,"98 Souder Rd, 21716",3.79,-,39.3238019,-77.6174184,3.79
