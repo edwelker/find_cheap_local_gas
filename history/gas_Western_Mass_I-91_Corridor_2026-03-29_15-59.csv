@@ -1,11 +1,12 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Springfield (East),01104,BD Mart,"20 East St, 01104",3.59,-,42.1481272,-72.5629038,3.59
 Springfield (East),01104,Cumberland Farms,"798 Carew St, 01104",3.69,Cumberland,42.1258915,-72.5841307,3.59
+Springfield (East),01104,Liberty Gas,"668 Liberty St, 01104",3.69,-,42.1214212,-72.5846698,3.69
 Springfield (East),01104,Racing Mart,"612 Carew St, 01104",3.69,-,42.1225238,-72.5887328,3.69
 Springfield (East),01104,CITGO,"1271 Page Blvd, 01104",3.75,-,42.1498946,-72.5374867,3.75
 Springfield (East),01104,Pride,"549 Page Blvd, 01104",3.79,Pride,42.1395392,-72.5601149,3.69
-Springfield (East),01104,CITGO,"289 Carew St, 01104",3.65,-,42.149015,-72.5644193,3.65
 Springfield (East),01104,Stop & Shop,"1277 Liberty St, 01104",3.89,Stop & Shop,42.1373538,-72.5820966,3.79
+Springfield (East),01104,CITGO,"289 Carew St, 01104",3.65,-,42.149015,-72.5644193,3.65
 Springfield (East),01104,Pride,"77 West St, 01104",3.79,Pride,42.1435596,-72.6112724,3.69
 West Springfield,01089,Speedway,"341 Memorial Ave, 01089",3.52,Speedway,42.0958494,-72.6025407,3.47
 West Springfield,01089,Shell,"173 Elm St, 01089",3.54,Shell,42.1071429,-72.6236243,3.49
@@ -20,72 +21,69 @@ West Springfield,01089,Pride,"757 Riverdale St, 01089",3.99,Pride,42.1246626,-72
 West Springfield,01089,Pride,"1247 Riverdale St, 01089",3.99,Pride,42.1379202,-72.6252571,3.89
 West Springfield,01089,Sunoco,"2668 Westfield St, 01089",3.99,Sunoco,42.1060032,-72.6538534,3.96
 West Springfield,01089,Shell,"1130 Riverdale St, 01089",3.99,Shell,42.1348232,-72.6261928,3.94
-Westfield,01085,Mobil,"162 Southampton Rd, 01085",3.55,Mobil,42.1460884,-72.7310211,3.52
 Westfield,01085,CITGO,"439 N Elm St, 01085",3.54,-,42.1401791,-72.7333993,3.54
+Westfield,01085,Mobil,"162 Southampton Rd, 01085",3.69,Mobil,42.1460884,-72.7310211,3.66
 Westfield,01085,Irving,"1400 Russel Rd, 01085",3.65,-,41.4647535,-73.2224032,3.65
 Westfield,01085,Shell,"259 N Elm St, 01085",3.65,Shell,42.1359276,-72.7389062,3.6
 Westfield,01085,Big Y Express,"330 E Main St, 01085",3.89,Big Y,42.1137756,-72.7238961,3.84
 Westfield,01085,Pride,"234 E Main St, 01085",3.89,Pride,42.1150935,-72.7284631,3.79
-Westfield,01085,Mobil,"181 Elm St, 01085",3.58,Mobil,42.1244206,-72.7476514,3.55
-Westfield,01085,CITGO,"41 Franklin St, 01085",3.55,-,42.1250645,-72.7500438,3.55
-Westfield,01085,Cumberland Farms,"1134 Southampton Rd, 01085",3.59,Cumberland,42.1825106,-72.7271699,3.49
-Westfield,01085,Shell,"27 Southwick Rd, 01085",3.69,Shell,42.1003913,-72.7636975,3.64
-Westfield,01085,Sunoco,"88 S Maple St, 01085",3.75,Sunoco,41.9829506,-72.5400431,3.72
-Westfield,01085,Sunoco,"163 Meadow St, 01085",3.75,Sunoco,42.1206555,-72.7397845,3.72
 Westfield,01085,Gulf,"278 Elm St, 01085",3.75,-,42.1086935,-72.6235306,3.75
-Chicopee,01020,Stop & Shop,"672 Memorial Dr, 01020",3.49,Stop & Shop,42.1759775,-72.5763068,3.39
+Chicopee,01020,Stop & Shop,"672 Memorial Dr, 01020",3.55,Stop & Shop,42.1759775,-72.5763068,3.45
 Chicopee,01020,Big Y Express,"1177 Granby Rd, 01020",3.54,Big Y,42.1739323,-72.5872689,3.49
 Chicopee,01020,Gulf,"646 Grattan Street, 01020",3.59,-,42.1730203,-72.5984727,3.59
 Chicopee,01020,F.L. Roberts,"2012 Memorial Dr, 01020",3.59,-,42.210334,-72.5714232,3.59
 Chicopee,01020,CITGO,"451 Grattan St, 01020",3.59,-,42.1684674,-72.5940776,3.59
+Chicopee,01020,Cumberland Farms,"1061 Memorial Dr, 01020",3.59,Cumberland,42.1870792,-72.5769006,3.49
 Chicopee,01020,Sunoco,"2041 Memorial Dr, 01020",3.59,Sunoco,42.2131424,-72.5723361,3.56
-Chicopee,01020,BP,"1423 Memorial Dr, 01020",3.57,BP,42.1960997,-72.5739353,3.52
+Chicopee,01020,CITGO,"817 Front St, 01020",3.69,-,42.1498779,-72.5862536,3.69
 Chicopee,01020,CITGO,"947 Burnett Rd, 01020",3.65,-,42.1753008,-72.5287525,3.65
+Chicopee,01020,Pride,"363 Burnett Rd, 01020",3.67,Pride,42.1661787,-72.5451161,3.57
 Chicopee,01020,CITGO,"1875 Memorial Dr, 01020",3.69,-,42.2082465,-72.571413,3.69
 Chicopee,01020,Pilot,"357 Burnett Rd, 01020",3.67,-,42.1661237,-72.546029,3.67
 Chicopee,01020,Sunoco,"560 East St, 01020",3.69,Sunoco,42.1480861,-72.5642343,3.66
-Chicopee,01020,CITGO,"817 Front St, 01020",3.69,-,42.1498779,-72.5862536,3.69
 Chicopee,01020,Sunoco,"500 Montgomery St, 01020",3.79,Sunoco,42.1743862,-72.5869497,3.76
 Chicopee,01020,Shell,"197 Grove St, 01020",3.79,Shell,42.1536921,-72.5840072,3.74
 Chicopee,01020,Pride,"27 Montgomery St, 01020",3.89,Pride,42.1612887,-72.5824657,3.79
+Chicopee,01020,BP,"1423 Memorial Dr, 01020",3.57,BP,42.1960997,-72.5739353,3.52
 Holyoke,01040,Stop and Shop,"2265 Northampton, 01040",3.65,-,42.1816881,-72.6330639,3.65
 Holyoke,01040,Stop & Shop,"2265 Northampton St, 01040",3.65,Stop & Shop,42.1816881,-72.6330639,3.55
-Holyoke,01040,Stop & Shop,"28 Lincoln St, 01040",3.65,Stop & Shop,42.2142774,-72.6181875,3.55
+Holyoke,01040,Stop & Shop,"28 Lincoln St, 01040",3.69,Stop & Shop,42.2142774,-72.6181875,3.59
 Holyoke,01040,Shell,"225 Whiting Farms Rd, 01040",3.89,Shell,42.1748898,-72.6408246,3.84
 Holyoke,01040,Pride,"1553 Dwight St, 01040",3.99,Pride,42.21103,-72.6281361,3.89
 South Hadley,01075,Cumberland Farms,"507 Newton St, 01075",3.61,Cumberland,42.2374802,-72.5816164,3.51
 South Hadley,01075,White Wing,"568 Newton St, 01075",3.66,-,42.2396215,-72.5815538,3.66
-South Hadley,01075,Sunoco,"19 Bridge St, 01075",3.79,Sunoco,42.2152143,-72.5942742,3.76
 South Hadley,01075,Gulf,"72 Lamb St, 01075",3.89,-,42.219949,-72.5918302,3.89
-South Hadley,01075,Big Y Express,"467 Newton St, 01075",3.63,Big Y,42.235783,-72.5828163,3.58
+South Hadley,01075,Sunoco,"19 Bridge St, 01075",3.89,Sunoco,42.2152143,-72.5942742,3.86
 Easthampton,01027,Cumberland Farms,"231 Northampton St, 01027",3.82,Cumberland,42.2870731,-72.6626681,3.72
 Easthampton,01027,7-Eleven,"97 Union St, 01027",3.85,7-Eleven,42.2669407,-72.6696351,3.82
 Easthampton,01027,F.L. Roberts,"124 Northampton St, 01027",3.89,-,42.2789978,-72.6713843,3.89
 Northampton,01060,King Street Convenience,"60 King St, 01060",3.65,-,42.3205763,-72.6313212,3.65
 Northampton,01060,Sunoco,"776 N King St, 01060",3.89,Sunoco,42.3622644,-72.6390352,3.86
-Northampton,01060,Stop & Shop,"228 King St, 01060",3.65,Stop & Shop,42.3290172,-72.6358623,3.55
-Northampton,01060,Mobil,"15 Locust, 01060",3.79,Mobil,42.3316863,-72.6526156,3.76
 Northampton,01060,Pride,"375 King St, 01060",3.99,Pride,42.3374852,-72.6366284,3.89
 Northampton,01060,Big Y Express,"188 N King St, 01060",3.99,Big Y,42.3289047,-72.633738,3.94
+Northampton,01060,Mobil,"15 Locust, 01060",3.79,Mobil,42.3316863,-72.6526156,3.76
 Hadley,01035,Stop & Shop,"446 Russell St, 01035",3.79,Stop & Shop,42.3646637,-72.5379721,3.69
+Hadley,01035,Pride,"445 Russell St, 01035",3.99,Pride,42.3632797,-72.5387719,3.89
 Hadley,01035,Pride,"25 Russell St, 01035",3.99,Pride,42.33861,-72.60906,3.89
 Amherst,01002,Speedway,"468 West St, 01002",3.79,Speedway,42.3420911,-72.5198559,3.74
-Amherst,01002,Cumberland Farms,"389 College St, 01002",3.79,Cumberland,42.373216,-72.5193521,3.69
+Amherst,01002,F.L. Roberts,"399 Northampton Rd, 01002",3.89,-,42.3661824,-72.5351597,3.89
+South Deerfield,01373,Irving,"1 Sunderland Rd, 01373",3.75,-,42.4685118,-72.6135264,3.75
+South Deerfield,01373,Cumberland Farms,"31 Elm St, 01373",3.77,Cumberland,42.5038547,-71.1615121,3.67
 South Deerfield,01373,Irving,"1 Greenfield Rd, 01373",3.75,-,42.4708672,-72.6158055,3.75
-Greenfield,01301,Planet,"109 Mohawk Trail, 01301",3.69,-,42.5848575,-72.6166793,3.69
-Greenfield,01301,Speedway,"245 Federal St, 01301",3.69,Speedway,42.5981415,-72.5957967,3.64
-Greenfield,01301,Shell,"100 Mohawk Tr, 01301",3.69,Shell,41.658523,-74.8076823,3.64
-Greenfield,01301,Cumberland Farms,"317 Federal St, 01301",3.72,Cumberland,42.6013026,-72.593169,3.62
+Greenfield,01301,Irving,"223 Mohawk Tr, 01301",3.71,-,41.6586025,-74.807643,3.71
 Greenfield,01301,Stop & Shop,"488 Bernardston Rd, 01301",3.69,Stop & Shop,42.6094682,-72.5869418,3.59
+Greenfield,01301,Planet,"109 Mohawk Trail, 01301",3.69,-,42.5848575,-72.6166793,3.69
+Greenfield,01301,Shell,"100 Mohawk Tr, 01301",3.69,Shell,41.658523,-74.8076823,3.64
+Greenfield,01301,Speedway,"245 Federal St, 01301",3.69,Speedway,42.5981415,-72.5957967,3.64
+Greenfield,01301,Cumberland Farms,"317 Federal St, 01301",3.72,Cumberland,42.6013026,-72.593169,3.62
 Greenfield,01301,Mobil,"142 Mohawk Tr, 01301",3.69,Mobil,41.6585209,-74.8076619,3.66
-Greenfield,01301,Irving,"223 Mohawk Tr, 01301",3.7,-,41.6586025,-74.807643,3.7
-Greenfield,01301,F.L. Roberts,"63 Main St, 01301",3.75,-,42.5871489,-72.6066369,3.75
 Greenfield,01301,Sandri,"295 Federal St, 01301",3.84,-,42.600351,-72.5939125,3.84
+Greenfield,01301,F.L. Roberts,"63 Main St, 01301",3.75,-,42.5871489,-72.6066369,3.75
 Greenfield,01301,Sunoco,"416 Federal St, 01301",3.84,Sunoco,42.6060538,-72.5895143,3.81
 Shelburne Falls,01370,Mobil,"269 Mohawk Tr, 01370",3.79,Mobil,41.6586025,-74.807643,3.76
+Agawam,01001,Cumberland Farms,"837 Suffield St, 01001",3.69,Cumberland,42.0606701,-72.6315678,3.59
 Agawam,01001,Gulf,"18 Springfield St, 01001",3.69,-,42.0897213,-72.6280116,3.69
 Agawam,01001,CITGO,"650 Suffield St, 01001",3.69,-,42.0675744,-72.6317643,3.69
 Agawam,01001,CITGO,"1 River Rd, 01001",3.69,-,42.04632,-72.6158718,3.69
-Agawam,01001,Cumberland Farms,"837 Suffield St, 01001",3.69,Cumberland,42.0606701,-72.6315678,3.59
 Agawam,01001,Mobil,"308 Suffield St, 01001",3.75,Mobil,42.0790669,-72.6300928,3.72
 Agawam,01001,Shell,"6 Lealand Ave, 01001",3.79,Shell,42.071971,-72.6152387,3.74
