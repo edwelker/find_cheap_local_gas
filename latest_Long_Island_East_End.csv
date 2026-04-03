@@ -1,25 +1,27 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Riverhead,11901,76,"7 Peconic Ave, 11901",3.79,-,40.9149773,-72.6623567,3.79
 Riverhead,11901,76,"301 Flanders Rd, 11901",3.85,-,40.9120984,-72.6478696,3.85
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.83,Mobil,40.9252206,-72.6951725,3.8
+Riverhead,11901,Shell,"1733 Old Country Rd, 11901",3.87,Shell,40.9239801,-72.7023482,3.82
 Riverhead,11901,Empire,"640 Main Rd, 11901",3.85,-,40.9396238,-72.6416222,3.85
 Riverhead,11901,76,"415 Flanders Rd, 11901",3.85,-,40.9119534,-72.6471547,3.85
 Riverhead,11901,BP,"626 W Main St, 11901",3.89,BP,40.9184063,-72.6731535,3.84
 Riverhead,11901,Mobil,"415 E Main St, 11901",3.89,Mobil,40.9182937,-72.6568979,3.86
-Riverhead,11901,Shell,"9 Lake Ave, 11901",3.89,Shell,40.9142638,-72.6632928,3.84
 Riverhead,11901,Speedway,"870 Old Country Rd, 11901",3.95,Speedway,40.9346058,-72.6699464,3.9
+Riverhead,11901,Shell,"9 Lake Ave, 11901",3.99,Shell,40.9142638,-72.6632928,3.94
 Riverhead,11901,CITGO,"1429 Main Rd, 11901",3.99,-,40.9391677,-72.6428426,3.99
-Riverhead,11901,Shell,"1733 Old Country Rd, 11901",3.87,Shell,40.9239801,-72.7023482,3.82
 Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",3.96,7-Eleven,40.8300726,-72.6474301,3.93
 Quogue,11959,Speedway,"38 Montauk Hwy, 11959",3.96,Speedway,40.88464,-72.4264717,3.91
 Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",3.89,7-Eleven,40.8766328,-72.5321733,3.86
-Hampton Bays,11946,Mobil,"239 W Montauk Hwy, 11946",3.89,Mobil,40.8659062,-72.5490604,3.86
-Southampton,11968,Gas Hampton,"2000 CR-39, 11968",3.75,-,40.8949126,-72.4661039,3.75
 Southampton,11968,Speedway,"816 CR-39, 11968",3.95,Speedway,40.8926889,-72.4251772,3.9
-Southampton,11968,Cumberland Farms,"13 CR-39, 11968",3.85,Cumberland,40.8966904,-72.3990073,3.75
+Southampton,11968,Gas Hampton,"2000 CR-39, 11968",3.75,-,40.8949126,-72.4661039,3.75
 Southampton,11968,Shell,"1630 CR-39, 11968",3.85,Shell,40.8949342,-72.4534478,3.8
+Southampton,11968,Cumberland Farms,"13 CR-39, 11968",3.85,Cumberland,40.8966904,-72.3990073,3.75
 Southampton,11968,BP,"10 County Road 39, 11968",3.95,BP,40.8964162,-72.3993071,3.9
 Southampton,11968,Sunoco,"500 CR-39, 11968",3.99,Sunoco,40.8969553,-72.4142682,3.96
 Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",3.99,Speedway,40.9192162,-72.3436923,3.94
 Sag Harbor,11963,Gulf,"144 Hampton St, 11963",4.19,-,40.9957393,-72.2839455,4.19
-Wainscott,11975,Speedway,"Unknown Address, 11975",3.99,Speedway,40.9487031,-72.2446628,3.94
+Wainscott,11975,Speedway,"Unknown Address, 11975",4.09,Speedway,40.9487031,-72.2446628,4.04
 East Hampton,11937,ROYAL,"23 Three Mile Harbor Rd, 11937",4.33,-,40.97458,-72.1821194,4.33
+Amagansett,11930,Gulf,"56 Montauk Hwy, 11930",4.59,-,40.9726927,-72.1482366,4.59
+Amagansett,11930,Mobil,"130 Main St, 11930",5.49,Mobil,40.9775166,-72.1371046,5.46
