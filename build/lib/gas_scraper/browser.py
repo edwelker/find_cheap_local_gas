@@ -1,3 +1,5 @@
+import os
+
 import undetected_chromedriver as uc
 from selenium_stealth import stealth
 from loguru import logger
@@ -39,8 +41,13 @@ def init_driver(headless=False):
 
     # Initialize the patched driver
     # PERFORMANCE: Specify version to avoid mismatch issues
+    chrome_binary = os.environ.get("CHROME_BINARY")
     driver = uc.Chrome(
-        options=options, headless=headless, use_subprocess=True, version_main=145
+        options=options,
+        headless=headless,
+        use_subprocess=True,
+        version_main=145,
+        browser_executable_path=chrome_binary if chrome_binary else None,
     )
 
     # RELIABILITY: Secondary layer using selenium-stealth to spoof hardware/browser traits
