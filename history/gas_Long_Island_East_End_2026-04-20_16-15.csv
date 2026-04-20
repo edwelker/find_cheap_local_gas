@@ -1,8 +1,9 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
-Riverhead,11901,Speedway,"870 Old Country Rd, 11901",3.93,Speedway,40.9346058,-72.6699464,3.88
-Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.93,Mobil,40.9252206,-72.6951725,3.9
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.85,Mobil,40.9252206,-72.6951725,3.82
+Riverhead,11901,BP,"626 W Main St, 11901",3.89,BP,40.9184063,-72.6731535,3.84
+Riverhead,11901,Sunoco,"1879 Old Country Rd 58, 11901",3.97,Sunoco,,,3.94
+Riverhead,11901,Speedway,"870 Old Country Rd, 11901",3.99,Speedway,40.9346058,-72.6699464,3.94
 Riverhead,11901,Valero,"1356 OLD COUNTRY RD, 11901",3.89,-,40.9283279,-72.6857992,3.89
-Riverhead,11901,76,"7 Peconic Ave, 11901",3.85,-,40.9149773,-72.6623567,3.85
 Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",4.05,7-Eleven,40.8300726,-72.6474301,4.02
 Quogue,11959,Speedway,"38 Montauk Hwy, 11959",4.05,Speedway,40.88464,-72.4264717,4.0
 Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",3.89,7-Eleven,40.8766328,-72.5321733,3.86
