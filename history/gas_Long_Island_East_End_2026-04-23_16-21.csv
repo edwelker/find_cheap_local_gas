@@ -1,15 +1,14 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
-Riverhead,11901,BP,"626 W Main St, 11901",3.89,BP,40.9184063,-72.6731535,3.84
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.85,Mobil,40.9252206,-72.6951725,3.82
 Riverhead,11901,Speedway,"870 Old Country Rd, 11901",3.93,Speedway,40.9346058,-72.6699464,3.88
-Riverhead,11901,Shell,"1733 Old Country Rd, 11901",3.85,Shell,40.9239801,-72.7023482,3.8
-Riverhead,11901,Shell,"9 Lake Ave, 11901",3.99,Shell,40.9142638,-72.6632928,3.94
+Riverhead,11901,BP,"626 W Main St, 11901",3.89,BP,40.9184063,-72.6731535,3.84
 Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",4.05,7-Eleven,40.8300726,-72.6474301,4.02
 Quogue,11959,Speedway,"38 Montauk Hwy, 11959",4.05,Speedway,40.88464,-72.4264717,4.0
 Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",3.89,7-Eleven,40.8766328,-72.5321733,3.86
 Hampton Bays,11946,Mobil,"239 W Montauk Hwy, 11946",3.89,Mobil,40.8659062,-72.5490604,3.86
 Southampton,11968,Shell,"1630 CR-39, 11968",3.89,Shell,40.8949342,-72.4534478,3.84
+Southampton,11968,Speedway,"816 CR-39, 11968",3.94,Speedway,40.8926889,-72.4251772,3.89
 Southampton,11968,Gas Hampton,"2000 CR-39, 11968",3.89,-,40.8949126,-72.4661039,3.89
-Southampton,11968,Speedway,"816 CR-39, 11968",3.99,Speedway,40.8926889,-72.4251772,3.94
 Southampton,11968,BP,"10 County Road 39, 11968",3.99,BP,40.8964162,-72.3993071,3.94
 Southampton,11968,Sunoco,"500 CR-39, 11968",4.09,Sunoco,40.8969553,-72.4142682,4.06
 Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",4.09,Speedway,40.9192162,-72.3436923,4.04
