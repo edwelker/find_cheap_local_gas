@@ -1,4 +1,5 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Scaggsville / Laurel,20723,7-Eleven,"9651 Washington Blvd N, 20723",4.15,7-Eleven,42.739557,-83.0334814,4.12
+Scaggsville / Laurel,20723,Weis,"9250 Washington Blvd N, 20723",4.18,-,42.739557,-83.0334814,4.18
+Scaggsville / Laurel,20723,Exxon,"8850 Gorman Rd, 20723",4.49,Exxon,39.1315805,-76.8205188,4.46
 Scaggsville / Laurel,20723,Shell,"9280 All Saints Rd, 20723",4.25,Shell,39.1195226,-76.8519516,4.2
-Scaggsville / Laurel,20723,Exxon,"8850 Gorman Rd, 20723",4.69,Exxon,39.1315805,-76.8205188,4.66
