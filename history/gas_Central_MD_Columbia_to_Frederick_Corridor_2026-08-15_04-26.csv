@@ -1,8 +1,0 @@
-City,Zip,Station,Address,Base,Discount,Lat,Long,Net
-Columbia (East),21045,Liberty,"6425 Dobbin Center Way, 21045",3.87,-,39.1968235,-76.8216821,3.87
-Columbia (East),21045,Exxon,"6004 Foreland Garth, 21045",3.87,Exxon,39.2049806,-76.8164844,3.84
-Columbia (East),21045,Exxon,"7100 Minstrel Way, 21045",3.89,Exxon,39.177736,-76.84448,3.86
-Columbia (East),21045,Mobil,"6251 Columbia Crossing Cir, 21045",3.99,Mobil,39.1995215,-76.8147128,3.96
-Columbia (East),21045,7-Eleven,"5901 Stevens Forest Rd, 21045",3.95,7-Eleven,39.210533,-76.847772,3.92
-Columbia (East),21045,7-Eleven,"8251 Snowden River Pkwy, 21045",3.99,7-Eleven,39.2090716,-76.8034905,3.96
-Columbia (East),21045,Shell,"7248 Cradlerock Way, 21045",3.99,Shell,39.1862523,-76.8457193,3.94
