@@ -1,0 +1,6 @@
+City,Zip,Station,Address,Base,Discount,Lat,Long,Net
+Riverhead,11901,OK Petroleum,"1212 E Main St, 11901",3.99,-,40.9308412,-72.6498192,3.99
+Riverhead,11901,Mobil,"415 E Main St, 11901",4.09,Mobil,40.9182937,-72.6568979,4.06
+Riverhead,11901,Shell,"626 W Main St, 11901",4.15,Shell,40.9184063,-72.6731535,4.1
+Riverhead,11901,7-Eleven,"870 Old Country Rd, 11901",4.19,7-Eleven,40.9346058,-72.6699464,4.16
+Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.99,Mobil,40.9252206,-72.6951725,3.96
