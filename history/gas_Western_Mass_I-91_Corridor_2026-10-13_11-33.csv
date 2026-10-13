@@ -1,0 +1,5 @@
+City,Zip,Station,Address,Base,Discount,Lat,Long,Net
+Springfield (East),01104,Pride,"549 Page Blvd, 01104",3.99,Pride,42.1395392,-72.5601149,3.89
+Springfield (East),01104,Shell,"2221 Main St, 01104",4.09,Shell,42.1101407,-72.6006844,4.04
+Springfield (East),01104,Pride,"77 West St, 01104",3.99,Pride,42.1435596,-72.6112724,3.89
+Springfield (East),01104,Cumberland Farms,"798 Carew St, 01104",4.23,Cumberland,42.1258915,-72.5841307,4.13
