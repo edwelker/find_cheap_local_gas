@@ -150,3 +150,29 @@ def test_get_state_hint():
     assert get_state_hint("11901") == "New York"
     assert get_state_hint("01060") == "Massachusetts"
     assert get_state_hint("90210") is None
+
+
+def test_perform_geocode_rejects_out_of_bounds(mock_geolocator, empty_geo_cache):
+    """
+    Test that _perform_geocode rejects coordinates returned in Michigan for a Maryland zip code.
+    """
+    mock_location = MagicMock()
+    # Michigan coordinates
+    mock_location.latitude = 42.739557
+    mock_location.longitude = -83.0334814
+    mock_geolocator.geocode.return_value = mock_location
+
+    cache_key = "9651 Washington Blvd N, 20723"
+    result = _perform_geocode(
+        "7-Eleven",
+        cache_key,
+        mock_geolocator,
+        empty_geo_cache,
+        cache_key,
+        zip_code="20723",
+    )
+
+    # Must reject the out-of-bounds result and not cache it
+    assert result is None
+    assert cache_key not in empty_geo_cache.root
+
