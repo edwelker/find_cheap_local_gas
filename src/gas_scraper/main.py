@@ -171,6 +171,7 @@ def _get_page_with_retry(driver, url):
         logger.warning(f"   ⚠️  Unexpected page title: '{title}'. Possible block.")
         snippet = driver.page_source[:500].replace("\n", " ")
         logger.debug(f"Source Snippet: {snippet}")
+        raise RuntimeError(f"Unexpected page title: '{title}'. Possible block.")
 
 
 def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
@@ -228,32 +229,30 @@ def fetch_gas_prices_for_zip(driver, zip_code, city_name, headless=False):
 
 
 def scrape_gasbuddy(region_config, headless=False):
-    driver = init_driver(headless=headless)
-
     geolocator = Nominatim(user_agent="gas_scraper_bot_v1", timeout=10)
     geo_cache = load_geo_cache()
 
     scraped_data = []
 
-    try:
-        zips = list(dict.fromkeys(region_config["zips"]))
+    zips = list(dict.fromkeys(region_config["zips"]))
 
-        for zip_code in zips:
-            city_name = ZIP_MAP.get(zip_code, zip_code)
-            logger.info(f"\n📍 Navigating to: {city_name} ({zip_code})...")
+    for zip_code in zips:
+        city_name = ZIP_MAP.get(zip_code, zip_code)
+        logger.info(f"\n📍 Navigating to: {city_name} ({zip_code})...")
 
-            if zips.index(zip_code) > 0:
-                delay = random.uniform(3.0, 7.0)
-                logger.info(f"   (Waiting {delay:.1f}s to look human...)")
-                time.sleep(delay)
+        if zips.index(zip_code) > 0:
+            delay = random.uniform(2.0, 4.0)
+            logger.info(f"   (Waiting {delay:.1f}s to look human...)")
+            time.sleep(delay)
 
+        driver = init_driver(headless=headless)
+        try:
             zip_data = fetch_gas_prices_for_zip(
                 driver, zip_code, city_name, headless=headless
             )
             scraped_data.extend(zip_data)
-
-    finally:
-        driver.quit()
+        finally:
+            driver.quit()
 
     unique_stations = {(s.station_name, s.address): s for s in scraped_data}.values()
 

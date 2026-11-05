@@ -1,8 +1,42 @@
 import os
+import re
+import subprocess
+import sys
 
 import undetected_chromedriver as uc
 from selenium_stealth import stealth
 from loguru import logger
+
+
+def get_chrome_major_version(browser_executable_path=None):
+    """
+    Detects the major version of the installed Chrome browser.
+    """
+    try:
+        exe = (
+            browser_executable_path
+            or os.environ.get("CHROME_BINARY")
+            or uc.find_chrome_executable()
+        )
+        if exe:
+            out = subprocess.check_output(
+                [exe, "--version"], stderr=subprocess.STDOUT
+            ).decode("utf-8")
+            match = re.search(r"(\d+)\.", out)
+            if match:
+                return int(match.group(1))
+    except Exception as e:
+        logger.warning(f"Could not determine Chrome major version: {e}")
+    return None
+
+
+def get_platform_name():
+    """Returns the matching platform string for navigator.platform."""
+    if sys.platform == "darwin":
+        return "MacIntel"
+    elif sys.platform.startswith("linux"):
+        return "Linux x86_64"
+    return "Win32"
 
 
 def init_driver(headless=False):
@@ -40,13 +74,14 @@ def init_driver(headless=False):
         options.add_argument("--window-size=1920,1080")
 
     # Initialize the patched driver
-    # PERFORMANCE: Specify version to avoid mismatch issues
+    # PERFORMANCE: Specify dynamic version to avoid mismatch issues
     chrome_binary = os.environ.get("CHROME_BINARY")
+    version_main = get_chrome_major_version(chrome_binary)
     driver = uc.Chrome(
         options=options,
         headless=headless,
         use_subprocess=True,
-        version_main=145,
+        version_main=version_main,
         browser_executable_path=chrome_binary if chrome_binary else None,
     )
 
@@ -55,7 +90,7 @@ def init_driver(headless=False):
         driver,
         languages=["en-US", "en"],
         vendor="Google Inc.",
-        platform="Win32",
+        platform=get_platform_name(),
         webgl_vendor="Intel Inc.",
         renderer="Intel Iris OpenGL Engine",
         fix_hairline=True,

@@ -6,3 +6,4 @@ debug*
 *.egg-info/*.txt
 *.egg-info/PKG-INFO
 .gemini
+.venv
