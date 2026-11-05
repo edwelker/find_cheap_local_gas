@@ -36,6 +36,22 @@ def get_state_hint(zip_code):
         return "Massachusetts"
     return None
 
+def is_within_state_bounds(lat: float, lon: float, zip_code: Optional[str]) -> bool:
+    """Validates that coordinates fall roughly within expected state boundaries."""
+    if not zip_code or len(zip_code) < 2:
+        return True
+    # MD / DC
+    if zip_code.startswith(("20", "21")):
+        return 37.5 <= lat <= 40.0 and -80.0 <= lon <= -74.5
+    # NY (Long Island / NYC area)
+    if zip_code.startswith("11"):
+        return 40.4 <= lat <= 41.5 and -74.5 <= lon <= -71.5
+    # MA
+    if zip_code.startswith("01"):
+        return 41.0 <= lat <= 43.0 and -74.0 <= lon <= -69.5
+    return True
+
+
 def geocode_stations(stations, geolocator, geo_cache: GeocodeCache):
     """Batch geocodes GasStation objects using the structured cache model."""
     logger.info(f"🌍 Geocoding {len(stations)} unique stations...")
@@ -58,27 +74,40 @@ def geocode_stations(stations, geolocator, geo_cache: GeocodeCache):
                 geolocator,
                 geo_cache,
                 cache_key,
+                zip_code=s.zip_code,
             )
             if coords:
                 s.lat, s.long = coords.lat, coords.lon
     return stations
 
+
 def _perform_geocode(
-    name, full_address_string, geolocator, geo_cache: GeocodeCache, cache_key
+    name, full_address_string, geolocator, geo_cache: GeocodeCache, cache_key, zip_code: Optional[str] = None
 ) -> Optional[Coordinates]:
     """Helper for Nominatim API with rate limiting, returns Coordinates model."""
     try:
         time.sleep(1.1)
 
+        query = full_address_string
+        state_hint = get_state_hint(zip_code) if zip_code else None
+        if state_hint and state_hint.lower() not in query.lower():
+            query = f"{query}, {state_hint}"
+
         # Primary geocoding attempt using the cleaned address string and US bias
-        location = geolocator.geocode(full_address_string, country_codes='us')
+        location = geolocator.geocode(query, country_codes='us')
 
         if location:
+            if not is_within_state_bounds(location.latitude, location.longitude, zip_code):
+                logger.warning(
+                    f"⚠️  Coordinates ({location.latitude}, {location.longitude}) out of bounds for {zip_code} ({state_hint}). Rejecting."
+                )
+                return None
+
             coords = Coordinates(lat=location.latitude, lon=location.longitude)
             geo_cache.root[cache_key] = coords
             return coords
 
-        logger.warning(f"Geocoding returned None for query: '{full_address_string}'")
+        logger.warning(f"Geocoding returned None for query: '{query}'")
         return None
 
     except Exception as e:
