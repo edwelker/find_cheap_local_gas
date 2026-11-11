@@ -1,18 +1,18 @@
 City,Zip,Station,Address,Base,Discount,Lat,Long,Net
 Riverhead,11901,Empire,"1050 Osborne Ave, 11901",3.89,-,40.8032257,-72.7577586,3.89
 Riverhead,11901,Mobil,"1575 Old Country Rd, 11901",3.97,Mobil,40.9252206,-72.6951725,3.94
+Riverhead,11901,7-Eleven,"870 Old Country Rd, 11901",3.96,7-Eleven,40.9346058,-72.6699464,3.93
 Riverhead,11901,Shell,"626 W Main St, 11901",3.99,Shell,40.9184063,-72.6731535,3.94
 Riverhead,11901,OK Petroleum,"1212 E Main St, 11901",3.99,-,40.9308412,-72.6498192,3.99
 Riverhead,11901,Shell,"1733 Old Country Rd, 11901",4.03,Shell,40.9239801,-72.7023482,3.98
 Riverhead,11901,Mobil,"415 E Main St, 11901",4.09,Mobil,40.9182937,-72.6568979,4.06
-Riverhead,11901,7-Eleven,"870 Old Country Rd, 11901",4.06,7-Eleven,40.9346058,-72.6699464,4.03
-Riverhead,11901,Sunoco,"1879 Old Country Rd 58, 11901",4.09,Sunoco,,,4.06
-Riverhead,11901,CITGO,"1429 Main Rd, 11901",4.19,-,40.9391677,-72.6428426,4.19
-Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",4.25,7-Eleven,40.8300726,-72.6474301,4.22
-Quogue,11959,7-Eleven,"38 Montauk Hwy, 11959",4.25,7-Eleven,40.88464,-72.4264717,4.22
+Westhampton Beach,11978,7-Eleven,"107 Old Riverhead Rd, 11978",4.19,7-Eleven,40.8300726,-72.6474301,4.16
+Quogue,11959,7-Eleven,"38 Montauk Hwy, 11959",4.19,7-Eleven,40.88464,-72.4264717,4.16
 Hampton Bays,11946,Mobil,"239 W Montauk Hwy, 11946",4.24,Mobil,40.8659062,-72.5490604,4.21
 Hampton Bays,11946,7-Eleven,"192 W Montauk hwy, 11946",4.29,7-Eleven,40.8766328,-72.5321733,4.26
-Southampton,11968,Speedway,"816 CR-39, 11968",4.29,Speedway,40.8926889,-72.4251772,4.24
+Southampton,11968,Cumberland Farms,"13 CR-39, 11968",4.09,Cumberland,40.8966904,-72.3990073,3.99
+Southampton,11968,Speedway,"816 CR-39, 11968",4.19,Speedway,40.8926889,-72.4251772,4.14
+Water Mill,11976,Shell,"960 Montauk Hwy, 11976",4.09,Shell,40.915432,-72.3479645,4.04
 Water Mill,11976,Speedway,"1138 Montauk Hwy, 11976",4.59,Speedway,40.9192162,-72.3436923,4.54
-Wainscott,11975,7-Eleven,"Unknown Address, 11975",4.59,7-Eleven,,,4.56
+Wainscott,11975,7-Eleven,"Unknown Address, 11975",4.49,7-Eleven,,,4.46
 East Hampton,11937,ROYAL,"23 Three Mile Harbor Rd, 11937",4.83,-,40.97458,-72.1821194,4.83
